@@ -3,4 +3,4 @@
 https://clyde-web.vercel.app
 
 
-//hello
+http://clyde.induced.me
