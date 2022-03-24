@@ -478,7 +478,7 @@
 			const password = document.querySelector("#password")
 			try {
 				const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
-				await result.user.sendEmailVerification()
+				//await result.user.sendEmailVerification()
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
 				window.location.href ="/home"
 			
