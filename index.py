@@ -22,6 +22,10 @@ def home():
 def api():
     return render_template("login.html")
 
+@app.route('/home')
+def api():
+    return render_template("index.html")
+
 
 
 if __name__ == "__main__":
