@@ -2,9 +2,15 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+
+    /* background-color: #111; */
+}
+
 nav{
     height:50px;
-    background-color:#111;
+    position: sticky;
+    background-color: #111;
 }
 ul {
     list-style-type: none;
@@ -40,13 +46,6 @@ li a:hover:not(.active) {
 #logoImg{
     height: 46px;
     width: 45px;
-}
-nav{
-    position: sticky;
-    background-color: #111;
-}
-body{
-    background-color: #111;
 }
 
 
