@@ -399,7 +399,7 @@
 			<form id="signup" action="/home"> 
 				<h1>Create Account</h1>
 				<div class="social-container">
-					<a href="#" class="social"><i onclick="loginWithGoogle()" class="fab fa-google-plus-g"></i></a>
+					<a href="/home" class="social"><i onclick="loginWithGoogle()" class="fab fa-google-plus-g"></i></a>
 				</div>
 				<span>or use your email for registration</span>
 				<input id="name" type="text" placeholder="Name" required />
@@ -412,7 +412,7 @@
 			<form id="login" action="/home">
 				<h1>Sign in</h1>
 				<div class="social-container">
-					<a href="#" class="social"><i onclick="loginWithGoogle()"class="fab fa-google-plus-g"></i></a>
+					<a href="/home" class="social"><i onclick="loginWithGoogle()"class="fab fa-google-plus-g"></i></a>
 				</div>
 				<span>or use your account</span>
 				<input id="email1" type="email" placeholder="Email" required>
@@ -509,13 +509,15 @@
 		try{
             var provider= new firebase.auth.GoogleAuthProvider();
 			await firebase.auth().signInWithPopup(provider)
+
 		}catch(err){
-			console.log(err)
+			pass
 		}
 
 		}
 		async function reset(){
 			await firebase.auth().sendPasswordResetEmail(email);
+			M.toast({ html: `Reset Email Has Been Sent ${result.user.email}`, classes: "green" })
 		}
 
 
