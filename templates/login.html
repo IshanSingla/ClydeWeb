@@ -417,7 +417,7 @@
 				<span>or use your account</span>
 				<input id="email1" type="email" placeholder="Email" required>
 				<input id="password1" type="password" placeholder="Password" required>
-				<a href="#" onclick="reset()">Forgot your password?</a>
+				<button onclick="reset()">Forgot your password?</button>
 				<button><a href="/home"
 						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
 			</form>
@@ -516,6 +516,7 @@
 
 		}
 		async function reset(){
+			const email = document.querySelector("#email")
 			await firebase.auth().sendPasswordResetEmail(email);
 			M.toast({ html: `Reset Email Has Been Sent ${result.user.email}`, classes: "green" })
 		}
