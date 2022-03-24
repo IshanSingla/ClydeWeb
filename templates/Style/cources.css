@@ -1,0 +1,38 @@
+.upr_container{
+    margin-left: 40px;
+}
+.cource_intro{
+    width: 50%;
+
+}
+.cards{
+    display: flex;
+}
+.science_cards{
+    height: 400px;
+    width: 260px;
+    border: 2px solid black;
+    margin-left: 40px;
+    border-radius: 5%;
+}
+.science_image{
+    height: 290px;
+    width: 260px;
+    border-radius: 5%;
+}
+.cards_1{
+    display: flex;
+}
+.eng_cards{
+    height: 400px;
+    width: 260px;
+    border: 2px solid black;
+    margin-left: 40px;
+    border-radius: 5%;
+}
+.eng_image{
+    height: 290px;
+    width: 260px;
+    border-radius: 5%;
+
+}
