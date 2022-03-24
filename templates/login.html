@@ -421,8 +421,8 @@
 				<span>or use your account</span>
 				<input id="email1" type="email" placeholder="Email" required>
 				<input id="password1" type="password" placeholder="Password" required>
-				<a href="#">Forgot your password?</a>
-				<button><a href="../web.html"
+				<a href="#" onclick="reset()">Forgot your password?</a>
+				<button><a href="/home"
 						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
 			</form>
 		</div>
@@ -438,7 +438,7 @@
 					<p>Enter your personal details and start journey with us</p>
 					<button class="ghost" id="signUp">Sign Up</button>
 
-					<a href="../home.html"><button class="ghost">Home</a></button>
+					<a href="/"><button class="ghost">Home</a></button>
 				</div>
 			</div>
 		</div>
@@ -482,10 +482,12 @@
 			const password = document.querySelector("#password")
 			try {
 				const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+				await result.user.sendEmailVerification()
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				console.log(result)
+				window.location.href ="/home"
+			
 			} catch (err) {
-				console.log(err)
+				
 				M.toast({ html: err.message, classes: "red" })
 
 			}
@@ -498,9 +500,10 @@
 			try {
 				const result = await firebase.auth().signInWithEmailAndPassword(email1.value, password1b.value)
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				console.log(result)
+				window.location.href ="/home"
+				
 			} catch (err) {
-				console.log(err)
+				
 				M.toast({ html: err.message, classes: "red" })
 
 			}
@@ -515,6 +518,10 @@
 		}
 
 		}
+		async function reset(){
+			await firebase.auth().sendPasswordResetEmail(email);
+		}
+
 
 	</script>
 
