@@ -14,16 +14,16 @@ loop = asyncio.get_event_loop()
 
 
 @app.route('/')
-def home():
+def _():
     return render_template("index.html")
 
 
 @app.route('/login')
-def api():
+def login():
     return render_template("login.html")
 
 @app.route('/home')
-def api():
+def home():
     return render_template("index.html")
 
 
