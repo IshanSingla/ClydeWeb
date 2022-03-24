@@ -21,7 +21,8 @@ li a {
 }
   
 li a:hover:not(.active) {
-    background-color: rgb(85, 83, 83);
+    background-color: white;
+    color:black;
 }
   
 .active {
@@ -32,6 +33,13 @@ li a:hover:not(.active) {
 #logoImg{
     height: 46px;
     width: 45px;
+}
+nav{
+    position: sticky;
+    background-color: #111;
+}
+body{
+    background-color: #111;
 }
 
 
