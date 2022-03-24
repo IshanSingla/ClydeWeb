@@ -418,8 +418,7 @@
 				<input id="email1" type="email" placeholder="Email" required>
 				<input id="password1" type="password" placeholder="Password" required>
 				<!-- <button onclick="reset()">Forgot your password?</button> -->
-				<button><a href="/home"
-						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
+				<button id="signIn">Sign In</button>
 			</form>
 		</div>
 		<div class="overlay-container">
@@ -494,7 +493,7 @@
 			const email = document.querySelector("#email1")
 			const password = document.querySelector("#password1")
 			try {
-				const result = await firebase.auth().signInWithEmailAndPassword(email1.value, password1b.value)
+				const result = await firebase.auth().signInWithEmailAndPassword(email1.value, password1.value)
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
 				window.location.href ="/home"
 				
