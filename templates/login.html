@@ -446,12 +446,13 @@ nav .menu{
 		  const email=document.querySelector("#email")
 		  const password=document.querySelector("#password")
 		  try{
-			  const result=await firebase.auth().createUserwithEmailAndPassword(email.value,password.value)
-			  M.toast({html:'WElcome ${result.user.email,classes:"green"}'})
+			  const result=await firebase.auth().createUserWithEmailAndPassword(email.value,password.value)
+			  M.toast({html:`Welcome ${result.user.email}`,classes:"green"})
 			  console.log(result) 
 		  }catch(err){
 			  console.log(err)
-			  
+			  M.toast({html:err.message,classes:"red"})
+
 		  }
 		
 		}
