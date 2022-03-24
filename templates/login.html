@@ -1,464 +1,497 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
 
 </head>
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
-	box-sizing: border-box;
-}
-html ::-webkit-scrollbar{
-	width:0px;
-}
+	* {
+		box-sizing: border-box;
+	}
 
-body {
-	background-image: url("https://telegra.ph/file/2c2302a1b50dc3638641e.jpg");
-	display: flex;
-	background-repeat: no-repeat;
-	background-size: cover ;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
-}
+	html ::-webkit-scrollbar {
+		width: 0px;
+	}
 
-h1 {
-	font-weight: bold;
-	margin: 0;
-}
+	body {
+		background-image: url("https://telegra.ph/file/2c2302a1b50dc3638641e.jpg");
+		display: flex;
+		background-repeat: no-repeat;
+		background-size: cover;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-family: 'Montserrat', sans-serif;
+		height: 100vh;
+		margin: -20px 0 50px;
+	}
 
-h2 {
-	text-align: center;
-}
+	h1 {
+		font-weight: bold;
+		margin: 0;
+	}
 
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
+	h2 {
+		text-align: center;
+	}
 
-span {
-	font-size: 12px;
-}
+	p {
+		font-size: 14px;
+		font-weight: 100;
+		line-height: 20px;
+		letter-spacing: 0.5px;
+		margin: 20px 0 30px;
+	}
 
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-}
+	span {
+		font-size: 12px;
+	}
 
-button {
-	border-radius: 20px;
-	border: 1px solid #bd5f4e;
-	background-color: #e4988b;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
+	a {
+		color: #333;
+		font-size: 14px;
+		text-decoration: none;
+		margin: 15px 0;
+	}
 
-button:active {
-	transform: scale(0.95);
-}
+	button {
+		border-radius: 20px;
+		border: 1px solid #bd5f4e;
+		background-color: #e4988b;
+		color: #FFFFFF;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 12px 45px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: transform 80ms ease-in;
+	}
 
-button:focus {
-	outline: none;
-}
+	button:active {
+		transform: scale(0.95);
+	}
 
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
+	button:focus {
+		outline: none;
+	}
 
-form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
-}
+	button.ghost {
+		background-color: transparent;
+		border-color: #FFFFFF;
+	}
 
-input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
-}
+	form {
+		background-color: #FFFFFF;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0 50px;
+		height: 100%;
+		text-align: center;
+	}
 
-.container {
-	background-color: #fff;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(white), 
+	input {
+		background-color: #eee;
+		border: none;
+		padding: 12px 15px;
+		margin: 8px 0;
+		width: 100%;
+	}
+
+	.container {
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 14px 28px rgba(white),
 			0 10px 10px rgba(white);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
-}
+		position: relative;
+		overflow: hidden;
+		width: 768px;
+		max-width: 100%;
+		min-height: 480px;
+	}
 
-.form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
-}
+	.form-container {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		transition: all 0.6s ease-in-out;
+	}
 
-.sign-in-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
-}
+	.sign-in-container {
+		left: 0;
+		width: 50%;
+		z-index: 2;
+	}
 
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
-}
+	.container.right-panel-active .sign-in-container {
+		transform: translateX(100%);
+	}
 
-.sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
-}
-
-@keyframes show {
-	0%, 49.99% {
+	.sign-up-container {
+		left: 0;
+		width: 50%;
 		opacity: 0;
 		z-index: 1;
 	}
-	
-	50%, 100% {
+
+	.container.right-panel-active .sign-up-container {
+		transform: translateX(100%);
 		opacity: 1;
 		z-index: 5;
+		animation: show 0.6s;
 	}
-}
 
-.overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
-}
+	@keyframes show {
 
-.container.right-panel-active .overlay-container{
-	transform: translateX(-100%);
-}
+		0%,
+		49.99% {
+			opacity: 0;
+			z-index: 1;
+		}
 
-.overlay {
-	background: #c65102;
-	background: -webkit-linear-gradient(to right, );
-	background: linear-gradient(to right,);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
+		50%,
+		100% {
+			opacity: 1;
+			z-index: 5;
+		}
+	}
 
-.container.right-panel-active .overlay {
-  	transform: translateX(50%);
-}
+	.overlay-container {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+		transition: transform 0.6s ease-in-out;
+		z-index: 100;
+	}
 
-.overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 40px;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
+	.container.right-panel-active .overlay-container {
+		transform: translateX(-100%);
+	}
 
-.overlay-left {
-	transform: translateX(-20%);
-}
+	.overlay {
+		background: #c65102;
+		background: -webkit-linear-gradient(to right, );
+		background: linear-gradient(to right, );
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 0 0;
+		color: #FFFFFF;
+		position: relative;
+		left: -100%;
+		height: 100%;
+		width: 200%;
+		transform: translateX(0);
+		transition: transform 0.6s ease-in-out;
+	}
 
-.container.right-panel-active .overlay-left {
-	transform: translateX(0);
-}
+	.container.right-panel-active .overlay {
+		transform: translateX(50%);
+	}
 
-.overlay-right {
-	right: 0;
-	transform: translateX(0);
-}
+	.overlay-panel {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0 40px;
+		text-align: center;
+		top: 0;
+		height: 100%;
+		width: 50%;
+		transform: translateX(0);
+		transition: transform 0.6s ease-in-out;
+	}
 
-.container.right-panel-active .overlay-right {
-	transform: translateX(20%);
-}
+	.overlay-left {
+		transform: translateX(-20%);
+	}
 
-.social-container {
-	margin: 20px 0;
-}
+	.container.right-panel-active .overlay-left {
+		transform: translateX(0);
+	}
 
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-}
-::selection{
-  color: #000;
-  background: #fff;
-}
-nav{
-  position: fixed;
-  background: #1b1b1b;
-  width: 100%;
-  padding: 10px 0;
-  z-index: 12;
-}
-nav .menu{
-  max-width: 1250px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-.menu .logo a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 35px;
-  font-weight: 600;
-}
-.menu ul{
-  display: inline-flex;
-}
-.menu ul li{
-  list-style: none;
-  margin-left: 7px;
-}
-.menu ul li:first-child{
-  margin-left: 0px;
-}
-.menu ul li a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-.menu ul li a:hover{
-  background: #fff;
-  color: black;
-}
-.img{
-  background: url('img3.jpg')no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.img::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-.center{
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding: 0 20px;
-  text-align: center;
-}
-.center .title{
-  color: #fff;
-  font-size: 55px;
-  font-weight: 600;
-}
-.center .sub_title{
-  color: #fff;
-  font-size: 52px;
-  font-weight: 600;
-}
-.center .btns{
-  margin-top: 20px;
-}
-.center .btns button{
-  height: 55px;
-  width: 170px;
-  border-radius: 5px;
-  border: none;
-  margin: 0 10px;
-  border: 2px solid white;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 0 10px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.center .btns button:first-child{
-  color: #fff;
-  background: #000000;
-}
-.btns button:first-child:hover{
-  background: white;
-  color: black;
-}
-.btns button:last-child{
-  background: white;
-  color: black;
-}
+	.overlay-right {
+		right: 0;
+		transform: translateX(0);
+	}
 
+	.container.right-panel-active .overlay-right {
+		transform: translateX(20%);
+	}
+
+	.social-container {
+		margin: 20px 0;
+	}
+
+	.social-container a {
+		border: 1px solid #DDDDDD;
+		border-radius: 50%;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 5px;
+		height: 40px;
+		width: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	::selection {
+		color: #000;
+		background: #fff;
+	}
+
+	nav {
+		position: fixed;
+		background: #1b1b1b;
+		width: 100%;
+		padding: 10px 0;
+		z-index: 12;
+	}
+
+	nav .menu {
+		max-width: 1250px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+
+	.menu .logo a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 35px;
+		font-weight: 600;
+	}
+
+	.menu ul {
+		display: inline-flex;
+	}
+
+	.menu ul li {
+		list-style: none;
+		margin-left: 7px;
+	}
+
+	.menu ul li:first-child {
+		margin-left: 0px;
+	}
+
+	.menu ul li a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 500;
+		padding: 8px 15px;
+		border-radius: 5px;
+		transition: all 0.3s ease;
+	}
+
+	.menu ul li a:hover {
+		background: #fff;
+		color: black;
+	}
+
+	.img {
+		background: url('img3.jpg')no-repeat;
+		width: 100%;
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+	}
+
+	.img::before {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.4);
+	}
+
+	.center {
+		position: absolute;
+		top: 52%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		padding: 0 20px;
+		text-align: center;
+	}
+
+	.center .title {
+		color: #fff;
+		font-size: 55px;
+		font-weight: 600;
+	}
+
+	.center .sub_title {
+		color: #fff;
+		font-size: 52px;
+		font-weight: 600;
+	}
+
+	.center .btns {
+		margin-top: 20px;
+	}
+
+	.center .btns button {
+		height: 55px;
+		width: 170px;
+		border-radius: 5px;
+		border: none;
+		margin: 0 10px;
+		border: 2px solid white;
+		font-size: 20px;
+		font-weight: 500;
+		padding: 0 10px;
+		cursor: pointer;
+		outline: none;
+		transition: all 0.3s ease;
+	}
+
+	.center .btns button:first-child {
+		color: #fff;
+		background: #000000;
+	}
+
+	.btns button:first-child:hover {
+		background: white;
+		color: black;
+	}
+
+	.btns button:last-child {
+		background: white;
+		color: black;
+	}
 </style>
+
 <body>
-	
-<p style="color: white; font-size:xx-large;"><b>Login to Khana Khazana&nbsp; &nbsp; &nbsp;</b></p>
+
+	<p style="color: white; font-size:xx-large;"><b>Login to Khana Khazana&nbsp; &nbsp; &nbsp;</b></p>
 
 	<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form onsubmit="signup(event)">
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input id="name" type="text" placeholder="Name" required/>
-			<input id="email" type="email" placeholder="Email" required/>
-			<input id="password" type="password" placeholder="Password" required/>
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form onsubmit="login(event)">
-			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input id="email1" type="email" placeholder="Email" required>
-			<input  id="password1" type="password" placeholder="Password" required>
-			<a href="#">Forgot your password?</a>
-			<button><a href="../web.html" onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Welcome!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-				
-				<a href="../home.html"><button class="ghost">Home</a></button>
+		<div class="form-container sign-up-container">
+			<form onsubmit="signup(event)">
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				<input id="name" type="text" placeholder="Name" required />
+				<input id="email" type="email" placeholder="Email" required />
+				<input id="password" type="password" placeholder="Password" required />
+				<button>Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form onsubmit="login(event)">
+				<h1>Sign in</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your account</span>
+				<input id="email1" type="email" placeholder="Email" required>
+				<input id="password1" type="password" placeholder="Password" required>
+				<a href="#">Forgot your password?</a>
+				<button><a href="../web.html"
+						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Welcome!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+
+					<a href="../home.html"><button class="ghost">Home</a></button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-  <script>const signUpButton = document.getElementById('signUp');
-	const signInButton = document.getElementById('signIn');
-	const container = document.getElementById('container');
-	
-	signUpButton.addEventListener('click', () => {
-		container.classList.add("right-panel-active");
-	});
-	
-	signInButton.addEventListener('click', () => {
-		container.classList.remove("right-panel-active");
-	});</script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script>const signUpButton = document.getElementById('signUp');
+		const signInButton = document.getElementById('signIn');
+		const container = document.getElementById('container');
+
+		signUpButton.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+
+		signInButton.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});</script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
 	<script>
 		const firebaseConfig = {
 			apiKey: "AIzaSyAByWb1CzSlgk0OzSS2llwPnkVE7NWQbXw",
-    authDomain: "clyde-web.firebaseapp.com",
-    databaseURL: "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "clyde-web",
-    storageBucket: "clyde-web.appspot.com",
-    messagingSenderId: "691435749279",
-    appId: "1:691435749279:web:f7b33ad28a2fd62be6c7aa",
-    measurementId: "G-722LG7913E"
-  };
-		
-	
-	  </script>
+			authDomain: "clyde-web.firebaseapp.com",
+			databaseURL: "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app",
+			projectId: "clyde-web",
+			storageBucket: "clyde-web.appspot.com",
+			messagingSenderId: "691435749279",
+			appId: "1:691435749279:web:f7b33ad28a2fd62be6c7aa",
+			measurementId: "G-722LG7913E"
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+
+
+
+	</script>
 	<script>
-		
+
 		// Submit form
-		async function signup(e){
-		  e.preventDefault();
-		  const email=document.querySelector("#email")
-		  const password=document.querySelector("#password")
-		  try{
-			  const result=await firebase.auth().createUserWithEmailAndPassword(email.value,password.value)
-			  M.toast({html:`Welcome ${result.user.email}`,classes:"green"})
-			  console.log(result) 
-		  }catch(err){
-			  console.log(err)
-			  M.toast({html:err.message,classes:"red"})
+		async function signup(e) {
+			e.preventDefault();
+			const email = document.querySelector("#email")
+			const password = document.querySelector("#password")
+			try {
+				const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
+				console.log(result)
+			} catch (err) {
+				console.log(err)
+				M.toast({ html: err.message, classes: "red" })
 
-		  }
-		
+			}
+
 		}
-			</script>
+	</script>
 
-	 
+
 
 </body>
+
 </html>
