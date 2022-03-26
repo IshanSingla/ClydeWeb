@@ -409,7 +409,7 @@
 	<span class="student">Student's</span>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form id="signup" action="/home"> 
+			<form id="signup" action="/"> 
 				<h1>Create Account</h1>
 				
 				<span>or use your email for registration</span>
@@ -420,7 +420,7 @@
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form id="login" action="/home">
+			<form id="login" action="/">
 				<h1>Log in</h1>
 				<!-- <div class="social-container">
 					<a class="social"><i onclick="loginWithGoogle()"class="fab fa-google-plus-g"></i></a>
@@ -429,7 +429,7 @@
 				<input id="email1" type="email" placeholder="Email" required>
 				<input id="password1" type="password" placeholder="Password" required>
 				<!-- <button onclick="reset()">Forgot your password?</button> -->
-				<button><a href="/home"
+				<button><a href="/"
 						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
 			</form>
 		</div>
@@ -492,7 +492,7 @@
 				const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
 				//await result.user.sendEmailVerification()
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				window.location.href ="/home"
+				window.location.href ="/"
 			
 			} catch (err) {
 				
@@ -508,7 +508,7 @@
 			try {
 				const result = await firebase.auth().signInWithEmailAndPassword(email1.value, password1.value)
 				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				window.location.href ="/home"
+				window.location.href ="/"
 				
 			} catch (err) {
 				
