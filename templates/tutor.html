@@ -5,16 +5,382 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/turtor.css">
-    <link rel="stylesheet" href="Bootstrap/ScrollEffects/onScroll.css">
     <title>Tutor's Point</title>
 </head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: black;
+        color: rgb(163, 159, 159);
+
+    }
+
+    /* ----------------Header section-----------  */
+    nav {
+        background-color: black;
+        height: auto;
+        /* box-shadow: 0px 0px 10px dimgrey; */
+
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    #logo:hover {}
+
+    /* ----------------Header section End-----------  */
+
+
+
+    /* ----------------Main section Start-----------  */
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #intro-in-main {
+        padding: 4%;
+        width: 60%;
+
+    }
+
+    .verticle-line {
+        height: 500px;
+        width: 1px;
+        background-color: dimgray;
+        margin: 2% 0% 0% 0%;
+    }
+
+    #offer-section {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        border-radius: 10%;
+        background-image: url('https://media.istockphoto.com/photos/white-felt-background-picture-id1062951208?b=1&k=20&m=1062951208&s=170667a&w=0&h=UqTpWjAYhXQPY4KIHWVzqNC6n_0DD73HAf-DO-eVJAk=');
+        background-size: cover;
+        box-shadow: 0px 2px 4px dimgray;
+        text-align: center;
+        color: dimgray;
+        float: right;
+        padding: 50px;
+        padding-top: 10%;
+    }
+
+    #offer-section button {
+        padding: 16px;
+        width: 200px;
+        border-radius: 10px;
+        margin-top: 30%;
+        border: 1px solid transparent;
+        background-color: rgb(0, 0, 0);
+        color: #FFFFFFFF;
+    }
+
+    #offer-section button:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        transform: scale(1.01);
+        transition: 0.3s;
+        background-color: #FFFFFFFF;
+        color: black;
+    }
+
+    #offer-section:hover {
+        /* transform: scale(1.01); */
+        transition: 0.5s;
+        box-shadow: 0px 4px 8px white;
+    }
+
+    .letter {
+        font-size: 24px;
+        font-family: cursive;
+    }
+
+    .letter::first-letter {
+        font-size: 64px;
+    }
+
+    .P-letter::first-letter {
+        font-size: 24px;
+    }
+
+    .container {
+        width: 500px;
+        height: 300px;
+        padding: 16px;
+        background-image: url('https://media.istockphoto.com/photos/gold-colour-velvet-fabric-background-texture-picture-id855005240?b=1&k=20&m=855005240&s=170667a&w=0&h=3SLXQMg1n8U8UwZ4Rq0Gv3x-8gOgrvPL4sgcPbwUq6E=');
+        background-size: cover;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        border-radius: 20px;
+        color: white;
+    }
+
+    #choicse-section {
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        color: black;
+        height: 500px;
+        width: 2000px;
+        background-color: white;
+    }
+
+    #choicse-section div {
+        width: 400px;
+        height: 200px;
+        background-color: white;
+        margin: 10% 5% 20% 20%;
+    }
+
+    #choicse-section aside {
+        width: 550px;
+        height: 450px;
+        background-image: url('https://v.fastcdn.co/u/83964589/50941228-0-Tablet.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 0px 4px 10px dimgray;
+        border-radius: 10%;
+        margin: 2% 0%;
+    }
+
+    #part3 {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl_8dN7XVM_tfpvsm55LauuBdfXF0h6ub5Vvw4WoxuD3aN4wZZfWZXkfq6iF6f83zCAw&usqp=CAU');
+        background-size: cover;
+        margin: 5% 0;
+        height: 300px;
+        width: 100%;
+        display: flex;
+        padding: 5%;
+        color: aliceblue;
+
+    }
+
+    #part3 aside {
+        width: 290px;
+        margin: 0 15%;
+    }
+
+    .mobile-model {
+        border: 2px solid black;
+        height: 400px;
+        width: 290px;
+        margin-top: -20%;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 4px 8px black;
+
+    }
+
+    .app-nav {
+        height: 10%;
+        border-bottom: 2px solid black;
+        margin-bottom: 30%;
+
+    }
+
+    .app-bottom-nav {
+        margin-top: 50%;
+        border-top: 2px solid black;
+        justify-content: center;
+    }
+
+    .app-controller {}
+
+    #part3 div h1 {
+        color: black;
+        text-transform: uppercase;
+        font-family: '';
+    }
+
+    #teacher-info-section {
+        color: white;
+        padding-left: 30%;
+    }
+
+    button {
+        padding: 16px;
+        width: 200px;
+        border-radius: 10px;
+        margin-top: 10%;
+        border: 1px solid transparent;
+        background-color: #FFFFFFFF;
+        color: black;
+    }
+
+    button:hover {
+        color: orange;
+        cursor: pointer;
+        transform: scale(1.01);
+        transition: 0.3s;
+    }
+
+    /* ----------------Main section End-----------  */
+
+    .scroll-container {
+        height: 100vh;
+        min-height: 450px;
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .scroll-container:nth-of-type(1) {
+        background-color: #bdd0c4;
+    }
+
+    .scroll-container:nth-of-type(2) {
+        background-color: #f5d2d3;
+    }
+
+    .scroll-container:nth-of-type(3) {
+        background-color: #9ab7d3;
+    }
+
+    .scroll-container:nth-of-type(4) {
+        background-color: #dfccf1;
+    }
+
+    .scroll-container:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+
+    .scroll-element,
+    .scroll-caption {
+        /*width: 50%;*/
+    }
+
+    .scroll-element {
+        min-height: 300px;
+        height: 100%;
+        background-color: #eaeaea;
+    }
+
+    .scroll-caption {
+        margin: 1rem;
+    }
+
+    @media screen and (max-width: 650px) {
+
+        .scroll-container,
+        .scroll-container:nth-of-type(even) {
+            flex-direction: column;
+            align-content: inherit;
+        }
+
+        .scroll-element {
+            height: 100%;
+        }
+
+        .scroll-element,
+        .scroll-caption {
+            width: 100%;
+        }
+    }
+
+    /**Styling scrollable elements*/
+
+    .js-scroll {
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+
+    .js-scroll.scrolled {
+        opacity: 1;
+    }
+
+    .scrolled.fade-in {
+        animation: fade-in 2s ease-in-out both;
+    }
+
+    .scrolled.fade-in-bottom {
+        animation: fade-in-bottom 1s ease-in-out both;
+    }
+
+    .scrolled.slide-left {
+        animation: slide-in-left 2s ease-in-out both;
+    }
+
+    .scrolled.slide-right {
+        animation: slide-in-right 1s ease-in-out both;
+    }
+
+    /* ----------------------------------------------
+   * Generated by Animista on 2021-2-11 23:32:31
+   * Licensed under FreeBSD License.
+   * See http://animista.net/license for more info.
+   * w: http://animista.net, t: @cssanimista
+   * ---------------------------------------------- */
+
+    @keyframes slide-in-left {
+        0% {
+            -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-in-right {
+        0% {
+            -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in-bottom {
+        0% {
+            -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li> <img id="logo" src="logo/online.png" alt="" height="150px"></li>
+                <li> <img id="logo" src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" alt="" height="150px"></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +397,7 @@
             <h1>15% OFF</h1>
             <p class="P-letter">The world where your doubts get's resolved from your prefered Teachers!!</p>
             <p class="letter">STUDENT'S</p>
-            <button onclick="location.href='login.html'">Join Now</button>
+            <button onclick="location.href='/login'">Join Now</button>
         </section>
 
         <section style="margin-top: -25%" class="container">
@@ -78,7 +444,7 @@
                     Lessons for any schedule<br> from Lina Ma'am!
                 </h1>
                 <p>Students can book ahead of time<br> with their favorite tutors or call <br>
-                    on-demand from anywhere, 
+                    on-demand from anywhere,
                     from any device.</p>
             </div>
         </section>
@@ -87,8 +453,72 @@
     <footer style="height: 100px;">
 
     </footer>
-    <script src="JavaScript/tutor.js"></script>
-    <script src="Bootstrap/ScrollEffects/onScroll.js"></script>
+    <script>
+        const texts = ["Welcome Teachers and Students!!"]
+        let count = 0;
+        let index = 0;
+        let currenttext = "";
+        let letter = "";
+
+        (function type() {
+
+            if (count === texts.length) {
+                count = 0;
+            }
+            currenttext = texts[count]
+            letter = currenttext.slice(0, ++index);
+
+            document.querySelector('.typing').textContent = letter;
+            if (letter.length === currenttext.length) {
+
+                index = 0;
+            }
+            setTimeout(type, 250);
+        })();
+
+    </script>
+    <script>
+        const scrollElements = document.querySelectorAll(".js-scroll");
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add("scrolled");
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove("scrolled");
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el)
+                }
+            })
+        }
+
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
+    </script>
 </body>
 
 </html>
