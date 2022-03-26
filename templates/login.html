@@ -18,6 +18,7 @@
 
 	* {
 		box-sizing: border-box;
+		/* background-color: #615d5d; */
 	}
 
 	html ::-webkit-scrollbar {
@@ -25,7 +26,7 @@
 	}
 
 	body {
-		background-image: url("https://telegra.ph/file/2c2302a1b50dc3638641e.jpg");
+		background-image: url("https://www.pexels.com/photo/white-framed-rectangular-mirror-159935/.jpg");
 		display: flex;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -34,7 +35,7 @@
 		flex-direction: column;
 		font-family: 'Montserrat', sans-serif;
 		height: 100vh;
-		margin: -20px 0 50px;
+		/* margin: -20px 0 50px; */
 	}
 
 	h1 {
@@ -59,17 +60,17 @@
 	}
 
 	a {
-		color: #333;
-		font-size: 14px;
+		color: #fff;
+    font-size: 12px;
 		text-decoration: none;
 		margin: 15px 0;
 	}
 
 	button {
 		border-radius: 20px;
-		border: 1px solid #bd5f4e;
-		background-color: #e4988b;
-		color: #FFFFFF;
+		border: 1px solid #000000;
+		background-color: #000000;
+		color: #000000;
 		font-size: 12px;
 		font-weight: bold;
 		padding: 12px 45px;
@@ -88,7 +89,8 @@
 
 	button.ghost {
 		background-color: transparent;
-		border-color: #FFFFFF;
+		border-color: #ffffff;
+		color: #FFFFFF;
 	}
 
 	form {
@@ -108,18 +110,19 @@
 		padding: 12px 15px;
 		margin: 8px 0;
 		width: 100%;
-	}
+	}  
 
 	.container {
 		background-color: #fff;
 		border-radius: 10px;
-		box-shadow: 0 14px 28px rgba(white),
+		box-shadow: 0 14px 28px rgba(rgb(65, 61, 61)),
 			0 10px 10px rgba(white);
 		position: relative;
 		overflow: hidden;
 		width: 768px;
 		max-width: 100%;
 		min-height: 480px;
+		box-shadow: 0px 8px 16px #615d5d;
 	}
 
 	.form-container {
@@ -184,7 +187,7 @@
 	}
 
 	.overlay {
-		background: #c65102;
+		background: #333131;
 		background: -webkit-linear-gradient(to right, );
 		background: linear-gradient(to right, );
 		background-repeat: no-repeat;
@@ -266,10 +269,12 @@
 
 	nav {
 		position: fixed;
-		background: #1b1b1b;
-		width: 100%;
-		padding: 10px 0;
-		z-index: 12;
+    background: #000000;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 12;
+    margin: -196px -964px;
+    height: 11%;
 	}
 
 	nav .menu {
@@ -388,29 +393,35 @@
 		background: white;
 		color: black;
 	}
+
+.student{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	color: #000;
+	margin-left: 238px;
+	text-transform: uppercase;
+}
 </style>
 
 <body>
 
-	<p style="color: white; font-size:xx-large;"><b>Login to Clyde&nbsp; &nbsp; &nbsp;</b></p>
-
+<div>
+	<span class="student">Student's</span>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
 			<form id="signup" action="/home"> 
 				<h1>Create Account</h1>
-				<!-- <div class="social-container">
-					<a class="social"><i onclick="loginWithGoogle()" class="fab fa-google-plus-g"></i></a>
-				</div> -->
+				
 				<span>or use your email for registration</span>
 				<input id="name" type="text" placeholder="Name" required />
 				<input id="email" type="email" placeholder="Email" required />
 				<input id="password" type="password" placeholder="Password" required />
-				<button id="signUp">Sign Up</button>
+				<button style="color: #FFFFFF;">Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
 			<form id="login" action="/home">
-				<h1>Sign in</h1>
+				<h1>Log in</h1>
 				<!-- <div class="social-container">
 					<a class="social"><i onclick="loginWithGoogle()"class="fab fa-google-plus-g"></i></a>
 				</div> -->
@@ -418,7 +429,8 @@
 				<input id="email1" type="email" placeholder="Email" required>
 				<input id="password1" type="password" placeholder="Password" required>
 				<!-- <button onclick="reset()">Forgot your password?</button> -->
-				<button id="signIn">Sign In</button>
+				<button><a href="/home"
+						onClick="alert('Your Account has been made Please Continue Shopping')">Sign In</a></button>
 			</form>
 		</div>
 		<div class="overlay-container">
@@ -426,7 +438,7 @@
 				<div class="overlay-panel overlay-left">
 					<h1>Welcome Back!</h1>
 					<p>To keep connected with us please login with your personal info</p>
-					<button class="ghost" id="signIn">Sign In</button>
+					<button class="ghost" id="signIn" style="background-color: #000000;">Sign In</button>
 				</div>
 				<div class="overlay-panel overlay-right">
 					<h1>Welcome!</h1>
@@ -438,6 +450,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	<script>const signUpButton = document.getElementById('signUp');
 		const signInButton = document.getElementById('signIn');
 		const container = document.getElementById('container');
