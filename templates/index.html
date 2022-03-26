@@ -1,26 +1,408 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="Style/nav.css">
-    
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
-        <li><a href=#index>Clyde</a></li>
-        <li><a href=#tutorProfile>Tutor Profile</a></li>
-        <li><a href=#doubt>Doubts</a></li>
-        <li><a href=#ourCourses>Our Courses</a></li>
-        <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
-        <li style="float:right" class="active"><a href="/login">Log In</a></li>
-      </ul>
-    </nav>
-    <div id="para1">
-      <h1>Find answers to you doubts from experts</h1>
-      <h3>Overcome all the obstracles in your way and upskill yourself </h3>
-      <input type="email" placeholder="EMAIL">
+
+<head>
+  <!-- <link rel="stylesheet" href="Style/main.css"> -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  #horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+    display: block;
+  }
+
+  #horizontal li {
+    float: left;
+  }
+
+  #horizontal li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #111;
+  }
+
+  #horizontal li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+  }
+
+  .active {
+    background-color: #111;
+    text-align: center;
+
+  }
+
+  #logoImg {
+    height: 46px;
+    width: 45px;
+  }
+
+  nav {
+    position: sticky;
+    background-color: #111;
+  }
+
+  #para1 {
+    color: black;
+    background-color: white;
+  }
+
+  #gets {
+    background-color: #228891;
+    color: #111;
+  }
+
+  .outer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #verticalb ul li {
+    display: block;
+    color: white;
+    background-color: #111;
+    padding: 12px;
+    font-size: 2rem;
+    margin: 20px;
+    border-radius: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #verticalb ul li:hover {
+    background-color: white;
+    color: #111;
+  }
+
+  #verticalb {
+    width: 250px;
+    padding-left: 100px;
+    ;
+  }
+
+  #imgChange {
+    margin-top: 5%;
+  }
+
+  #changeimg {
+    margin: 0 10%;
+  }
+
+  footer.footer-section {
+
+    padding: 60px 0 50px;
+    background-color: #111;
+  }
+
+  .bg-with-black {
+    position: relative;
+  }
+
+  .footer-top-section {
+    margin: 0 0 47px;
+  }
+
+  .single-fta>img {
+    margin: 0 0 7px;
+  }
+
+  .single-fta ul.fta-list {
+    list-style: outside none none;
+    padding-left: 0;
+  }
+
+  .single-fta ul.fta-list li,
+  .single-fta ul.fta-list li a {
+    color: #e5e5e5;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 36px;
+  }
+
+  .single-fta ul.fta-list {
+    list-style: outside none none;
+    padding-left: 0;
+  }
+
+  .fta-title {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0 0 20px;
+  }
+
+  .fba-links {
+    text-align: right;
+  }
+
+  .fba-links ul li a {
+    color: #e5e5e5;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .fba-links ul {
+    list-style: outside none none;
+    padding: 0;
+  }
+
+  .fba-links ul li {
+    display: inline-block;
+    margin-left: 28px;
+  }
+
+  .fba-copyright p {
+    color: #aaaaaa;
+    line-height: 30px;
+  }
+
+  .single-fta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+  }
+
+  #para22 {
+    padding-top: 100px;
+    padding-left: 50px;
+  }
+
+  #para33 {
+    padding-left: 150px;
+
+  }
+
+  #para3 {
+    padding-left: 100px;
+    padding-top: 100px;
+  }
+
+  #explorem:hover {
+    background-color: white;
+    color: #111;
+  }
+</style>
+
+<body>
+  <!--------NAV SECTION--------->
+  <nav>
+    <ul id="horizontal">
+      <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
+      <li><a href=#index>Clyde</a></li>
+      <li><a href="tutor.html">Tutor Profile</a></li>
+      <li><a href=#doubt>Doubts</a></li>
+      <li><a href="cources.html">Our Courses</a></li>
+      <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
+      <li style="float:right" class="active"><a href="/login">Get started</a></li>
+    </ul>
+  </nav>
+  <!--nav section ended-->
+  <section id="introS">
+    <div class="intro">
+      <div id="para2">
+        <img src="https://telegra.ph/file/00f6128e3e0942ab1f82e.png"
+          style="height: 60vh; width: 45vw; padding-top: 2vh;padding-bottom: 4vh;">
+
+      </div>
+      <div id="para22">
+        <p style="font-size: 4rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
+        <p style="font-family: sans-serif; font-size: 2rem;">Interactive <b> one-on-one</b> doubts solving through video
+          call or text messages</p>
+        <input type="email" placeholder="EMAIL" height="75px" width="40vw">
+        <button id="explorem" style="background-color:#111; color: white;">Explore More</button>
+
+      </div>
     </div>
-  
-  </body>
+    <div class="intro" style="background-color: #111;color:white; padding-top: 2vh;padding-bottom: 2vh;">
+      <div id="para3" style="padding-top: 2vh; padding-bottom: 4vh;">
+        <p style="font-size: 4rem; padding-top: 2vh;">Smart tutoring</p>
+        <p style="font-size: 2rem; font-family: sans-serif;">Short videos briefly explaining a specific topic.</p>
+        <button style="background-color: white;color: #111;">View tutorial</button>
+
+      </div>
+      <div id="para33">
+        <img src="" width="400px" height="400px">
+      </div>
+    </div>
+    <p style="font-size: 4rem;padding-left: 100px; margin-top: 10%;">Do more with Clyde</p>
+    <div class="intro1" style="height: 75vh;width: auto">
+      <div id="verticalb" style="height: 60vh;width: 50vh; float: right; ">
+        <ul style="list-style-type: none; display: block;">
+          <li onclick="change1()">lesson discovery</li>
+          <li onclick="change2()">Tutor profile</li>
+          <li onclick="change3()">lesson review</li>
+          <li onclick="change4()">flexible scheduling</li>
+          <li onclick="change5()">All around courses</li>
+          <li onclick="change6()">Smooth matchmaking</li>
+
+        </ul>
+      </div>
+
+      <div id="imgChange">
+        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png" style="height: 50vh; width: 50vw;">
+      </div>
+    </div>
+
+
+  </section>
+  <!--footer section-->
+  <footer class="footer-section bg-with-black">
+    <div class="footer-top-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <img src="http://themeinnovation.com/demo2/html/build-up/img/home1/logo2.png" alt="">
+              <ul class="fta-list">
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Tutor Profile</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Doubts</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Our courses</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Important Link</h3>
+              <ul class="fta-list">
+                <li><a href="#"><i class="fa fa-square"></i>Entrepreneurship</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Counselling</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Spoken languages</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Important Link</h3>
+              <ul class="fta-list">
+                <li><a href="#"><i class="fa fa-square"></i>Science</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Engineering Subjects</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Extra co-curricular acttivities</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Contact Us</h3>
+              <ul class="fta-list">
+                <li>Address: Chitkara University,Rajpura,Punjab 140401</li>
+                <li>Phone: (+91) 9501277568</li>
+                <li>Email: Contact.be21@chitkara.edu.in</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer-bottom">
+              <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="fba-copyright">
+                    <p>Copyright © 2022 Designed by Team Clyde. All rights reserved.</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="fba-links">
+                    <ul>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Term & Conditions</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Sites Map</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const texts = ["Find answers of your doubts"]
+    let count = 0;
+    let index = 0;
+    let currenttext = "";
+    let letter = "";
+
+    (function type() {
+
+      if (count === texts.length) {
+        count = 0;
+      }
+      currenttext = texts[count]
+      letter = currenttext.slice(0, ++index);
+
+      document.querySelector('.typing').textContent = letter;
+      if (letter.length === currenttext.length) {
+
+        index = 0;
+      }
+      setTimeout(type, 250);
+    })();
+
+    window.onload = function () {
+      document.getElementById("transparent-container").style.color = "white";
+      document.getElementById("transparent-container").style.transform = "scale(1.1)";
+      document.getElementById("transparent-container").style.transition = "2s";
+    }
+    function change1() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/2eaf44c648b4d41108682.png";
+
+    }
+    function change2() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/48600d0fd95914f6c9a4e.png";
+
+
+    }
+    function change3() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/8df378cb7aa15159686c2.png";
+
+    }
+    function change4() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/6d77e78c84ad15a42f9e1.png";
+
+    }
+    function change5() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/5ce7df0a05195b92c8ece.png";
+
+    }
+    function change6() {
+      var Image_Id = document.getElementById("changeimg");
+      Image_Id.src = "https://telegra.ph/file/e1d3dadf20e09ed2d474e.png";
+
+    }
+  </script>
+</body>
 
 </html>
