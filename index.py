@@ -30,9 +30,9 @@ def home():
 def tutor():
     return render_template("tutor.html")
 
-@app.route('/courses')
+@app.route('/cources')
 def courses():
-    return render_template("courses.html")
+    return render_template("cources.html")
 
 
 

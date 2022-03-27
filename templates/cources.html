@@ -1,70 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/cources.css">
     <title>Our Courses</title>
 </head>
+<style>
+    * {
+        font-family: 'Nunito', sans-serif;
+        transition: all .2s ease-out;
+    }
+
+    html::-webkit-scrollbar {
+        width: 0.6rem;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 5rem;
+    }
+
+    html::-webkit-scrollbar-track {
+        background: #333;
+    }
+
+    :root {
+        --theme: black;
+    }
+
+
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        transition: 0.6s;
+        padding-top: 10px;
+        z-index: 10000;
+        background-color: var(--theme);
+        /* border-radius: 10px; */
+    }
+
+    header.sticky {
+        background-color: whitesmoke;
+        box-shadow: 2px 2px 2px #666;
+    }
+
+    header #logo p {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-top: -4px;
+    }
+
+    header nav ul li {
+        position: relative;
+        list-style: none;
+    }
+
+    header nav ul li a {
+        position: relative;
+        list-style: none;
+    }
+
+    #logo {
+        display: flex;
+        color: rgb(255, 255, 255);
+        height: 7.5vh;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 2rem 0rem 2rem;
+        transition: 0.6s;
+    }
+
+    #logo .p {
+        font-size: xx-large;
+    }
+
+    #logo nav a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        margin-left: 2rem;
+        transition: 0.6s;
+    }
+
+    #list {
+        display: block;
+    }
+
+    #logoImg {
+        height: 46px;
+        width: 45px;
+    }
+
+    .upr_container {
+        margin-left: 30px;
+    }
+
+
+    #head {
+        font-size: 2rem;
+        margin-top: 70px;
+    }
+
+    .main {
+        font-size: xx-large;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .cards {
+        display: flex;
+    }
+
+    .science_cards {
+        height: 300px;
+        width: 290px;
+        margin-left: 30px;
+        border-radius: 5%;
+        padding: 5px;
+        background-color: whitesmoke;
+        margin-top: 40px;
+    }
+
+    .science_cards:hover {
+        transform: translateY(-1px);
+        transition: 500ms;
+        box-shadow: 0.5px 0.5px 10px;
+        filter: grayscale(50%);
+        filter: brightness(80%);
+
+    }
+
+    .science_image {
+        height: 70%;
+        width: 100%;
+        border-radius: 5%;
+    }
+
+    .sub {
+        position: relative;
+        text-align: center;
+        color: white;
+        background-color: var(--theme);
+        border-radius: 5px;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 22px;
+    }
+
+    /* FOOTER */
+    #footer {
+        border-bottom: 0.1rem solid rgba(0, 0, 0, .1);
+        display: flex;
+        gap: 1rem;
+        text-align: center;
+        justify-content: space-around;
+        margin-top: 50px;
+        background-color: #0e0e0e;
+        border-radius: 10px;
+    }
+
+    .fdiv {
+        height: 350px;
+        width: 270px;
+    }
+
+    .fhead {
+        font-size: 1.4rem;
+        font-weight: 550;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .fabout {
+        font-family: serif;
+        font-size: 1.1rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a {
+        display: block;
+        font-size: 1.05rem;
+        padding: 0.7rem 0;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a:hover {
+        color: var(--theme);
+    }
+
+    #box input:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #message:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #box input {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #333;
+        padding: 0.5rem;
+        text-transform: none;
+        margin: 3px;
+    }
+
+    #message {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        height: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        margin: 5px 7px 7px 3px;
+    }
+
+    #btn {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        background: #333;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    #btn:hover {
+        background: linear-gradient(90deg, #ff5959, #6363ff);
+    }
+
+    #img a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 26px;
+        height: 4px;
+        background-color: rgb(255, 255, 255);
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    @media screen and (max-width : 960px) {
+        #nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, .2);
+            border-bottom: 0.1rem solid rgba(0, 0, 0, .2);
+            text-align: center;
+            display: none;
+        }
+
+        #nav li {
+            display: block;
+            padding: 3px 0px;
+            font-size: 1.2rem;
+        }
+
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* #list{
+        display: none;
+    } */
+        #clyde {
+            display: block;
+        }
+
+        #footer {
+            display: none;
+        }
+    }
+</style>
 
 <body>
-    
-    <div class="upr_container">
-    <h2 id="head">Discover Courses</h2>
-    <h3 class="main">Get started in science</h3>
-    <p class="cource_intro">Science is the knowledge about the earth, surroundings and environment and the living beings involved. Science offers new information and revelations of many things we do not know. Day by day, science is progressing. Now science has helped man reach the moon, which was once unknown to man as a satellite.</p>
-    
-    </div>
-    
-    <div class="cards">
-        
-        <div class="science_cards">
-            <img src="images/phy.webp" alt="" class="science_image">
-            <div class="sub">PHYSICS</div>
-        </div>
-        
-        <div class="science_cards">
-            <img src="images/chemm.png" alt="" class="science_image">
-            <div class="sub">CHEMISTRY</div>
-        </div>
-        
-        <div class="science_cards">
-            <img src="images/bio.png"alt="" class="science_image">
-            <div class="sub">BIOLOGY</div>
-        </div>
-    
-    </div>
-    <div class="upr_container">
-    
-    <h3 class="main">Rock the engineering</h3>
-    <p class="cource_intro">Engineering is the use of science and math to design or make things. People who do engineering are called engineers. They learn engineering at a college or university. Engineers usually design or build things. Some engineers also use their skills to solve technical problems.</p>
-    </div>
-    <div class="cards_1">
-        
-        <div class="eng_cards">
-            <img src="images/ai.jpg" alt="" class="eng_image">
-            <div class="sub">ARTIFICAL INTEGENCE</div>
-        </div>
-        
-        <div class="eng_cards">
-            <img src="images/mecha.webp" alt="" class="eng_image">
-            <div class="sub">MECHANICS</div>
-        </div>
-        
-        <!-- <div class="eng_cards"><img src="images/chemical.jpg" alt="" class="eng_image"  >
-            <div class="sub">CHEMICAL</div>
-        </div> -->
-        
-        <div class="eng_cards"><img src="images/civil.png" alt="" class="eng_image">
-            <div class="sub">CIVIL</div>
-        </div>
-        
-        <!-- <div class="eng_cards"><img src="C:\Users\hp\OneDrive\Desktop\electronu=ics.jpg"     alt="" class="eng_image">
-            <div class="sub">ELECTRONICS</div>
-        </div> -->
 
+    <header id="nav-bar">
+        <div id="logo">
+            <p id="clyde">CLYDE</p>
+            <nav id="list">
+                <ul id="nav">
+                    <li class="navicon"><a href="/">Home</a></li>
+                    <li class="navicon"><a href="/discover">Discover</a></li>
+                    <li class="navicon"><a href="/review">Review</a></li>
+                    <li class="navicon"><a href="/contact">Contact</a>
+                    <li class="navicon"><a href="#footer">Footer</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" onclick="myFunction()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mainbody">
+
+        <div class="upr_container">
+
+            <br>
+
+
+
+            <h2 id="head">Discover Courses</h2>
+            <h3 class="main">Get started in science</h3>
+            <p class="cource_intro">Science is the knowledge about the earth, surroundings and environment and the
+                living beings involved. Science offers new information and revelations of many things we do not know.
+                Day by day, science is progressing. Now science has helped man reach the moon, which was once unknown to
+                man as a satellite.</p>
+
+        </div>
+
+        <div class="cards">
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src=" https://telegra.ph/file/dc7096cb2b80657f1d374.png" alt="" class="science_image">
+                <div class="sub">PHYSICS</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/5feea82a03e359251a982.jpg" alt="" class="science_image">
+                <div class="sub">CHEMISTRY</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/cabbbe0ace4f6eeec2ed4.jpg" alt="" class="science_image">
+                <div class="sub">BIOLOGY</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/cabbbe0ace4f6eeec2ed4.jpg" alt="" class="science_image">
+                <div class="sub">BIOLOGY</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="upr_container">
+
+            <h3 class="main">Rock the engineering</h3>
+            <p class="cource_intro">Engineering is the use of science and math to design or make things. People who do
+                engineering are called engineers. They learn engineering at a college or university. Engineers usually
+                design or build things. Some engineers also use their skills to solve technical problems.</p>
+        </div>
+        <br>
+        <div class="cards">
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/11ab60a282ed9e8c18336.jpg" alt="" class="science_image">
+                <div class="sub">ARTIFICAL INTEGENCE</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/d5e5512bb2259c92c0f10.png" alt="" class="science_image">
+                <div class="sub">MECHANICS</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards"><img src="https://telegra.ph/file/2e5b98d30f2cd816b6390.jpg" alt="" class="science_image"
+                    onclick="location.href='Skip_to_content.html'">
+                <div class="sub">CIVIL</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards"><img src="https://telegra.ph/file/2e5b98d30f2cd816b6390.jpg" alt="" class="science_image"
+                    onclick="location.href='Skip_to_content.html'">
+                <div class="sub">CIVIL</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+
+        <div class="upr_container">
+            <h3 class="main">MUSIC</h3>
+            <p class="cource_intro">Music plays a great role in everyone’s life. It keeps us busy in free time and makes
+                our life peaceful. The streamlined sound, which arises from the creation of rasa, is called music. The
+                effect of music’s drunkenness on the living world is not hidden from anyone. Music plays an intrinsic
+                and necessary role in our lives. There are different types of music, which we can enjoy according to our
+                need and requirement.</p>
+        </div>
+        <br>
+
+        <div class="cards" onclick="location.href='Skip_to_content.html'">
+            <div class="science_cards"><img src="https://telegra.ph/file/8e22c1e2f638ff81fce51.png" alt="" class="science_image">
+                <div class="sub">COUNTRY</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/a9f5d846794ba9efa9438.jpg" alt="" class="science_image">
+                <div class="sub"> JASS</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/4ca02135a3be73e37c476.jpg" alt="" class="science_image">
+                <div class="sub">CLASSICAL</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+            <div class="science_cards" onclick="location.href='Skip_to_content.html'">
+                <img src="https://telegra.ph/file/8e22c1e2f638ff81fce51.png" alt="" class="science_image">
+                <div class="sub">COUNTRY</div>
+                <div class="icons">
+                    <p>2 Hours</p>
+                    <p>6 months</p>
+                    <p>12 modules</p>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+
+        <div class="fdiv">
+            <p class="fhead">About US</p>
+            <p class="fabout">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Illo, Maxime!</p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Follow Us</p>
+            <p class="fabout">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Linkedin</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Quick Links</p>
+            <p class="fabout">
+                <a href="/">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">Extras</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Achivements</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Contact Us</p>
+            <p class="fabout">+521 258484</p>
+            <p class="fabout">@CLIDE</p>
+            <p class="fabout">Chandigarh, India</p>
+            <div id="img">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"></a>
+                <a href="#"><img src="https://i.pinimg.com/564x/63/a2/31/63a231592efca78f2bcbc02267eb37be.jpg"></a>
+                <a href="#"><img src="https://e7.pngegg.com/pngimages/708/311/png-clipart-twitter-twitter-thumbnail.png"></a>
+                <a href="#"><img src="https://image.similarpng.com/very-thumbnail/2020/07/Linkedin-logo-on-transparent--background-PNG.png"></a>
+            </div>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Reach Us</p>
+            <div>
+                <div id="box">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <textarea placeholder="Message" id="message"></textarea>
+                <br>
+                <a href="#" id="btn">Send</a>
+            </div>
+        </div>
+
+    </footer>
 
 </body>
+
 </html>
