@@ -3,6 +3,7 @@ import firebase_admin,asyncio,os,requests
 from firebase_admin import db, credentials
 from datetime import datetime, date
 
+
 cred = credentials.Certificate('1.json')
 default_app = firebase_admin.initialize_app(
     cred, {'databaseURL': "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app/"})
@@ -33,6 +34,10 @@ def tutor():
 @app.route('/cources')
 def courses():
     return render_template("cources.html")
+
+@app.route('/cources/')
+def cources():
+    return render_template("courcestemp.html")
 
 
 

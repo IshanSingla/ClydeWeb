@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clide</title>
+</head>
+<style>
+    * {
+        font-family: 'Nunito', sans-serif;
+        transition: all .2s ease-out;
+    }
+
+    :root {
+        --theme: rgb(37, 37, 37);
+    }
+
+    /* nav-bar */
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        transition: 0.6s;
+        padding-top: 10px;
+        z-index: 10000;
+        background-color: var(--theme);
+    }
+
+    header.sticky {
+        background-color: whitesmoke;
+        box-shadow: 2px 2px 2px #666;
+    }
+
+    header #logo p {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-top: -4px;
+    }
+
+    header nav ul li {
+        position: relative;
+        list-style: none;
+    }
+
+    header nav ul li a {
+        position: relative;
+        list-style: none;
+    }
+
+    #logo {
+        display: flex;
+        color: rgb(255, 255, 255);
+        height: 7.5vh;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 2rem 0rem 2rem;
+        transition: 0.6s;
+    }
+
+    #logo .p {
+        font-size: xx-large;
+    }
+
+    #logo nav a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        margin-left: 2rem;
+        transition: 0.6s;
+    }
+
+    /*<-------MAIN SECTION START---------->*/
+    main {
+        display: flex;
+        flex-direction: row;
+        padding-top: 0.5%;
+        margin-bottom: 7%;
+    }
+
+    /* <--MAIN CONTAINER--> */
+
+    .main-container {
+        margin-top: 70px;
+        width: 47%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.3rem;
+        padding: 2%;
+        padding-right: -2%;
+        border-radius: 15px;
+        justify-content: space-between;
+    }
+
+    .main-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        gap: 1.3rem;
+    }
+
+    .row div {
+        padding: 1rem;
+        width: 174px;
+        height: 33vh;
+        background-color: whitesmoke;
+        border-radius: 20px;
+    }
+
+    .row div img {
+        border-radius: 20%;
+        height: 6.2rem;
+    }
+
+    .row div p {
+        color: whitesmoke;
+    }
+
+    .row div p {
+        color: dimgray
+    }
+
+    .row div a {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 0.32rem;
+        border-radius: 5px;
+    }
+
+    .row div nav {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid dimgray;
+        margin-top: 22px;
+    }
+
+    .row .small {
+        height: 18vh;
+        background: white;
+    }
+
+    .small p {
+        color: black;
+        font-size: 2rem;
+    }
+
+    .small img {
+        float: right;
+        margin-bottom: 20px;
+    }
+
+    .small center p {
+
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    /* <--MAIN CONTAINER END---> */
+
+    /* <----ASIDE-----> */
+    aside {
+        border-radius: 15px;
+        width: 40%;
+        padding: 5%;
+        /* text-align:right; */
+        margin-top: 5%;
+        margin-left: 2%;
+        font-size: 1.2rem;
+    }
+
+    #asidehead {
+        border: 2px solid black;
+    }
+
+    #welcome {
+        /* text-align: center; */
+        color: #666;
+    }
+
+
+    /*<-------MAIN SECTION END---------->*/
+
+    /*<----CATEGORIES SECTION----->*/
+
+    #cata {
+        text-align: center;
+        background: var(--theme);
+        color: transparent;
+        -webkit-background-clip: text;
+        font-size: 18px;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-top: 6rem;
+    }
+
+    #categories {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1;
+    }
+
+    .container {
+        border-radius: 10px;
+        position: relative;
+        width: 280px;
+        height: 170px;
+    }
+
+    .row div main {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .row div img {
+        border-radius: 50%;
+        height: 4rem;
+        margin-right: 10px;
+    }
+
+    .row div a {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 0.32rem;
+        border-radius: 5px;
+    }
+
+    .row div nav {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid dimgray;
+        margin-top: 20px;
+    }
+
+    .image {
+        height: 170px;
+        width: 285px;
+        border-radius: 10px;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        width: 40%;
+        height: 100%;
+        transition: 1s ease;
+        border-radius: 10px;
+        opacity: 0;
+    }
+
+    .container:hover .image {
+        filter: grayscale(70%);
+    }
+
+    .container:hover .overlay {
+        width: 100%;
+        opacity: 1;
+    }
+
+    .textInfo {
+        color: white;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+
+    /*      <----Footer---->    */
+    #footer {
+        border-bottom: 0.1rem solid rgba(0, 0, 0, .1);
+        display: flex;
+        gap: 1rem;
+        text-align: center;
+        justify-content: space-around;
+        margin-top: 50px;
+        background-color: #0e0e0e;
+        border-radius: 10px;
+    }
+
+    .fdiv {
+        height: 350px;
+        width: 270px;
+    }
+
+    .fhead {
+        font-size: 1.4rem;
+        font-weight: 550;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .fabout {
+        font-family: serif;
+        font-size: 1.1rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a {
+        display: block;
+        font-size: 1.05rem;
+        padding: 0.7rem 0;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a:hover {
+        color: var(--theme);
+    }
+
+    #box input:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #message:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #box input {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #333;
+        padding: 0.5rem;
+        text-transform: none;
+        margin: 3px;
+    }
+
+    #message {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        height: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        margin: 5px 7px 7px 3px;
+    }
+
+    #btn {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        background: #333;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    #btn:hover {
+        background: linear-gradient(90deg, #ff5959, #6363ff);
+    }
+
+    #img a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    @media screen and (max-width : 1250px) {
+        .row div {
+            width: 200px;
+            height: 33vh;
+        }
+    }
+
+    @media screen and (max-width : 900px) {
+        aside {
+            display: none;
+        }
+
+        #main-container {
+            width: 100%;
+        }
+
+        .row div {
+            width: 185px;
+            height: 33vh;
+        }
+
+        #footer {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width : 740px) {
+        .row div {
+            width: 220px;
+            height: 33vh;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .row div {
+            width: 150px;
+            height: 35vh;
+        }
+    }
+</style>
+
+<body>
+    <header id="nav-bar">
+        <div id="logo">
+            <p>CLIDE</p>
+            <nav>
+                <ul>
+                    <li class="navicon"><a>Home</a></li>
+                    <li class="navicon"><a>Discover</a></li>
+                    <li class="navicon"><a>Review</a></li>
+                    <li class="navicon"><a>Contact</a>
+                    <li class="navicon"><a href="#footer">Footer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section id="main-container" class="main-container">
+            <div id="row1" class="row">
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKnoQ7EouUXmIXtL7PlVxyPn7hTEdZtD_pyw&usqp=CAU">
+                        <p>- T SHARMA</p>
+                    </main>
+                    <p>ELECTRO STATICS </p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrkD6Muhccc1mwXophoeZW0qCpSGRUsUYusupCAKiW2hHmm_C9izSz8pvkbQijWxAGZwA&usqp=CAU">
+                        <p>- HC VERMA</p>
+                    </main>
+                    <p> RAY OPTICS</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLttqtVDHi9j8ihaOg9VnhpFlBgQRXL-sxb0iolOeUuBqW0o4xuddqWRs2hGcPKuZRdVI&usqp=CAU">
+                        <p>- AS TYAGI</p>
+                    </main>
+                    <p>WAVE OPTICS</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div id="div-4" class="small">
+                    <p></p>
+                </div>
+            </div>
+            <div id="row2" class="row">
+                <div class="small">
+
+                    <img src="images/lit.png" alt="" srcset="">
+
+                    <center>
+                        <p>#trending</p>
+                    </center>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT10HdvN66tPWORq1BLYP3_ygMSTd7tMEZRNlkdr94eKGVLW-N0NuIVaNyqdPrVQz86BIA&usqp=CAU">
+                        <p>- SJ GUPTA </p>
+                    </main>
+                    <p>GRAVITATION</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8FN2dFdSfhHikg8usyKYjfCk9LIpcAbtdMcO5IYKjPROm3TTtOzqYNQaeZg614fkaFA8&usqp=CAU">
+                        <p>- GV TYAGI</p>
+                    </main>
+                    <p>CURRENT ELECTRICITY</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNOB3HqlQGxLswLLExNhqw9MSh-oXJqrGtcyD4WSsca8DsyAy02whXiukMUcvZtCCyXI4&usqp=CAU">
+                        <p>- VN GUPTA</p>
+                    </main>
+                    <p>LAWS OF MOTION</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+            </div>
+            <div id="row3" class="row">
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpHcD_lCHI6IYrF5JjVkwihyXiJLh03Kt7kcuid5XhCuvbBqrlR4JluO_2uyrgNr2Lic&usqp=CAU">
+                        <p>- GV SHARMA</p>
+                    </main>
+                    <p>WORK ENERGY POWER</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx7Liu4Fo4oiqO9Z6N61XDp2jYLEZbHG85TYUK9pNN-Txi4CdkNWXgr9SnfCCN_XKdAKk&usqp=CAU">
+                        <p>- SS THAKUR</p>
+                    </main>
+                    <p>ROTATIONAL MOTION</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div>
+                    <main>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQExanT9AylZd7zXeUMBPYNuWsneoGPN6Bo68QZA8Cbj-4OfHueMUa7AIa0oKQ2oIMSK1E&usqp=CAU">
+                        <p>- WR SMITH</p>
+                    </main>
+                    <p>THERMODYNAMICS</p>
+                    <a href="#">Explore</a>
+                    <nav>
+                        <p>abc</p>
+                        <p>abc</p>
+                        <p>abc</p>
+                    </nav>
+                </div>
+                <div id="div" class="small">
+                    <p></p>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="background-img">
+
+            <head id="asidehead">
+                <center>
+                    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/ssdupzsv.json" trigger="hover"
+                        colors="primary:#121331,secondary:#6363ff" style="width:250px;height:250px">
+                    </lord-icon>
+                </center>
+                <p class="text typing" id="welcome">Welcome to One of the Largest One-One Interaction Community!! Clyde
+                    is a learning platform that provides content for major competitive examinations as well as offers
+                    short lectures in the form of videos on different subjects which can be accessed for free. It allows
+                    aspiring students to better prepare for their competitive examinations and promote self-learning.
+                </p>
+            </head>
+
+
+            <p id="cata">EXPLORE MORE</p>
+            <center>
+                <section id="categories">
+                    <div class="container">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/10/03/08/road-2617557_1280.jpg" alt="Avatar"
+                            class="image">
+                        <div class="overlay">
+                            <div class="textInfo">JEE PHYSICS</div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <img src="images/music.png" alt="Avatar" class="image" cheight="170px" width="285px">
+                        <div class="overlay">
+                            <div class="textInfo">NEET PHYSICS</div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <img src="images/books.png" alt="Avatar" class="image" height="170px" width="285px">
+                        <div class="overlay">
+                            <div class="textInfo">CARASH COURCES</div>
+                        </div>
+                    </div>
+
+
+                    <div class="container">
+                        <img src="https://cdn2.coachmag.co.uk/sites/coachmag/files/shutterstock_151938761.jpg"
+                            alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="textInfo">NOTES</div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <img src="https://images.moneycontrol.com/static-mcnews/2021/11/stocks_sensex_nifty_stockmarket3-1.jpg"
+                            alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="textInfo">RECORDED LECTURES</div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <img src="images/doctor.png" alt="Avatar" class="image">
+                        <div class="overlay">
+                            <div class="textInfo">MORE INFO</div>
+                        </div>
+                    </div>
+                </section>
+            </center>
+        </aside>
+    </main>
+
+
+    <!--FOOTER SECTION-->
+    <footer id="footer">
+
+        <div class="fdiv">
+            <p class="fhead">About US</p>
+            <p class="fabout">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Illo, Maxime!</p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Follow Us</p>
+            <p class="fabout">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Linkedin</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Quick Links</p>
+            <p class="fabout">
+                <a href="#">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">Extras</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Achivements</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Contact Us</p>
+            <p class="fabout">+521 258484</p>
+            <p class="fabout">@We Talks</p>
+            <p class="fabout">Chandigarh, India</p>
+            <div id="img">
+                <a href="#"><img src="images\insta.png"></a>
+                <a href="#"><img src="images\fb.png"></a>
+                <a href="#"><img src="images\twiter.png"></a>
+                <a href="#"><img src="images\lindin.png"></a>
+            </div>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Reach Us</p>
+            <div>
+                <div id="box">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <textarea placeholder="Message" id="message"></textarea>
+                <br>
+                <a href="#" id="btn">Send</a>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+</body>
+
+</html>
