@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tutor's Point</title>
 </head>
 <style>
@@ -80,7 +82,7 @@
         padding: 16px;
         width: 200px;
         border-radius: 10px;
-        margin-top: 30%;
+        margin-top: 20%;
         border: 1px solid transparent;
         background-color: rgb(0, 0, 0);
         color: #FFFFFFFF;
@@ -205,7 +207,39 @@
 
     #teacher-info-section {
         color: white;
-        padding-left: 30%;
+        padding-left: 20%;
+    }
+
+    #div-1 {
+        display: flex;
+        margin-bottom: 10%;
+    }
+
+    #div-1 img {
+        margin-left: 10%;
+        border-radius: 10%;
+    }
+
+    #div-2 {
+        display: flex;
+        margin-bottom: 10%;
+    }
+
+    #div-2 img {
+        margin-right: 10%;
+        width: 30%;
+        border-radius: 10%;
+    }
+
+    #div-3 {
+        display: flex;
+        margin-bottom: 10%;
+    }
+
+    #div-3 img {
+        margin-left: 10%;
+        width: 30%;
+        border-radius: 10%;
     }
 
     button {
@@ -226,6 +260,242 @@
     }
 
     /* ----------------Main section End-----------  */
+
+    /* ----------------FOOTER SECTION-----------  */
+    #footer {
+        background-color: aliceblue;
+        width: 100%;
+        height: 90px;
+        padding-left: 45%;
+        justify-content: center;
+
+    }
+
+    /* Style all font awesome icons */
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 45px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-google {
+        background: #98583b;
+        color: white;
+    }
+
+    /* Twitter */
+    .fa-instagram {
+        background: #eeac55;
+        color: white;
+    }
+
+    body {
+        /* make it look decent enough */
+        font-family: "Avenir Next", "Avenir", sans-serif;
+
+        overflow-x: hidden;
+        /* needed because hiding the menu on the right side is not perfect,  */
+    }
+
+    #menu li a {
+        text-decoration: none;
+        color: white;
+
+        transition: color 0.3s ease;
+    }
+
+    #menu li a:hover {
+        color: red;
+    }
+
+    #menuToggle {
+        display: block;
+        position: absolute;
+        top: 43px;
+        right: 20px;
+
+        z-index: 1;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /*
+ * Just a quick hamburger
+ */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #cdcdcd;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    /*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: white;
+    }
+
+    /*
+ * But let's hide the middle one.
+ */
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    #menuToggle input:checked~span:nth-last-child(2) {
+        opacity: 1;
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+    #menu {
+        display: flex;
+        flex-direction: column;
+        border-radius: 20%;
+        position: absolute;
+        width: 300px;
+        height: 850px;
+        margin: 20px 0 0 0;
+        padding: 50px;
+        padding-top: 40px;
+        right: -100px;
+        background: #ffb02875;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+
+        transform-origin: 0% 0%;
+        transform: translate(100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 24px;
+    }
+
+    #menu li:hover {
+        color: orange;
+        font-size: 24px;
+    }
+
+    #menu li h1,
+    h4,
+    :hover {
+        color: white;
+        font-weight: bold;
+    }
+
+    #menu li h5 {
+        font-size: 24px;
+        background-color: white;
+        border-radius: 30px;
+        width: 50%;
+        text-align: center;
+    }
+
+    #menu li h5:hover {
+        background-color: orange;
+        color: white;
+        transform: scale(1.3);
+        transition: 0.3s;
+    }
+
+    .images {
+        border-radius: 50%;
+        width: 80px;
+        margin: 5px;
+    }
+
+    .images:hover {
+        transform: scale(1.25);
+        transition: 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .menu-row {
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    /*
+ * And let's fade it in from the left
+ */
+    #menuToggle input:checked~ul {
+        transform: none;
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+        #menu {
+            transform: none;
+            opacity: 0;
+
+            transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+    }
 
     .scroll-container {
         height: 100vh;
@@ -381,6 +651,25 @@
         <nav>
             <ul>
                 <li> <img id="logo" src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" alt="" height="150px"></li>
+                <li>
+                    <nav role='navigation'>
+                        <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul id="menu">
+                                <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"
+                                        style="border-radius:50%;" width="200px">
+                                </li>
+                                <li class="active" onclick="location.href='/'">Home</li>
+                                <li><a href=/doubt>Doubts</a></li>
+                                <li><a href="/cources">Our Courses</a></li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </li>
             </ul>
         </nav>
     </header>
@@ -439,19 +728,52 @@
             </div>
         </section>
         <section id="teacher-info-section">
-            <div>
-                <h1 class="letter" style="font-family:''; font-weight: 100;">
-                    Lessons for any schedule<br> from Lina Ma'am!
-                </h1>
-                <p>Students can book ahead of time<br> with their favorite tutors or call <br>
-                    on-demand from anywhere,
-                    from any device.</p>
+            <div id="div-1">
+                <div>
+                    <h1 class="letter" style="font-family:''; font-weight: 100;">
+                        Lessons for any schedule<br> from Lina Ma'am!
+                    </h1>
+                    <p>Students can book ahead of time with their favorite tutors or call <br>
+                        on-demand from anywhere,
+                        from any device.</p>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn0j-muT1Z1jfBKt93gguwqvtfQHgoHx3l7A&usqp=CAU"
+                    alt="">
+            </div>
+
+            <div id="div-2">
+                <img src="https://thumbs.dreamstime.com/b/software-engineer-working-project-cheerful-asian-enjoying-all-night-long-139439927.jpg"
+                    alt="">
+                <div>
+                    <h1 class="letter" style="font-family:''; font-weight: 100;">
+                        Private Tutoring
+                    </h1>
+                    <strong>Punit Sir!</strong>
+                    <p>Every student can focus on their individual needs and goals
+                        in<br> 1-on-1 classes.</p>
+                </div>
+            </div>
+            <div id="div-3">
+                <div>
+                    <h1 class="letter" style="font-family:''; font-weight: 100;">
+                        English for the real world
+                    </h1>
+                    <strong>Punit Sir!</strong>
+                    <p>Students build skills and confidence<br> to navigate real world situations with ease through our
+                        <br>conversation based methodology.
+                    </p>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlE6KlPlT2rmBMrSBhZSKSckY4c46Spro2jA&usqp=CAU"
+                    alt="">
             </div>
         </section>
 
     </main>
-    <footer style="height: 100px;">
-
+    <footer id="footer">
+        <p style="color:aliceblue">hello</p>
+        <!-- Add font awesome icons -->
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-instagram"></a>
     </footer>
     <script>
         const texts = ["Welcome Teachers and Students!!"]
@@ -476,8 +798,9 @@
             setTimeout(type, 250);
         })();
 
+
     </script>
-    <script>
+    <script >
         const scrollElements = document.querySelectorAll(".js-scroll");
 
         const elementInView = (el, dividend = 1) => {
