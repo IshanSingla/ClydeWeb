@@ -35,9 +35,12 @@ def tutor():
 def courses():
     return render_template("cources.html")
 
-@app.route('/cources/')
-def cources():
-    return render_template("courcestemp.html")
+@app.route('/cources/<string:n>')
+def cources(n):
+    proxys = (db.reference(f"/Courses/{n}/")).get()
+    if proxys == None:
+        return render_template("404.html")
+    return render_template("courcestemp.html",data=proxys)
 
 
 
