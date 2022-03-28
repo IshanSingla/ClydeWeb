@@ -1,7 +1,6 @@
 <html>
 
 <head>
-  <!-- <link rel="stylesheet" href="Style/main.css"> -->
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -47,18 +46,47 @@
   }
 
   nav {
-    position: sticky;
+    position: relative;
     background-color: #111;
   }
 
-  #para1 {
-    color: black;
-    background-color: white;
+  #sub3,
+  #sub2 {
+
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left top, right top, from(#90f3b3), color-stop(#90e9f3), color-stop(#909ff3), color-stop(#cc90f3), color-stop(#f390d1), color-stop(#f39a90), color-stop(#f3e590), to(#b8f390)) repeat scroll 0% 0%/200% 200%;
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, #90f3b3, #90e9f3, #909ff3, #cc90f3, #f390d1, #f39a90, #f3e590, #b8f390) repeat scroll 0% 0%/200% 200%;
+    background-clip: border-box;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
-  #gets {
-    background-color: #228891;
-    color: #111;
+  #sub3:hover {
+    -webkit-animation: GradientAnimation 2s ease infinite;
+    animation: GradientAnimation 2s ease infinite;
+  }
+
+  @keyframes GradientAnimation {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  #sub2:hover {
+    -webkit-animation: GradientAnimation 2s ease infinite;
+    animation: GradientAnimation 2s ease infinite;
+
   }
 
   .outer {
@@ -70,22 +98,29 @@
     display: block;
     color: white;
     background-color: #111;
-    padding: 12px;
+    width: 15vw;
+    height: 8vh;
     font-size: 2rem;
-    margin: 20px;
-    border-radius: 20%;
+
+    margin-top: 2vh;
+
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  #verticalb ul {
+    width: 28vw;
+    height: 50vh;
+  }
+
   #verticalb ul li:hover {
-    background-color: white;
-    color: #111;
+
+    color: white;
   }
 
   #verticalb {
-    width: 250px;
-    padding-left: 100px;
-    ;
+
+
+    padding-right: 5vw;
   }
 
   #imgChange {
@@ -94,6 +129,7 @@
 
   #changeimg {
     margin: 0 10%;
+
   }
 
   footer.footer-section {
@@ -126,6 +162,7 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: 36px;
+
   }
 
   .single-fta ul.fta-list {
@@ -181,24 +218,295 @@
   }
 
   #para22 {
-    padding-top: 100px;
-    padding-left: 50px;
+    padding-top: 15vh;
+    padding-left: 0;
   }
 
   #para33 {
-    padding-left: 150px;
+    padding-left: 10vh;
 
+  }
+
+  #para33 img {
+    width: 45vw;
+    height: 60vh;
   }
 
   #para3 {
-    padding-left: 100px;
-    padding-top: 100px;
+    padding-left: 10vh;
+    padding-top: 5vh;
+    width: 40vw;
+    height: 60vh;
   }
 
-  #explorem:hover {
-    background-color: white;
-    color: #111;
+  .sub {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10vh;
+
   }
+
+  .glow-on-hover {
+    width: 15vw;
+    height: 7vh;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:active {
+    color: #000
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  /*  do more with  */
+
+  .title-word {
+    animation: color-animation 4s linear infinite;
+  }
+
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+  }
+
+  .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+
+  @keyframes color-animation {
+    0% {
+      color: var(--color-1)
+    }
+
+    32% {
+      color: var(--color-1)
+    }
+
+    33% {
+      color: var(--color-2)
+    }
+
+    65% {
+      color: var(--color-2)
+    }
+
+    66% {
+      color: var(--color-3)
+    }
+
+    99% {
+      color: var(--color-3)
+    }
+
+    100% {
+      color: var(--color-1)
+    }
+  }
+
+
+
+  .container1 {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 20vh;
+  }
+
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
+
+  /*  subscribe */
+
+  .container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
+  }
+
+  .card {
+    display: block;
+    position: relative;
+    width: 45vw;
+    height: 60vh;
+    max-width: 90%;
+    min-height: 12em;
+    background: #111;
+    ;
+    color: #ffffff;
+    padding: 1em 2em 2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  .card h1 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+  }
+
+  .card form {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  .card form input {
+    display: flex;
+    width: 80%;
+    margin-top: 4vh;
+  }
+
+  .card form input.email {
+    border: 0px;
+    margin-bottom: 1em;
+    padding: .3em 1em;
+    text-align: center;
+    font-family: monospace;
+    font-size: 24px;
+    line-height: 30px;
+    outline: none !important;
+    border-radius: 5px;
+    background-color: #F1FFFA;
+  }
+
+  .card form button {
+    border: 0px transparent;
+    padding: 1em 1.2em;
+    border-radius: 5px;
+    margin-top: 1vh;
+
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+  }
+
+  .card form button:hover {
+    background-color: #F17C73;
+  }
+
+  #inp input {
+    border: #111 solid 2px;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    padding-right: 2vw;
+    padding-bottom: 2vh;
+    margin-left: 2.5vw;
+    margin-top: 5vh;
+    transition: transform .2s;
+  }
+
+  #inp input:hover {
+    transform: scale(1.5);
+
+  }
+
+
+  /*  menu bar css
+* {box-sizing: border-box;max-width: 100%;font-family: 'Gruppo', cursive;}
+html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
+
+.menu-icon {width: 50px;height: 50px;position: fixed;top: 0;right: 0;margin: 10px 15px;transform:scale(0.8);padding: 0;cursor: pointer;z-index:20}
+.menu-bar {width: 50px;height: 5px;background: rgb(190,190,190);position: absolute;transition: all 0.3s;}
+.menu-bar1 {margin-top: 9px}
+.menu-bar2 {margin-top: 23px}
+.menu-bar3 {margin-top: 37px}
+.menu-icon.hover .menu-bar1 {-webkit-transform: rotate(45deg) scaleX(0.7);margin-top: 22px;}
+.menu-icon.hover .menu-bar2 {opacity: 0}
+.menu-icon.hover .menu-bar3 {-webkit-transform: rotate(-45deg) scaleX(0.7);margin-top: 22px;}
+
+.menu {width: 100%;height: 100%;display: -webkit-flex;display: flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;}
+.menu-con {-webkit-flex-grow: 1;flex-basis: 0;flex-grow: 1;display: -webkit-flex;display: flex;-webkit-justify-content:space-around;position:relative;top:-100%;transition:all 0.5s}
+.menu-con p:before {content: ""; display: block;position:absolute;top:0;left:0;z-index:1;width:100%;height: 100%;opacity: 1;background: rgba(0,0,0,0);-webkit-transition: all 0.5s;transition: all 0.5s;}
+.menu-con:hover p:before {background: rgba(0,0,0,0.2)}
+.menu-con p {height:20px;-webkit-align-self:center;color:white;font-size:25px;z-index:2;cursor:pointer}
+@media screen and (max-width: 600px) {.menu-con {min-width:50%}}
+@media screen and (max-width: 350px) {.menu-con {min-width:100%}}
+*/
 </style>
 
 <body>
@@ -219,47 +527,106 @@
     <div class="intro">
       <div id="para2">
         <img src="https://telegra.ph/file/00f6128e3e0942ab1f82e.png"
-          style="height: 60vh; width: 45vw; padding-top: 2vh;padding-bottom: 4vh;">
+          style="height: 70vh; width: 50vw; padding-top: 9vh;padding-bottom: 7vh;">
 
       </div>
       <div id="para22">
         <p style="font-size: 4rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
         <p style="font-family: sans-serif; font-size: 2rem;">Interactive <b> one-on-one</b> doubts solving through video
           call or text messages</p>
-        <input type="email" placeholder="EMAIL" height="75px" width="40vw">
-        <button id="explorem" style="background-color:#111; color: white;">Explore More</button>
-          
-      </div>
-    </div>
-    <div class="intro" style="background-color: #111;color:white; padding-top: 2vh;padding-bottom: 2vh;">
-      <div id="para3" style="padding-top: 2vh; padding-bottom: 4vh;">
-        <p style="font-size: 4rem; padding-top: 2vh;">Smart tutoring</p>
-        <p style="font-size: 2rem; font-family: sans-serif;">Short videos briefly explaining a specific topic.</p>
-        <button style="background-color: white;color: #111;">View tutorial</button>
+        <br><br>
+        <input type="email" placeholder="EMAIL" style="height: 7vh;width: 28vw;">
+        <button class="glow-on-hover" type="button">Explore More</button>
 
       </div>
-      <div id="para33">
-        <img src="" width="400px" height="400px">
-      </div>
     </div>
-    <p style="font-size: 4rem;padding-left: 100px; margin-top: 10%;">Do more with Clyde</p>
-    <div class="intro1" style="height: 75vh;width: auto">
-      <div id="verticalb" style="height: 60vh;width: 50vh; float: right; ">
+
+
+    <div class="container1">
+      <h2 class="title">
+        <span class="title-word title-word-1">Do</span>
+        <span class="title-word title-word-2">more</span>
+        <span class="title-word title-word-3">with</span>
+        <span class="title-word title-word-4">CLYDE</span>
+      </h2>
+    </div>
+    <div class="intro1" style="height: 75vh;width: auto;">
+      <div id="verticalb" style="height: 60vh;width: 60vh; float: right;padding-right: 10vh;padding-top: 2vh;">
         <ul style="list-style-type: none; display: block;">
-          <li onclick="change1()">lesson discovery</li>
-          <li onclick="change2()">Tutor profile</li>
-          <li onclick="change3()">lesson review</li>
-          <li onclick="change4()">flexible scheduling</li>
-          <li onclick="change5()">All around courses</li>
-          <li onclick="change6()">Smooth matchmaking</li>
+          <li class="glow-on-hover" onclick="change1()">&nbsp;&nbsp;Lesson discovery</li>
+          <li class="glow-on-hover" onclick="change2()">&nbsp;&nbsp;Tutor profile</li>
+          <li class="glow-on-hover" onclick="change3()">&nbsp;&nbsp;Lesson review</li>
+          <li class="glow-on-hover" onclick="change4()">&nbsp;&nbsp;Flexible scheduling</li>
+          <li class="glow-on-hover" onclick="change5()">&nbsp;&nbsp;All around courses</li>
+          <li class="glow-on-hover" onclick="change6()">&nbsp;&nbsp;Smooth matchmaking</li>
 
         </ul>
       </div>
 
       <div id="imgChange">
-        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png" style="height: 50vh; width: 50vw;">
+        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png" style="height: 65vh; width: 50vw;">
       </div>
     </div>
+    <div class="sub" style="width: 100vw; height: 80vh;">
+      <div id="subs" style="width:28vw; height: 50vh;padding-top: 5vh;">
+        <p style="font-size: 4rem; padding-left: 5vw; font-family:cursive;"><b>One subscription unlimited access</b></p>
+        <p style="font-size: 2rem; font-family: sans-serif; padding-left: 5vw;">Every one of our plans unlocks access to
+          our full tutor community and course catalog.
+          Study with your favorite tutors every week or meet someone new for every lesson.
+        </p>
+      </div>
+      <div id="sub2"
+        style="width: 28vw;height: 55vh;border-radius: 2%;margin-left: 3vw; padding-left: 3vw;padding-top: 5vh; border: #111 solid 4px;">
+        <h1 style="font-family:cursive;"><b>Silver subscription</b></h1>
+        <p style="font-size: 2.2rem;">Learn from local tutors from across your country</p>
+        <p style="font-size: 1.5rem;">Experience CLYDE in your local language from your local tutors in your area,
+          at a minimal subscription of Rs.100/per month.
+        </p><br>
+        <button class="glow-on-hover" style="margin-left:3vw;margin-top: 2vh;">Join Now</button>
+      </div>
+      <div id="sub3"
+        style="width: 30vw; padding-left: 3vw; margin-left: 3vw;padding-top: 4vh;height: 55vh;border-radius: 2%;border: #111 solid 4px;">
+        <h1 style="font-family:cursive;"><b>Gold premium subscription</b></h1>
+        <p style="font-size: 2.2rem;"> Learn from global tutors from across world</p>
+        <p style="font-size: 1.5rem;"> Explore CLYDE globally and learn from international tutors
+          , at an effective subscription of Rs.500/per months.
+        </p>
+        <button class="glow-on-hover" style="margin-left:3vw;"> Join now</button>
+      </div>
+    </div>
+
+
+    <!--demo class-->
+    <div id="demoC" style="margin-top: 10vh;margin-bottom: 5vh;">
+      <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 5rem;text-align: center;">
+        Book your <b>Free Demo </b>class</p>
+      <div id="inp" style="text-align: center;">
+        <input type="email" placeholder="Enter your email">
+        <input type="text" placeholder="Enter your name">
+        <input type="number" placeholder="Enter your phone number">
+        <input type="text" placeholder="Enter your class">
+        <button type="button" class="glow-on-hover" style="margin-left: 2vw;">Book free session</button>
+      </div>
+
+    </div>
+    <div class="container2">
+      <div class="card">
+        <h1>Notify.me</h1>
+        <h2>Subscribe to our newsletter</h2>
+        <p>Don't miss any notification from our side.</p>
+        <p><small>We don't share your email with any third party companies, promise!</small></p>
+        <form action="/" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+          class="validate" novalidate>
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email" required>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="" tabindex="-1"
+              value=""></div>
+          <div class="clear"></div>
+          <button name="subscribe" id="mc-embedded-subscribe" class="button glow-on-hover" type="submit">Subscribe
+            me</button>
+        </form>
+      </div>
+    </div>
+
 
 
   </section>
@@ -282,9 +649,9 @@
             <div class="single-fta">
               <h3 class="fta-title">Important Link</h3>
               <ul class="fta-list">
-                <li><a href="#"><i class="fa fa-square"></i>Entrepreneurship</a></li>
-                <li><a href="#"><i class="fa fa-square"></i>Counselling</a></li>
-                <li><a href="#"><i class="fa fa-square"></i>Spoken languages</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Log In</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Apply form</a></li>
+                <li><a href="#" style="color: #111;"><i class="fa fa-square"></i>spoken languages</a></li>
               </ul>
             </div>
           </div>
@@ -294,7 +661,7 @@
               <ul class="fta-list">
                 <li><a href="#"><i class="fa fa-square"></i>Science</a></li>
                 <li><a href="#"><i class="fa fa-square"></i>Engineering Subjects</a></li>
-                <li><a href="#"><i class="fa fa-square"></i>Extra co-curricular acttivities</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Music</a></li>
               </ul>
             </div>
           </div>
@@ -363,7 +730,7 @@
 
         index = 0;
       }
-      setTimeout(type, 250);
+      setTimeout(type, 125);
     })();
 
     window.onload = function () {
@@ -373,36 +740,108 @@
     }
     function change1() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/2eaf44c648b4d41108682.png";
+      Image_Id.src = "logo/discover.png";
 
     }
     function change2() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/48600d0fd95914f6c9a4e.png";
+      Image_Id.src = "logo/tutor.png";
 
 
     }
     function change3() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/8df378cb7aa15159686c2.png";
+      Image_Id.src = "logo/review.png";
 
     }
     function change4() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/6d77e78c84ad15a42f9e1.png";
+      Image_Id.src = "logo/scheduling.png";
 
     }
     function change5() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/5ce7df0a05195b92c8ece.png";
+      Image_Id.src = "logo/courses.png";
 
     }
     function change6() {
       var Image_Id = document.getElementById("changeimg");
-      Image_Id.src = "https://telegra.ph/file/e1d3dadf20e09ed2d474e.png";
+      Image_Id.src = "logo/matchM.png";
 
     }
+
+// menu bar js
+    /*
+    var open = false;
+    
+    function Drop(n) {
+      var i;
+      if (open == false) {
+        for (i = n; i < 5; i++) {
+          Drp(i)
+        }
+        open = true
+      } else if (open == true) {
+        for (i = n; i < 5; i++) {
+          Cls(i)
+        }
+        open = false
+      }
+    }
+    
+    function Drp(n) {
+      var elem = document.getElementsByClassName("menu-con")[n];
+      var pos = -1 * window.innerHeight - n * 100;
+      var id = setInterval(frame, 5);
+    
+      function frame() {
+        if (pos >= -10) {
+          clearInterval(id);
+          elem.style.top = 0 + 'px';
+        } else {
+          pos += 10;
+          elem.style.top = pos + 'px';
+        }
+      }
+    }
+    
+    function Cls(n) {
+      var elems = document.getElementsByClassName("menu-con")[n];
+      var poss = 0;
+      var ids = setInterval(frames, 5);
+    
+      function frames() {
+        if (poss <= -1 * window.innerHeight) {
+          clearInterval(ids);
+          elems.style.top = -1 * window.innerHeight + 'px';
+        } else {
+          poss += -7 - n * 2;
+          elems.style.top = poss + 'px';
+        }
+      }
+    }
+    */
+
+
+
   </script>
+
+
+  <!--
+    responsive menu bar
+    <div class="menu-icon" onclick="this.classList.toggle('hover');Drop(0)">
+  <div class="menu-bar menu-bar1"></div>
+  <div class="menu-bar menu-bar2"></div>
+  <div class="menu-bar menu-bar3"></div>
+</div>
+<div class="menu">
+  <div class="menu-con" style="background:IndianRed;"><p>HOME</p></div>
+  <div class="menu-con" style="background:rgb(160,160,170);"><p>Courses</p></div>  
+  <div class="menu-con" style="background:mediumseagreen;"><p>Tutors</p></div> 
+  <div class="menu-con" style="background:teal;"><p>Doubts</p></div> 
+  <div class="menu-con" style="background:rgb(70,70,70);"><p>Join us</p></div>
+</div>
+  -->
 </body>
 
 </html>
