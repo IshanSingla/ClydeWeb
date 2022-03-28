@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
+  * {
+    font-family: 'Nunito', sans-serif;
+    transition: all .2s ease-out;
+  }
+
   #horizontal {
     list-style-type: none;
     margin: 0;
@@ -118,13 +123,11 @@
   }
 
   #verticalb {
-
-
-    padding-right: 5vw;
+    padding-left: 20vw;
   }
 
   #imgChange {
-    margin-top: 5%;
+    /* margin-top: 5%; */
   }
 
   #changeimg {
@@ -481,32 +484,203 @@
   }
 
   #inp input:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 
   }
 
+  #mainimg {
+    height: auto;
+    width: 700px;
+    padding-top: 9vh;
+    padding-bottom: 7vh;
+  }
 
-  /*  menu bar css
-* {box-sizing: border-box;max-width: 100%;font-family: 'Gruppo', cursive;}
-html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
+  #emailbtn {
+    height: 7vh;
+    width: 300px;
+    border-radius: 2px;
+    border-radius: 5px;
+  }
 
-.menu-icon {width: 50px;height: 50px;position: fixed;top: 0;right: 0;margin: 10px 15px;transform:scale(0.8);padding: 0;cursor: pointer;z-index:20}
-.menu-bar {width: 50px;height: 5px;background: rgb(190,190,190);position: absolute;transition: all 0.3s;}
-.menu-bar1 {margin-top: 9px}
-.menu-bar2 {margin-top: 23px}
-.menu-bar3 {margin-top: 37px}
-.menu-icon.hover .menu-bar1 {-webkit-transform: rotate(45deg) scaleX(0.7);margin-top: 22px;}
-.menu-icon.hover .menu-bar2 {opacity: 0}
-.menu-icon.hover .menu-bar3 {-webkit-transform: rotate(-45deg) scaleX(0.7);margin-top: 22px;}
+  #changeimg {
+    height: 65vh;
+    width: 50vw;
+  }
 
-.menu {width: 100%;height: 100%;display: -webkit-flex;display: flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;}
-.menu-con {-webkit-flex-grow: 1;flex-basis: 0;flex-grow: 1;display: -webkit-flex;display: flex;-webkit-justify-content:space-around;position:relative;top:-100%;transition:all 0.5s}
-.menu-con p:before {content: ""; display: block;position:absolute;top:0;left:0;z-index:1;width:100%;height: 100%;opacity: 1;background: rgba(0,0,0,0);-webkit-transition: all 0.5s;transition: all 0.5s;}
-.menu-con:hover p:before {background: rgba(0,0,0,0.2)}
-.menu-con p {height:20px;-webkit-align-self:center;color:white;font-size:25px;z-index:2;cursor:pointer}
-@media screen and (max-width: 600px) {.menu-con {min-width:50%}}
-@media screen and (max-width: 350px) {.menu-con {min-width:100%}}
-*/
+  .intro1 {
+    height: 75vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #subs {
+    width: 400px;
+    height: auto;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  #sub2 {
+    width: 400px;
+    height: 55vh;
+    border-radius: 2%;
+    margin-left: 3vw;
+    padding-left: 3vw;
+    padding-top: 5vh;
+    border: #111 solid 4px;
+    margin-bottom: 20px;
+  }
+
+  #sub3 {
+    width: 400px;
+    padding-left: 3vw;
+    margin-left: 3vw;
+    padding-top: 4vh;
+    height: 55vh;
+    border-radius: 2%;
+    border: #111 solid 4px;
+  }
+
+  #onesub {
+    font-size: 4rem;
+    padding-left: 5vw;
+    font-family: cursive;
+  }
+
+  #evyone {
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding-left: 5vw;
+  }
+
+  #book {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  #inp {
+    text-align: center;
+  }
+
+  @media screen and (max-width : 1290px) {
+    .intro1 {
+      display: none;
+    }
+
+    #onesub {
+      font-size: 2.5rem;
+    }
+
+    #evyone {
+      font-size: 1.5rem;
+    }
+
+    #sub2 {
+      width: 350px;
+      height: 55vh;
+    }
+
+    #sub3 {
+      width: 350px;
+      height: 55vh;
+    }
+
+    #book {
+      font-size: 4rem;
+    }
+
+    #inp {
+      font-size: 1.5rem;
+    }
+
+    #inp button {
+      font-size: 1.5rem;
+    }
+
+    .card {
+      width: 400px;
+    }
+
+    .footer-section {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width : 1200px) {
+    #mainimg {
+      width: 600px;
+      text-align: center;
+    }
+
+    .intro1 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width : 1100px) {
+    #mainimg {
+      width: 500px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width : 980px) {
+    #mainimg {
+      text-align: center;
+      width: 600px;
+    }
+  }
+
+  @media screen and (max-width : 950px) {
+    #mainimg {
+      text-align: center;
+      width: 500px;
+
+    }
+
+    #para22 {
+      text-align: center;
+      margin-left: 50px;
+      text-align: center;
+    }
+
+    #emailbtn {
+      width: 200px;
+    }
+
+    #expbtn {
+      width: 200px;
+    }
+
+    .title-word {
+      font-size: 3rem;
+    }
+
+    .sub {
+      text-align: center;
+      margin-left: 50px;
+    }
+
+    #onesub {
+      font-size: 2.5rem;
+    }
+
+    #evyone {
+      font-size: 1.5rem;
+    }
+
+    #sub2 {
+      width: 400px;
+      height: 55vh;
+    }
+
+    #sub3 {
+      width: 400px;
+      height: 55vh;
+    }
+  }
 </style>
 
 <body>
@@ -531,12 +705,12 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
 
       </div>
       <div id="para22">
-        <p style="font-size: 4rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
-        <p style="font-family: sans-serif; font-size: 2rem;">Interactive <b> one-on-one</b> doubts solving through video
-          call or text messages</p>
+        <p style="font-size: 3rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
+        <p style="font-family: sans-serif; font-size: 1.5rem;">Interactive <b> one-on-one</b> doubts solving through
+          video call or text messages</p>
         <br><br>
-        <input type="email" placeholder="EMAIL" style="height: 7vh;width: 28vw;">
-        <button class="glow-on-hover" type="button">Explore More</button>
+        <input id="emailbtn" type="email" placeholder="EMAIL">
+        <button id="expbtn" class="glow-on-hover" type="button">Explore More</button>
 
       </div>
     </div>
@@ -550,8 +724,12 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
         <span class="title-word title-word-4">CLYDE</span>
       </h2>
     </div>
-    <div class="intro1" style="height: 75vh;width: auto;">
-      <div id="verticalb" style="height: 60vh;width: 60vh; float: right;padding-right: 10vh;padding-top: 2vh;">
+    <br>
+    <section class="intro1">
+      <div id="imgChange">
+        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png">
+      </div>
+      <div id="verticalb" style="height: 60vh;width: 60vh;padding-right: 10vh;padding-top: 2vh;">
         <ul style="list-style-type: none; display: block;">
           <li class="glow-on-hover" onclick="change1()">&nbsp;&nbsp;Lesson discovery</li>
           <li class="glow-on-hover" onclick="change2()">&nbsp;&nbsp;Tutor profile</li>
@@ -559,33 +737,26 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
           <li class="glow-on-hover" onclick="change4()">&nbsp;&nbsp;Flexible scheduling</li>
           <li class="glow-on-hover" onclick="change5()">&nbsp;&nbsp;All around courses</li>
           <li class="glow-on-hover" onclick="change6()">&nbsp;&nbsp;Smooth matchmaking</li>
-
         </ul>
       </div>
+    </section>
 
-      <div id="imgChange">
-        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png" style="height: 65vh; width: 50vw;">
-      </div>
-    </div>
-    <div class="sub" style="width: 100vw; height: 80vh;">
-      <div id="subs" style="width:28vw; height: 50vh;padding-top: 5vh;">
-        <p style="font-size: 4rem; padding-left: 5vw; font-family:cursive;"><b>One subscription unlimited access</b></p>
-        <p style="font-size: 2rem; font-family: sans-serif; padding-left: 5vw;">Every one of our plans unlocks access to
-          our full tutor community and course catalog.
+    <div class="sub">
+      <div id="subs">
+        <p id="onesub"><b>One subscription unlimited access</b></p>
+        <p id="evyone">Every one of our plans unlocks access to our full tutor community and course catalog.
           Study with your favorite tutors every week or meet someone new for every lesson.
         </p>
       </div>
-      <div id="sub2"
-        style="width: 28vw;height: 55vh;border-radius: 2%;margin-left: 3vw; padding-left: 3vw;padding-top: 5vh; border: #111 solid 4px;">
+      <div id="sub2">
         <h1 style="font-family:cursive;"><b>Silver subscription</b></h1>
         <p style="font-size: 2.2rem;">Learn from local tutors from across your country</p>
         <p style="font-size: 1.5rem;">Experience CLYDE in your local language from your local tutors in your area,
           at a minimal subscription of Rs.100/per month.
         </p><br>
-        <button class="glow-on-hover" style="margin-left:3vw;margin-top: 2vh;">Join Now</button>
+        <button class="glow-on-hover" style="margin-left:3vw;margin-top: 2vh;"><a href="/login">Join Now</a></button>
       </div>
-      <div id="sub3"
-        style="width: 30vw; padding-left: 3vw; margin-left: 3vw;padding-top: 4vh;height: 55vh;border-radius: 2%;border: #111 solid 4px;">
+      <div id="sub3">
         <h1 style="font-family:cursive;"><b>Gold premium subscription</b></h1>
         <p style="font-size: 2.2rem;"> Learn from global tutors from across world</p>
         <p style="font-size: 1.5rem;"> Explore CLYDE globally and learn from international tutors
@@ -598,14 +769,15 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
 
     <!--demo class-->
     <div id="demoC" style="margin-top: 10vh;margin-bottom: 5vh;">
-      <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 5rem;text-align: center;">
+      <p id="book">
         Book your <b>Free Demo </b>class</p>
-      <div id="inp" style="text-align: center;">
+      <div id="inp">
         <input type="email" placeholder="Enter your email">
         <input type="text" placeholder="Enter your name">
         <input type="number" placeholder="Enter your phone number">
         <input type="text" placeholder="Enter your class">
-        <button type="button" class="glow-on-hover" style="margin-left: 2vw;">Book free session</button>
+        <button type="button" class="glow-on-hover" style="margin-left: 2vw;"><a href="/login"></a>Book free
+          session</a></button>
       </div>
 
     </div>
@@ -615,14 +787,14 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
         <h2>Subscribe to our newsletter</h2>
         <p>Don't miss any notification from our side.</p>
         <p><small>We don't share your email with any third party companies, promise!</small></p>
-        <form action="/" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+        <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
           class="validate" novalidate>
           <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email" required>
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="" tabindex="-1"
               value=""></div>
           <div class="clear"></div>
-          <button name="subscribe" id="mc-embedded-subscribe" class="button glow-on-hover" type="submit"><a href="/login">Subscribe
-            me</a></button>
+          <button name="subscribe" id="mc-embedded-subscribe" class="button glow-on-hover" type="submit">Subscribe
+            me</button>
         </form>
       </div>
     </div>
@@ -649,8 +821,8 @@ html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
             <div class="single-fta">
               <h3 class="fta-title">Important Link</h3>
               <ul class="fta-list">
-                <li><a href="#"><i class="fa fa-square"></i>Log In</a></li>
-                <li><a href="#"><i class="fa fa-square"></i>Apply form</a></li>
+                <li><a href="/login"><i class="fa fa-square"></i>Log In</a></li>
+                <li><a href="/form"><i class="fa fa-square"></i>Apply form</a></li>
                 <li><a href="#" style="color: #111;"><i class="fa fa-square"></i>spoken languages</a></li>
               </ul>
             </div>
