@@ -1,750 +1,809 @@
 <html>
 
 <head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="Style/main.css"> -->
 </head>
 <style>
-    #horizontal {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #111;
-        display: block;
-    }
 
-    #horizontal li {
-        float: left;
-    }
+* {
+    font-family: 'Nunito', sans-serif;
+    transition: all .2s ease-out;}
 
-    #horizontal li a {
-        display: block;
-        color: white;
+#horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#111;
+    display: block;
+}
+  
+#horizontal li {
+    float: left;
+}
+  
+#horizontal li a {
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #111;
+}
+  
+#horizontal li a:hover:not(.active) {
+    background-color: white;
+    color:black;
+}
+  
+.active {
+    background-color: #111;
+    text-align: center;
+    
+}
+#logoImg{
+    height: 46px;
+    width: 45px;
+}
+nav{
+    position:relative;
+    background-color: #111;
+}
+
+#sub3,#sub2{
+    
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left top, right top, from(#90f3b3), color-stop(#90e9f3), color-stop(#909ff3), color-stop(#cc90f3), color-stop(#f390d1), color-stop(#f39a90), color-stop(#f3e590), to(#b8f390)) repeat scroll 0% 0%/200% 200%;
+  background: rgba(0, 0, 0, 0) linear-gradient(90deg, #90f3b3, #90e9f3, #909ff3, #cc90f3, #f390d1, #f39a90, #f3e590, #b8f390) repeat scroll 0% 0%/200% 200%;
+      background-clip: border-box;
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+#sub3:hover{
+    -webkit-animation: GradientAnimation 2s ease infinite;
+  animation: GradientAnimation 2s ease infinite;
+}
+@keyframes GradientAnimation {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+#sub2:hover{
+    -webkit-animation: GradientAnimation 2s ease infinite;
+  animation: GradientAnimation 2s ease infinite;
+
+}
+.outer{
+    display: flex;
+    flex-wrap: wrap;
+}
+#verticalb ul li{
+    display:block;
+    color:white;
+    background-color: #111;
+    width: 15vw;
+    height: 8vh;
+    font-size: 2rem;
+    
+    margin-top: 2vh;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+#verticalb ul{
+    width: 28vw;
+    height: 50vh;
+}
+#verticalb ul li:hover{
+    
+    color:white;
+}
+#verticalb{
+    padding-left:20vw ;
+}
+
+#imgChange{
+    /* margin-top: 5%; */
+}
+#changeimg{
+    margin: 0 10%;
+   
+}
+footer.footer-section {
+    
+    padding: 60px 0 50px;
+    background-color: #111;
+}
+.bg-with-black {
+    position: relative;
+}
+.footer-top-section {
+    margin: 0 0 47px;
+}
+.single-fta > img {
+    margin: 0 0 7px;
+}
+.single-fta ul.fta-list {
+    list-style: outside none none;
+    padding-left: 0;
+}
+.single-fta ul.fta-list li, .single-fta ul.fta-list li a {
+    color: #e5e5e5;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 36px;
+    
+}
+.single-fta ul.fta-list {
+    list-style: outside none none;
+    padding-left: 0;
+}
+.fta-title {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0 0 20px;
+}
+
+.fba-links {
+    text-align: right;
+}
+
+.fba-links ul li a {
+    color: #e5e5e5;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+.fba-links ul {
+    list-style: outside none none;
+    padding: 0;
+}
+.fba-links ul li {
+    display: inline-block;
+    margin-left: 28px;
+}
+.fba-copyright p {
+    color: #aaaaaa;
+    line-height: 30px;
+}
+.single-fta{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.intro{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    
+}
+#para22{
+    padding-top: 15vh;
+    padding-left: 0;
+}
+#para33{
+    padding-left:10vh;
+    
+}
+#para33 img{
+    width:45vw;
+    height: 60vh;
+}
+#para3{
+    padding-left: 10vh;
+    padding-top: 5vh;
+    width:40vw;
+    height: 60vh;
+}
+.sub{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10vh;
+    
+}
+.glow-on-hover {
+    width: 15vw;
+    height: 7vh;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/*  do more with  */
+
+.title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+  }
+  
+  .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
+  
+  
+  .container1 {
+    display: grid;
+    place-items: center;  
+    text-align: center;
+    height: 20vh;
+  }
+  
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
+  /*  subscribe */
+
+  .container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    
+  }
+  
+  .card {
+    display: block;
+    position: relative;
+    width: 45vw;
+    height: 60vh;
+    max-width: 90%;
+    min-height: 12em;
+    background: #111;;
+    color: #ffffff;
+    padding: 1em 2em 2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  .card h1 { font-family: 'Dosis', sans-serif; font-weight: 400; font-size: 3rem; }
+  
+  .card form {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  
+  .card form input {
+    display: flex;
+    width: 80%;
+    margin-top: 4vh;
+  }
+  
+  .card form input.email {
+    border: 0px;
+    margin-bottom: 1em;
+    padding: .3em 1em;
+    text-align: center;
+    font-family: monospace;
+    font-size: 24px;
+    line-height: 30px;
+    outline: none !important;
+    border-radius: 5px;
+    background-color: #F1FFFA;
+  }
+  
+  .card form button {
+    border: 0px transparent;
+    padding: 1em 1.2em;
+    border-radius: 5px;
+    margin-top: 1vh;
+    
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+  }
+  
+  .card form button:hover { background-color: #F17C73; }
+#inp input{
+    border: #111 solid 2px;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    padding-right: 2vw;
+    padding-bottom: 2vh;
+    margin-left: 2.5vw;
+    margin-top:5vh ;
+    transition: transform .2s;
+}
+#inp input:hover{
+    transform: scale(1.2);
+
+}
+
+#mainimg{
+    height: auto; 
+    width: 700px; 
+    padding-top: 9vh;
+    padding-bottom: 7vh;
+}
+#emailbtn{
+    height: 7vh;
+    width: 300px;
+    border-radius: 2px;
+    border-radius: 5px;
+}
+#changeimg{
+    height: 65vh;
+    width: 50vw;
+}
+.intro1{
+    height: 75vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+#subs{
+    width:400px; 
+    height: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+#sub2{
+    width:400px; 
+    height: 55vh;
+    border-radius: 2%;
+    margin-left: 3vw;
+     padding-left: 3vw;
+     padding-top: 5vh; 
+     border: #111 solid 4px; 
+     margin-bottom: 20px;
+}
+#sub3{
+    width:400px;
+    padding-left: 3vw;
+     margin-left: 3vw;
+     padding-top: 4vh;
+     height: 55vh;
+     border-radius: 2%;
+     border: #111 solid 4px;
+}
+
+#onesub{
+    font-size: 4rem; 
+    padding-left: 5vw; 
+    font-family:cursive; 
+}
+#evyone{
+    font-size: 2rem; 
+    font-family: sans-serif; 
+    padding-left: 5vw;
+}
+
+#book{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 5rem;
+    text-align: center;
+}
+#inp{
+    text-align: center;
+}
+
+@media screen and (max-width : 1290px){
+    .intro1{
+        display: none;
+    }
+    #onesub{
+        font-size: 2.5rem; 
+    }
+    #evyone{
+        font-size: 1.5rem; 
+    }
+    #sub2{
+        width:350px; 
+        height: 55vh;
+    }
+    #sub3{
+        width:350px;
+        height: 55vh;
+    }
+    #book{
+        font-size: 4rem;
+    }
+    #inp{
+        font-size: 1.5rem;
+    }
+    #inp button{
+        font-size: 1.5rem;
+    }
+    .card{
+        width:400px;
+    }
+        .footer-section{
+        display: none;
+    }
+}
+@media screen and (max-width : 1200px){
+    #mainimg{
+        width:600px;
         text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        background-color: #111;
     }
-
-    #horizontal li a:hover:not(.active) {
-        background-color: white;
-        color: black;
+    .intro1{
+        display: none;
     }
-
-    .active {
-        background-color: #111;
-        text-align: center;
-
-    }
-
-    #logoImg {
-        height: 46px;
-        width: 45px;
-    }
-
-    nav {
-        position: relative;
-        background-color: #111;
-    }
-
-    #sub3,
-    #sub2 {
-
-        font-weight: bold;
-        font-family: sans-serif;
-        text-decoration: none;
-        background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left top, right top, from(#90f3b3), color-stop(#90e9f3), color-stop(#909ff3), color-stop(#cc90f3), color-stop(#f390d1), color-stop(#f39a90), color-stop(#f3e590), to(#b8f390)) repeat scroll 0% 0%/200% 200%;
-        background: rgba(0, 0, 0, 0) linear-gradient(90deg, #90f3b3, #90e9f3, #909ff3, #cc90f3, #f390d1, #f39a90, #f3e590, #b8f390) repeat scroll 0% 0%/200% 200%;
-        background-clip: border-box;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    #sub3:hover {
-        -webkit-animation: GradientAnimation 2s ease infinite;
-        animation: GradientAnimation 2s ease infinite;
-    }
-
-    @keyframes GradientAnimation {
-        0% {
-            background-position: 0% 50%
-        }
-
-        50% {
-            background-position: 100% 50%
-        }
-
-        100% {
-            background-position: 0% 50%
-        }
-    }
-
-    #sub2:hover {
-        -webkit-animation: GradientAnimation 2s ease infinite;
-        animation: GradientAnimation 2s ease infinite;
-
-    }
-
-    .outer {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    #verticalb ul li {
-        display: block;
-        color: white;
-        background-color: #111;
-        width: 15vw;
-        height: 8vh;
-        font-size: 2rem;
-
-        margin-top: 2vh;
-
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #verticalb ul {
-        width: 28vw;
-        height: 50vh;
-    }
-
-    #verticalb ul li:hover {
-
-        color: white;
-    }
-
-    #verticalb {
-
-
-        padding-right: 5vw;
-    }
-
-    #imgChange {
-        margin-top: 5%;
-    }
-
-    #changeimg {
-        margin: 0 10%;
-
-    }
-
-    footer.footer-section {
-
-        padding: 60px 0 50px;
-        background-color: #111;
-    }
-
-    .bg-with-black {
-        position: relative;
-    }
-
-    .footer-top-section {
-        margin: 0 0 47px;
-    }
-
-    .single-fta>img {
-        margin: 0 0 7px;
-    }
-
-    .single-fta ul.fta-list {
-        list-style: outside none none;
-        padding-left: 0;
-    }
-
-    .single-fta ul.fta-list li,
-    .single-fta ul.fta-list li a {
-        color: #e5e5e5;
-        display: block;
-        font-size: 14px;
-        letter-spacing: 0;
-        line-height: 36px;
-
-    }
-
-    .single-fta ul.fta-list {
-        list-style: outside none none;
-        padding-left: 0;
-    }
-
-    .fta-title {
-        color: #ffffff;
-        font-weight: 500;
-        letter-spacing: 0;
-        margin: 0 0 20px;
-    }
-
-    .fba-links {
-        text-align: right;
-    }
-
-    .fba-links ul li a {
-        color: #e5e5e5;
-        display: block;
-        font-size: 14px;
-        letter-spacing: 0;
-    }
-
-    .fba-links ul {
-        list-style: outside none none;
-        padding: 0;
-    }
-
-    .fba-links ul li {
-        display: inline-block;
-        margin-left: 28px;
-    }
-
-    .fba-copyright p {
-        color: #aaaaaa;
-        line-height: 30px;
-    }
-
-    .single-fta {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .intro {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-
-    }
-
-    #para22 {
-        padding-top: 15vh;
-        padding-left: 0;
-    }
-
-    #para33 {
-        padding-left: 10vh;
-
-    }
-
-    #para33 img {
-        width: 45vw;
-        height: 60vh;
-    }
-
-    #para3 {
-        padding-left: 10vh;
-        padding-top: 5vh;
-        width: 40vw;
-        height: 60vh;
-    }
-
-    .sub {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding-top: 10vh;
-
-    }
-
-    .glow-on-hover {
-        width: 15vw;
-        height: 7vh;
-        border: none;
-        outline: none;
-        color: #fff;
-        background: #111;
-        cursor: pointer;
-        position: relative;
-        z-index: 0;
-        border-radius: 10px;
-    }
-
-    .glow-on-hover:before {
-        content: '';
-        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        background-size: 400%;
-        z-index: -1;
-        filter: blur(5px);
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        animation: glowing 20s linear infinite;
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        border-radius: 10px;
-    }
-
-    .glow-on-hover:active {
-        color: #000
-    }
-
-    .glow-on-hover:active:after {
-        background: transparent;
-    }
-
-    .glow-on-hover:hover:before {
-        opacity: 1;
-    }
-
-    .glow-on-hover:after {
-        z-index: -1;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #111;
-        left: 0;
-        top: 0;
-        border-radius: 10px;
-    }
-
-    @keyframes glowing {
-        0% {
-            background-position: 0 0;
-        }
-
-        50% {
-            background-position: 400% 0;
-        }
-
-        100% {
-            background-position: 0 0;
-        }
-    }
-
-    /*  do more with  */
-
-    .title-word {
-        animation: color-animation 4s linear infinite;
-    }
-
-    .title-word-1 {
-        --color-1: #DF8453;
-        --color-2: #3D8DAE;
-        --color-3: #E4A9A8;
-    }
-
-    .title-word-2 {
-        --color-1: #DBAD4A;
-        --color-2: #ACCFCB;
-        --color-3: #17494D;
-    }
-
-    .title-word-3 {
-        --color-1: #ACCFCB;
-        --color-2: #E4A9A8;
-        --color-3: #ACCFCB;
-    }
-
-    .title-word-4 {
-        --color-1: #3D8DAE;
-        --color-2: #DF8453;
-        --color-3: #E4A9A8;
-    }
-
-    @keyframes color-animation {
-        0% {
-            color: var(--color-1)
-        }
-
-        32% {
-            color: var(--color-1)
-        }
-
-        33% {
-            color: var(--color-2)
-        }
-
-        65% {
-            color: var(--color-2)
-        }
-
-        66% {
-            color: var(--color-3)
-        }
-
-        99% {
-            color: var(--color-3)
-        }
-
-        100% {
-            color: var(--color-1)
-        }
-    }
-
-
-
-    .container1 {
-        display: grid;
-        place-items: center;
-        text-align: center;
-        height: 20vh;
-    }
-
-    .title {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        font-size: 5rem;
-        text-transform: uppercase;
-    }
-
-    /*  subscribe */
-
-    .container2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 100vh;
-
-    }
-
-    .card {
-        display: block;
-        position: relative;
-        width: 45vw;
-        height: 60vh;
-        max-width: 90%;
-        min-height: 12em;
-        background: #111;
-        ;
-        color: #ffffff;
-        padding: 1em 2em 2em;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width : 1100px){
+    #mainimg{
+        width:500px;
         text-align: center;
     }
+}
+@media screen and (max-width : 980px){
+    #mainimg{
+        text-align: center;
+        width:600px;
+    }
+}
+@media screen and (max-width : 950px){
+    #mainimg{
+        text-align: center;
+        width:500px;
 
-    .card h1 {
-        font-family: 'Dosis', sans-serif;
-        font-weight: 400;
+    }
+    #para22{
+        text-align: center;
+        margin-left: 50px;
+        text-align: center;
+    }
+    #emailbtn{
+        width:200px;
+    }
+    #expbtn{
+        width: 200px;
+    }
+    .title-word{
         font-size: 3rem;
     }
 
-    .card form {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-    }
-
-    .card form input {
-        display: flex;
-        width: 80%;
-        margin-top: 4vh;
-    }
-
-    .card form input.email {
-        border: 0px;
-        margin-bottom: 1em;
-        padding: .3em 1em;
+    .sub{
         text-align: center;
-        font-family: monospace;
-        font-size: 24px;
-        line-height: 30px;
-        outline: none !important;
-        border-radius: 5px;
-        background-color: #F1FFFA;
+        margin-left: 50px;
     }
-
-    .card form button {
-        border: 0px transparent;
-        padding: 1em 1.2em;
-        border-radius: 5px;
-        margin-top: 1vh;
-
-        color: white;
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 18px;
-        letter-spacing: 0;
-        font-weight: 700;
-        text-transform: uppercase;
-        transition: .4s all ease-in-out;
-        cursor: pointer;
+    #onesub{
+        font-size: 2.5rem; 
     }
-
-    .card form button:hover {
-        background-color: #F17C73;
+    #evyone{
+        font-size: 1.5rem; 
     }
-
-    #inp input {
-        border: #111 solid 2px;
-        padding-left: 2vw;
-        padding-top: 2vh;
-        padding-right: 2vw;
-        padding-bottom: 2vh;
-        margin-left: 2.5vw;
-        margin-top: 5vh;
-        transition: transform .2s;
+    #sub2{
+        width:400px; 
+        height: 55vh;
     }
-
-    #inp input:hover {
-        transform: scale(1.2);
-
+    #sub3{
+        width:400px;
+        height: 55vh;
     }
+}
 
-
-    /*  menu bar css
-* {box-sizing: border-box;max-width: 100%;font-family: 'Gruppo', cursive;}
-html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
-
-.menu-icon {width: 50px;height: 50px;position: fixed;top: 0;right: 0;margin: 10px 15px;transform:scale(0.8);padding: 0;cursor: pointer;z-index:20}
-.menu-bar {width: 50px;height: 5px;background: rgb(190,190,190);position: absolute;transition: all 0.3s;}
-.menu-bar1 {margin-top: 9px}
-.menu-bar2 {margin-top: 23px}
-.menu-bar3 {margin-top: 37px}
-.menu-icon.hover .menu-bar1 {-webkit-transform: rotate(45deg) scaleX(0.7);margin-top: 22px;}
-.menu-icon.hover .menu-bar2 {opacity: 0}
-.menu-icon.hover .menu-bar3 {-webkit-transform: rotate(-45deg) scaleX(0.7);margin-top: 22px;}
-
-.menu {width: 100%;height: 100%;display: -webkit-flex;display: flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;}
-.menu-con {-webkit-flex-grow: 1;flex-basis: 0;flex-grow: 1;display: -webkit-flex;display: flex;-webkit-justify-content:space-around;position:relative;top:-100%;transition:all 0.5s}
-.menu-con p:before {content: ""; display: block;position:absolute;top:0;left:0;z-index:1;width:100%;height: 100%;opacity: 1;background: rgba(0,0,0,0);-webkit-transition: all 0.5s;transition: all 0.5s;}
-.menu-con:hover p:before {background: rgba(0,0,0,0.2)}
-.menu-con p {height:20px;-webkit-align-self:center;color:white;font-size:25px;z-index:2;cursor:pointer}
-@media screen and (max-width: 600px) {.menu-con {min-width:50%}}
-@media screen and (max-width: 350px) {.menu-con {min-width:100%}}
-*/
 </style>
 
 <body>
-    <!--------NAV SECTION--------->
-    <nav>
-        <ul id="horizontal">
-            <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
-            <li><a href="/">Clyde</a></li>
-            <li><a href="/tutor">Tutor Profile</a></li>
-            <li><a href='/doubt'>Doubts</a></li>
-            <li><a href="/cources">Our Courses</a></li>
-            <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
-            <li style="float:right" class="active"><a href="/login">Get started</a></li>
-          </ul>
-        </nav>
-        <!--nav section ended-->
-        <section id="introS">
-          <div class="intro">
-            <div id="para2">
-              <img src="https://telegra.ph/file/00f6128e3e0942ab1f82e.png"
-                style="height: 70vh; width: 50vw; padding-top: 9vh;padding-bottom: 7vh;">
-      
-            </div>
-            <div id="para22">
-                <p style="font-size: 4rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
-                <p style="font-family: sans-serif; font-size: 2rem;">Interactive <b> one-on-one</b> doubts solving
-                    through video call or text messages</p>
-                <br><br>
-                <input type="email" placeholder="EMAIL" style="height: 7vh;width: 28vw;">
-                <button class="glow-on-hover" type="button">Explore More</button>
+  <!--------NAV SECTION--------->
+  <nav>
+    <ul id="horizontal">
+      <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
+      <li><a href="/">Clyde</a></li>
+      <li><a href="/tutor">Tutor Profile</a></li>
+      <li><a href='/doubt'>Doubts</a></li>
+      <li><a href="/cources">Our Courses</a></li>
+      <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
+      <li style="float:right" class="active"><a href="/login">Get started</a></li>
+    </ul>
+  </nav>
+  <!--nav section ended-->
+  <section id="introS">
+    <div class="intro">
+      <div id="para2">
+        <img src="https://telegra.ph/file/00f6128e3e0942ab1f82e.png"
+          style="height: 70vh; width: 50vw; padding-top: 9vh;padding-bottom: 7vh;">
 
-            </div>
-        </div>
+      </div>
+      <div id="para22">
+        <p style="font-size: 3rem;" class="h-primary text typing" id="welcome">Find answers to your doubts</p>
+        <p style="font-family: sans-serif; font-size: 1.5rem;">Interactive <b> one-on-one</b> doubts solving through
+          video call or text messages</p>
+        <br><br>
+        <input id="emailbtn" type="email" placeholder="EMAIL">
+        <button id="expbtn" class="glow-on-hover" type="button">Explore More</button>
 
-
-        <div class="container1">
-            <h2 class="title">
-                <span class="title-word title-word-1">Do</span>
-                <span class="title-word title-word-2">more</span>
-                <span class="title-word title-word-3">with</span>
-                <span class="title-word title-word-4">CLYDE</span>
-            </h2>
-        </div>
-        <div class="intro1" style="height: 75vh;width: auto;">
-            <div id="verticalb" style="height: 60vh;width: 60vh; float: right;padding-right: 10vh;padding-top: 2vh;">
-                <ul style="list-style-type: none; display: block;">
-                    <li class="glow-on-hover" onclick="change1()">&nbsp;&nbsp;Lesson discovery</li>
-                    <li class="glow-on-hover" onclick="change2()">&nbsp;&nbsp;Tutor profile</li>
-                    <li class="glow-on-hover" onclick="change3()">&nbsp;&nbsp;Lesson review</li>
-                    <li class="glow-on-hover" onclick="change4()">&nbsp;&nbsp;Flexible scheduling</li>
-                    <li class="glow-on-hover" onclick="change5()">&nbsp;&nbsp;All around courses</li>
-                    <li class="glow-on-hover" onclick="change6()">&nbsp;&nbsp;Smooth matchmaking</li>
-
-                </ul>
-            </div>
-
-            <div id="imgChange">
-                <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png" style="height: 65vh; width: 50vw;">
-            </div>
-        </div>
-        <div class="sub" style="width: 100vw; height: 80vh;">
-            <div id="subs" style="width:28vw; height: 50vh;padding-top: 5vh;">
-                <p style="font-size: 4rem; padding-left: 5vw; font-family:cursive;"><b>One subscription unlimited
-                        access</b></p>
-                <p style="font-size: 2rem; font-family: sans-serif; padding-left: 5vw;">Every one of our plans unlocks
-                    access to our full tutor community and course catalog.
-                    Study with your favorite tutors every week or meet someone new for every lesson.
-                </p>
-            </div>
-            <div id="sub2"
-                style="width: 28vw;height: 55vh;border-radius: 2%;margin-left: 3vw; padding-left: 3vw;padding-top: 5vh; border: #111 solid 4px;">
-                <h1 style="font-family:cursive;"><b>Silver subscription</b></h1>
-                <p style="font-size: 2.2rem;">Learn from local tutors from across your country</p>
-                <p style="font-size: 1.5rem;">Experience CLYDE in your local language from your local tutors in your
-                    area,
-                    at a minimal subscription of Rs.100/per month.
-                </p><br>
-                <button class="glow-on-hover" style="margin-left:3vw;margin-top: 2vh;">Join Now</button>
-            </div>
-            <div id="sub3"
-                style="width: 30vw; padding-left: 3vw; margin-left: 3vw;padding-top: 4vh;height: 55vh;border-radius: 2%;border: #111 solid 4px;">
-                <h1 style="font-family:cursive;"><b>Gold premium subscription</b></h1>
-                <p style="font-size: 2.2rem;"> Learn from global tutors from across world</p>
-                <p style="font-size: 1.5rem;"> Explore CLYDE globally and learn from international tutors
-                    , at an effective subscription of Rs.500/per months.
-                </p>
-                <button class="glow-on-hover" style="margin-left:3vw;"> Join now</button>
-            </div>
-        </div>
+      </div>
+    </div>
 
 
-        <!--demo class-->
-        <div id="demoC" style="margin-top: 10vh;margin-bottom: 5vh;">
-            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 5rem;text-align: center;">
-                Book your <b>Free Demo </b>class</p>
-            <div id="inp" style="text-align: center;">
-                <input type="email" placeholder="Enter your email">
-                <input type="text" placeholder="Enter your name">
-                <input type="number" placeholder="Enter your phone number">
-                <input type="text" placeholder="Enter your class">
-                <button type="button" class="glow-on-hover" style="margin-left: 2vw;">Book free session</button>
-            </div>
-
-        </div>
-        <div class="container2">
-            <div class="card">
-                <h1>Notify.me</h1>
-                <h2>Subscribe to our newsletter</h2>
-                <p>Don't miss any notification from our side.</p>
-                <p><small>We don't share your email with any third party companies, promise!</small></p>
-                <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                    class="validate" novalidate>
-                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email"
-                        required>
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name=""
-                            tabindex="-1" value=""></div>
-                    <div class="clear"></div>
-                    <button name="subscribe" id="mc-embedded-subscribe" class="button glow-on-hover"
-                        type="submit">Subscribe me</button>
-                </form>
-            </div>
-        </div>
-
-
-
+    <div class="container1">
+      <h2 class="title">
+        <span class="title-word title-word-1">Do</span>
+        <span class="title-word title-word-2">more</span>
+        <span class="title-word title-word-3">with</span>
+        <span class="title-word title-word-4">CLYDE</span>
+      </h2>
+    </div>
+    <br>
+    <section class="intro1">
+      <div id="imgChange">
+        <img id="changeimg" src="https://telegra.ph/file/cca1d2cbb0a9076657055.png">
+      </div>
+      <div id="verticalb" style="height: 60vh;width: 60vh;padding-right: 10vh;padding-top: 2vh;">
+        <ul style="list-style-type: none; display: block;">
+          <li class="glow-on-hover" onclick="change1()">&nbsp;&nbsp;Lesson discovery</li>
+          <li class="glow-on-hover" onclick="change2()">&nbsp;&nbsp;Tutor profile</li>
+          <li class="glow-on-hover" onclick="change3()">&nbsp;&nbsp;Lesson review</li>
+          <li class="glow-on-hover" onclick="change4()">&nbsp;&nbsp;Flexible scheduling</li>
+          <li class="glow-on-hover" onclick="change5()">&nbsp;&nbsp;All around courses</li>
+          <li class="glow-on-hover" onclick="change6()">&nbsp;&nbsp;Smooth matchmaking</li>
+        </ul>
+      </div>
     </section>
-    <!--footer section-->
-    <footer class="footer-section bg-with-black">
-        <div class="footer-top-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="single-fta">
-                            <img src="http://themeinnovation.com/demo2/html/build-up/img/home1/logo2.png" alt="">
-                            <ul class="fta-list">
-                                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Tutor
-                                        Profile</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Doubts</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Our courses</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="single-fta">
-                            <h3 class="fta-title">Important Link</h3>
-                            <ul class="fta-list">
-                                <li><a href="#"><i class="fa fa-square"></i>Log In</a></li>
-                                <li><a href="form.html"><i class="fa fa-square"></i>Apply form</a></li>
-                                <li><a href="#" style="color: #111;"><i class="fa fa-square"></i>spoken languages</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="single-fta">
-                            <h3 class="fta-title">Important Link</h3>
-                            <ul class="fta-list">
-                                <li><a href="#"><i class="fa fa-square"></i>Science</a></li>
-                                <li><a href="#"><i class="fa fa-square"></i>Engineering Subjects</a></li>
-                                <li><a href="#"><i class="fa fa-square"></i>Music</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="single-fta">
-                            <h3 class="fta-title">Contact Us</h3>
-                            <ul class="fta-list">
-                                <li>Address: Chitkara University,Rajpura,Punjab 140401</li>
-                                <li>Phone: (+91) 9501277568</li>
-                                <li>Email: Contact.be21@chitkara.edu.in</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                </div>
+    <div class="sub">
+      <div id="subs">
+        <p id="onesub"><b>One subscription unlimited access</b></p>
+        <p id="evyone">Every one of our plans unlocks access to our full tutor community and course catalog.
+          Study with your favorite tutors every week or meet someone new for every lesson.
+        </p>
+      </div>
+      <div id="sub2">
+        <h1 style="font-family:cursive;"><b>Silver subscription</b></h1>
+        <p style="font-size: 2.2rem;">Learn from local tutors from across your country</p>
+        <p style="font-size: 1.5rem;">Experience CLYDE in your local language from your local tutors in your area,
+          at a minimal subscription of Rs.100/per month.
+        </p><br>
+        <button class="glow-on-hover" style="margin-left:3vw;margin-top: 2vh;"><a href="/login">Join Now</a></button>
+      </div>
+      <div id="sub3">
+        <h1 style="font-family:cursive;"><b>Gold premium subscription</b></h1>
+        <p style="font-size: 2.2rem;"> Learn from global tutors from across world</p>
+        <p style="font-size: 1.5rem;"> Explore CLYDE globally and learn from international tutors
+          , at an effective subscription of Rs.500/per months.
+        </p>
+        <button class="glow-on-hover" style="margin-left:3vw;"><a href="/login">Join now</a></button>
+      </div>
+    </div>
+
+
+    <!--demo class-->
+    <div id="demoC" style="margin-top: 10vh;margin-bottom: 5vh;">
+      <p id="book">
+        Book your <b>Free Demo </b>class</p>
+      <div id="inp">
+        <input type="email" placeholder="Enter your email">
+        <input type="text" placeholder="Enter your name">
+        <input type="number" placeholder="Enter your phone number">
+        <input type="text" placeholder="Enter your class">
+        <button type="button" class="glow-on-hover" style="margin-left: 2vw;"><a href="/login"></a>Book free
+          session</a></button>
+      </div>
+
+    </div>
+    <div class="container2">
+      <div class="card">
+        <h1>Notify.me</h1>
+        <h2>Subscribe to our newsletter</h2>
+        <p>Don't miss any notification from our side.</p>
+        <p><small>We don't share your email with any third party companies, promise!</small></p>
+        <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+          class="validate" novalidate>
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email" required>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="" tabindex="-1"
+              value=""></div>
+          <div class="clear"></div>
+          <button name="subscribe" id="mc-embedded-subscribe" class="button glow-on-hover" type="submit">Subscribe
+            me</button>
+        </form>
+      </div>
+    </div>
+
+
+
+  </section>
+  <!--footer section-->
+  <footer class="footer-section bg-with-black">
+    <div class="footer-top-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <img src="http://themeinnovation.com/demo2/html/build-up/img/home1/logo2.png" alt="">
+              <ul class="fta-list">
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Tutor Profile</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Doubts</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Our courses</a></li>
+              </ul>
             </div>
-        </div>
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="footer-bottom">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="fba-copyright">
-                                        <p>Copyright © 2022 Designed by Team Clyde. All rights reserved.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="fba-links">
-                                        <ul>
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                            <li><a href="#">Term & Conditions</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
-                                            <li><a href="#">Sites Map</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Important Link</h3>
+              <ul class="fta-list">
+                <li><a href="/login"><i class="fa fa-square"></i>Log In</a></li>
+                <li><a href="/form"><i class="fa fa-square"></i>Apply form</a></li>
+                <li><a href="#" style="color: #111;"><i class="fa fa-square"></i>spoken languages</a></li>
+              </ul>
             </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Important Link</h3>
+              <ul class="fta-list">
+                <li><a href="#"><i class="fa fa-square"></i>Science</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Engineering Subjects</a></li>
+                <li><a href="#"><i class="fa fa-square"></i>Music</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="single-fta">
+              <h3 class="fta-title">Contact Us</h3>
+              <ul class="fta-list">
+                <li>Address: Chitkara University,Rajpura,Punjab 140401</li>
+                <li>Phone: (+91) 9501277568</li>
+                <li>Email: Contact.be21@chitkara.edu.in</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-bottom-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer-bottom">
+              <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="fba-copyright">
+                    <p>Copyright © 2022 Designed by Team Clyde. All rights reserved.</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="fba-links">
+                    <ul>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Term & Conditions</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Sites Map</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
-    <script>
-        const texts = ["Find answers of your doubts"]
-let count=0;
-let index=0;
-let currenttext="";
-let letter="";
+  <script>
+    const texts = ["Find answers of your doubts"]
+    let count = 0;
+    let index = 0;
+    let currenttext = "";
+    let letter = "";
 
-(function type(){
+    (function type() {
 
-    if (count === texts.length){
-        count=0;
+      if (count === texts.length) {
+        count = 0;
+      }
+      currenttext = texts[count]
+      letter = currenttext.slice(0, ++index);
+
+      document.querySelector('.typing').textContent = letter;
+      if (letter.length === currenttext.length) {
+
+        index = 0;
+      }
+      setTimeout(type, 125);
+    })();
+
+    window.onload = function () {
+      document.getElementById("transparent-container").style.color = "white";
+      document.getElementById("transparent-container").style.transform = "scale(1.1)";
+      document.getElementById("transparent-container").style.transition = "2s";
     }
-    currenttext=texts[count]
-    letter = currenttext.slice(0,++index);
-
-    document.querySelector('.typing').textContent = letter;
-    if(letter.length === currenttext.length){
-
-        index=0;
-    }
-    setTimeout(type,125);
-})();
-
-window.onload= function (){
-     document.getElementById("transparent-container").style.color="white";
-     document.getElementById("transparent-container").style.transform="scale(1.1)";
-     document.getElementById("transparent-container").style.transition="2s";
-}
-function change1() {
+    function change1() {
       var Image_Id = document.getElementById("changeimg");
       Image_Id.src = "https://telegra.ph/file/2eaf44c648b4d41108682.png";
 
@@ -777,60 +836,63 @@ function change1() {
     }
 
 // menu bar js
-/*  
-var open = false;
-
-function Drop(n) {
-  var i;
-  if (open == false) {
-    for (i = n; i < 5; i++) {
-      Drp(i)
+    /*
+    var open = false;
+    
+    function Drop(n) {
+      var i;
+      if (open == false) {
+        for (i = n; i < 5; i++) {
+          Drp(i)
+        }
+        open = true
+      } else if (open == true) {
+        for (i = n; i < 5; i++) {
+          Cls(i)
+        }
+        open = false
+      }
     }
-    open = true
-  } else if (open == true) {
-    for (i = n; i < 5; i++) {
-      Cls(i)
+    
+    function Drp(n) {
+      var elem = document.getElementsByClassName("menu-con")[n];
+      var pos = -1 * window.innerHeight - n * 100;
+      var id = setInterval(frame, 5);
+    
+      function frame() {
+        if (pos >= -10) {
+          clearInterval(id);
+          elem.style.top = 0 + 'px';
+        } else {
+          pos += 10;
+          elem.style.top = pos + 'px';
+        }
+      }
     }
-    open = false
-  }
-}
-
-function Drp(n) {
-  var elem = document.getElementsByClassName("menu-con")[n];
-  var pos = -1 * window.innerHeight - n * 100;
-  var id = setInterval(frame, 5);
-
-  function frame() {
-    if (pos >= -10) {
-      clearInterval(id);
-      elem.style.top = 0 + 'px';
-    } else {
-      pos += 10;
-      elem.style.top = pos + 'px';
+    
+    function Cls(n) {
+      var elems = document.getElementsByClassName("menu-con")[n];
+      var poss = 0;
+      var ids = setInterval(frames, 5);
+    
+      function frames() {
+        if (poss <= -1 * window.innerHeight) {
+          clearInterval(ids);
+          elems.style.top = -1 * window.innerHeight + 'px';
+        } else {
+          poss += -7 - n * 2;
+          elems.style.top = poss + 'px';
+        }
+      }
     }
-  }
-}
-
-function Cls(n) {
-  var elems = document.getElementsByClassName("menu-con")[n];
-  var poss = 0;
-  var ids = setInterval(frames, 5);
-
-  function frames() {
-    if (poss <= -1 * window.innerHeight) {
-      clearInterval(ids);
-      elems.style.top = -1 * window.innerHeight + 'px';
-    } else {
-      poss += -7 - n * 2;
-      elems.style.top = poss + 'px';
-    }
-  }
-}
-*/
-    </script>
+    */
 
 
-    <!--
+
+  </script>
+
+
+  <!--
     responsive menu bar
     <div class="menu-icon" onclick="this.classList.toggle('hover');Drop(0)">
   <div class="menu-bar menu-bar1"></div>
