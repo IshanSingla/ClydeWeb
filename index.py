@@ -42,7 +42,9 @@ def cources(n):
         return render_template("404.html")
     return render_template("courcestemp.html",data=proxys)
 
-
+@app.route('/doubt')
+def doubt():
+    return render_template("doubt.html")
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True, threaded=True)

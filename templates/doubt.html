@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubt</title>
+</head>
+<style>
+    * {
+        font-family: 'Nunito', sans-serif;
+        transition: all .2s ease-out;
+    }
+
+    html::-webkit-scrollbar {
+        width: 0.6rem;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 5rem;
+    }
+
+    html::-webkit-scrollbar-track {
+        background: #333;
+    }
+
+    :root {
+        --theme: black;
+    }
+
+
+    #horizontal {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #111;
+        display: block;
+    }
+
+    #horizontal li {
+        float: left;
+    }
+
+    #horizontal li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        background-color: #111;
+    }
+
+    #horizontal li a:hover:not(.active) {
+        background-color: white;
+        color: black;
+    }
+
+    .active {
+        background-color: #111;
+        text-align: center;
+
+    }
+
+    #logoImg {
+        height: 46px;
+        width: 45px;
+    }
+
+    nav {
+        position: relative;
+        background-color: #111;
+    }
+
+    #main {
+        display: flex;
+    }
+
+
+    #doubt {
+        border-radius: 5px;
+        height: 70px;
+        width: 350px;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    #head2 {
+        color: #333;
+    }
+
+    #filebtn {
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+    #head,
+    #head2,
+    #filebtn,
+    #doubt {
+        margin-left: 100px;
+    }
+
+    #img {
+        height: 300px;
+    }
+
+    #videos {
+        /* border: 1px solid black; */
+        margin-left: 9rem;
+        width: 60%;
+    }
+
+    #content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #content div {
+        height: 200px;
+        width: 260px;
+        /* border: 1px solid black; */
+        margin: 1rem;
+        border-radius: 4px;
+        background-color: whitesmoke;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* FOOTER */
+    #footer {
+        border-bottom: 0.1rem solid rgba(0, 0, 0, .1);
+        display: flex;
+        gap: 1rem;
+        text-align: center;
+        justify-content: space-around;
+        margin-top: 50px;
+        background-color: #0e0e0e;
+        border-radius: 10px;
+    }
+
+    .fdiv {
+        height: 350px;
+        width: 270px;
+    }
+
+    .fhead {
+        font-size: 1.4rem;
+        font-weight: 550;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .fabout {
+        font-family: serif;
+        font-size: 1.1rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a {
+        display: block;
+        font-size: 1.05rem;
+        padding: 0.7rem 0;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .fabout a:hover {
+        color: var(--theme);
+    }
+
+    #box input:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #message:hover {
+        border: 0.1rem solid #ffffff;
+    }
+
+    #box input {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #333;
+        padding: 0.5rem;
+        text-transform: none;
+        margin: 3px;
+    }
+
+    #message {
+        border: 0.1rem solid rgba(0, 0, 0, .1);
+        width: 45%;
+        height: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        margin: 5px 7px 7px 3px;
+    }
+
+    #btn {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        background: #333;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    #btn:hover {
+        background: linear-gradient(90deg, #ff5959, #6363ff);
+    }
+
+    #img a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 26px;
+        height: 4px;
+        background-color: rgb(255, 255, 255);
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    @media screen and (max-width : 960px) {
+        #nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, .2);
+            border-bottom: 0.1rem solid rgba(0, 0, 0, .2);
+            text-align: center;
+            display: none;
+        }
+
+        #nav li {
+            display: block;
+            padding: 3px 0px;
+            font-size: 1.2rem;
+        }
+
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* #list{
+        display: none;
+    } */
+        #clyde {
+            display: block;
+        }
+
+        #footer {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+
+    <!--------NAV SECTION--------->
+    <nav>
+        <ul id="horizontal">
+            <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
+            <li><a href="/">Clyde</a></li>
+            <li><a href="/tutor">Tutor Profile</a></li>
+            <li><a href='/doubt'>Doubts</a></li>
+            <li><a href="/cources">Our Courses</a></li>
+            <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
+            <li style="float:right" class="active"><a href="/login">Get started</a></li>
+        </ul>
+    </nav>
+    <!--nav section ended-->
+    <br>
+    <br>
+    <br>
+
+
+    <div id="main">
+
+        <div id="type">
+            <h1 id="head">DOUBT ?</h1>
+            <h3 id="head2">Get your all doubt resolved in one GO.....</h3>
+            <textarea placeholder="Type Your Doubt Here" id="doubt"></textarea>
+            <br>
+            <input id="fileInput" type="file" style="display:none;" />
+            <input id="filebtn" type="button" value="Search With Image"
+                onclick="document.getElementById('fileInput').click();" />
+            <img id="img" src="https://telegra.ph/file/e4e2eea6c8aeaf8c68386.jpg">
+        </div>
+
+        <div id="videos">
+            <center>
+                <h2>Frequently Asked Doubts</h2>
+            </center>
+
+            <div id="content">
+
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <footer id="footer">
+
+        <div class="fdiv">
+            <p class="fhead">About US</p>
+            <p class="fabout">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Illo, Maxime!</p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Follow Us</p>
+            <p class="fabout">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Linkedin</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Quick Links</p>
+            <p class="fabout">
+                <a href="#">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">Extras</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Achivements</a>
+            </p>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Contact Us</p>
+            <p class="fabout">+521 258484</p>
+            <p class="fabout">@CLIDE</p>
+            <p class="fabout">Chandigarh, India</p>
+            <div id="img">
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"></a>
+                <a href="#"><img src="https://i.pinimg.com/564x/63/a2/31/63a231592efca78f2bcbc02267eb37be.jpg"></a>
+                <a href="#"><img
+                        src="https://e7.pngegg.com/pngimages/708/311/png-clipart-twitter-twitter-thumbnail.png"></a>
+                <a href="#"><img
+                        src="https://image.similarpng.com/very-thumbnail/2020/07/Linkedin-logo-on-transparent--background-PNG.png"></a>
+            </div>
+        </div>
+
+        <div class="fdiv">
+            <p class="fhead">Reach Us</p>
+            <div>
+                <div id="box">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <textarea placeholder="Message" id="message"></textarea>
+                <br>
+                <a href="#" id="btn">Send</a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
