@@ -16,7 +16,7 @@ loop = asyncio.get_event_loop()
 
 @app.route('/')
 def _():
-    return render_template("index.html")
+    return render_template("1.html")
 
 
 @app.route('/login')
