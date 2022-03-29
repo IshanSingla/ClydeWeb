@@ -23,11 +23,13 @@ def home():
     try:
         info = auth.sign_in_with_email_and_password(email, password)
         details = auth.get_account_info(info["idToken"])
-        if details["users"][0]["emailVerified"] == True:
+        if details["users"][0]['emailVerified'] == True:
             proxys = (db.reference(f"/Details/{info['localId']}/")).get()
-            return render_template('index.html', s=proxys["Name"][0])
+            if proxys!=None:
+                return render_template('index.html', s=proxys["Name"][0])
             return render_template('index.html', s=proxys["Name"])
     except Exception as e:
+        print(e)
         pass
     return render_template('index.html')
     return render_template('login.html')
