@@ -1,4 +1,5 @@
 gunicorn
+pyjwt
 pyrebase
 firebase_admin
 flask
