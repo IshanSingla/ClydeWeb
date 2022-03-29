@@ -1,9 +1,4 @@
-from flask import Flask, flash, jsonify, request, render_template, send_file, redirect
-import firebase_admin
-import asyncio
-import os
-import requests
-import pyrebase
+import firebase_admin,pyrebase
 from datetime import datetime, date
 from flask import *
 app = Flask(__name__)
@@ -15,12 +10,11 @@ config = {
     "storageBucket": "inducedmesssystem.appspot.com",
     "messagingSenderId": "1059758496051"
 }
-
+auth = pyrebase.initialize_app(config).auth()
 from firebase_admin import db, credentials
 cred = credentials.Certificate("1.json")
 default_app = firebase_admin.initialize_app(
     cred, {'databaseURL': "https://inducedmesssystem-default-rtdb.asia-southeast1.firebasedatabase.app/"})
-auth = pyrebase.initialize_app(config).auth()
 
 @app.route('/')
 def home():
@@ -94,7 +88,7 @@ def basic():
 
 @app.route('/logout')
 def logout():
-    res = make_response(redirect("/login"))
+    res = make_response(redirect("/"))
     res.set_cookie('email', "", max_age=0)
     res.set_cookie('password', "", max_age=0)
     return res
