@@ -204,10 +204,6 @@
     padding-left: 20vw;
   }
 
-  #imgChange {
-    /* margin-top: 5%; */
-  }
-
   #changeimg {
     margin: 0 10%;
 
@@ -760,21 +756,21 @@
     }
   }
 
-  .profilw-circle{
+  .profilw-circle {
     width: 40px;
     height: 40px;
     text-align: center;
     font-size: 3rem;
     border-radius: 50%;
-    background: linear-gradient(-45deg,#ddd6f3 ,#faaca8);
+    background: linear-gradient(-45deg, #ddd6f3, #faaca8);
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
     transform: translateY(5px);
   }
-  
-  .profilw-circle p{
+
+  .profilw-circle p {
     margin: 0;
     padding: 0;
   }
@@ -791,7 +787,11 @@
       <li><a href="/cources">Our Courses</a></li>
       <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
       {% if s %}
-      <li style="float:right" class="active" onclick="opennav()"><div class="profilw-circle" ><p>{{s}}</p></div></li>
+      <li style="float:right" class="active" onclick="opennav()">
+        <div class="profilw-circle">
+          <p>{{s}}</p>
+        </div>
+      </li>
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/profile">My Profile</a>
