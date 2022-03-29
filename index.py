@@ -29,7 +29,6 @@ def home():
                 return render_template('index.html', s=proxys["Name"][0])
             return render_template('index.html', s=proxys["Name"])
     except Exception as e:
-        print(e)
         pass
     return render_template('index.html')
     return render_template('login.html')
