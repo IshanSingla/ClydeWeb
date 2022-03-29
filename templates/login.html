@@ -5,13 +5,13 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
-    
+
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		
+
 
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
@@ -61,7 +61,7 @@
 
 	a {
 		color: #fff;
-    font-size: 12px;
+		font-size: 12px;
 		text-decoration: none;
 		margin: 15px 0;
 	}
@@ -110,7 +110,7 @@
 		padding: 12px 15px;
 		margin: 8px 0;
 		width: 100%;
-	}  
+	}
 
 	.container {
 		background-color: #fff;
@@ -269,12 +269,12 @@
 
 	nav {
 		position: fixed;
-    background: #000000;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 12;
-    margin: -196px -964px;
-    height: 11%;
+		background: #000000;
+		width: 100%;
+		padding: 10px 0;
+		z-index: 12;
+		margin: -196px -964px;
+		height: 11%;
 	}
 
 	nav .menu {
@@ -394,66 +394,68 @@
 		color: black;
 	}
 
-.student{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 50px;
-	color: #000;
-	margin-left: 238px;
-	text-transform: uppercase;
-}
+	.student {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 50px;
+		color: #000;
+		margin-left: 238px;
+		text-transform: uppercase;
+	}
 </style>
 
 <body>
 
-<div>
-	<span class="student">User LogIn/SignUp</span>
-	<div class="container" id="container">
-		<div class="form-container sign-up-container">
-			<form id="signup" action="/"> 
-				<h1>Create Account</h1>
-				
-				<span>or use your email for registration</span>
-				<input id="name" type="text" placeholder="Name" required />
-				<input id="email" type="email" placeholder="Email" required />
-				<input id="password" type="password" placeholder="Password" required />
-				<button style="color: #FFFFFF;">Sign Up</button>
-			</form>
-		</div>
-		<div class="form-container sign-in-container">
-			<form id="login" action="/">
-				<h1>Log in</h1>
-				<!-- <div class="social-container">
+	<div>
+		<span class="student">Student's</span>
+		<div class="container" id="container">
+			<div class="form-container sign-up-container">
+				<form id="signup" action="/login" method="post">
+					<h1>Create Account</h1>
+
+					<span>or use your email for registration</span>
+					<input id="name" type="text" placeholder="Name" name="name" required />
+					<input id="email" type="email" placeholder="Email" name="email" required />
+					<input id="password" type="password" placeholder="Password" name="password" required />
+					<button style="color: #FFFFFF;" type="submit">Sign Up</button>
+				</form>
+			</div>
+			<div class="form-container sign-in-container">
+				<form id="login" action="/login" method="post">
+					<h1>Log in</h1>
+					<!-- <div class="social-container">
 					<a class="social"><i onclick="loginWithGoogle()"class="fab fa-google-plus-g"></i></a>
 				</div> -->
-				<span>or use your account</span>
-				<input id="email1" type="email" placeholder="Email" required>
-				<input id="password1" type="password" placeholder="Password" required>
-				<!-- <button onclick="reset()">Forgot your password?</button> -->
-				<button><a href="/"
-						onClick="alert('Successful Logged In')">Sign In</a></button>
-			</form>
-		</div>
-		<div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-left">
-					<h1>Welcome Back!</h1>
-					<p>To keep connected with us please login with your personal info</p>
-					<button class="ghost" id="signIn" style="background-color: #000000;">Sign In</button>
-				</div>
-				<div class="overlay-panel overlay-right">
-					<h1>Welcome!</h1>
-					<p>Enter your personal details and start journey with us</p>
-					<button class="ghost" id="signUp">Sign Up</button>
+					<span>or use your account</span>
+					<input id="email1" type="email" placeholder="Email" name="email1" required>
+					<input id="password1" type="password" placeholder="Password" name="password1" required>
+					<!--<button onclick="reset()">Forgot your password?</button>-->
+					<button type="submit">Sign In</button>
+				</form>
+			</div>
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-panel overlay-left">
+						<h1>Welcome Back!</h1>
+						<p>To keep connected with us please login with your personal info</p>
+						<button class="ghost" id="signIn" style="background-color: #000000;">Sign In</button>
+					</div>
+					<div class="overlay-panel overlay-right">
+						<h1>Welcome!</h1>
+						<p>Enter your personal details and start journey with us</p>
+						<button class="ghost" id="signUp">Sign Up</button>
 
-					<a href="/"><button class="ghost">Home</a></button>
+						<a href="/"><button class="ghost">Home</a></button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-	<script>const signUpButton = document.getElementById('signUp');
+	<script>
+
+		const signUpButton = document.getElementById('signUp');
 		const signInButton = document.getElementById('signIn');
 		const container = document.getElementById('container');
+		const ishan = "{{s}}"
 
 		signUpButton.addEventListener('click', () => {
 			container.classList.add("right-panel-active");
@@ -461,79 +463,19 @@
 
 		signInButton.addEventListener('click', () => {
 			container.classList.remove("right-panel-active");
-		});</script>
-	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-
-	<script>
-		firebase.initializeApp( {
-			apiKey: "AIzaSyAByWb1CzSlgk0OzSS2llwPnkVE7NWQbXw",
-			authDomain: "clyde-web.firebaseapp.com",
-			databaseURL: "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app",
-			projectId: "clyde-web",
-			storageBucket: "clyde-web.appspot.com",
-			messagingSenderId: "691435749279",
-			appId: "1:691435749279:web:f7b33ad28a2fd62be6c7aa",
-			measurementId: "G-722LG7913E"
 		});
-
-
-
-	</script>
-	<script>
-        document.getElementById('signup').addEventListener('submit', signup);
-		document.getElementById('login').addEventListener('submit', login);
-		// Submit form
-		async function signup(e) {
-			e.preventDefault();
-			const email = document.querySelector("#email")
-			const password = document.querySelector("#password")
-			try {
-				const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
-				//await result.user.sendEmailVerification()
-				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				window.location.href ="/"
-			
-			} catch (err) {
-				
-				M.toast({ html: err.message, classes: "red" })
-
-			}
-
-		}
-		async function login(e) {
-			e.preventDefault();
-			const email = document.querySelector("#email1")
-			const password = document.querySelector("#password1")
-			try {
-				const result = await firebase.auth().signInWithEmailAndPassword(email1.value, password1.value)
-				M.toast({ html: `Welcome ${result.user.email}`, classes: "green" })
-				window.location.href ="/"
-				
-			} catch (err) {
-				
-				M.toast({ html: err.message, classes: "red" })
-
-			}
-
-		}
-		async function loginWithGoogle(){
-		try{
-            var provider= new firebase.auth.GoogleAuthProvider();
-			await firebase.auth().signInWithPopup(provider)
-
-		}catch(err){
-			pass
-		}
-
-		}
-		async function reset(){
-			const email = document.querySelector("#email")
-			await firebase.auth().sendPasswordResetEmail(email);
-			M.toast({ html: `Reset Email Has Been Sent ${result.user.email}`, classes: "green" })
-		}
-
-
+		window.addEventListener('load',
+			function () {
+				if (ishan==""){
+					
+				}else{
+					M.toast({ html: ishan })
+				}
+				if (ishan=="Login successful"){
+					window.location.href = "/"
+				}
+				// window.location.href = "/"
+			});
 	</script>
 
 
