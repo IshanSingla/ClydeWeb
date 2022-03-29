@@ -1,3 +1,4 @@
+firebase_admin
 pyrebase
 flask
 firebase_admin
