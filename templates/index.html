@@ -693,7 +693,12 @@
       <li><a href='/doubt'>Doubts</a></li>
       <li><a href="/cources">Our Courses</a></li>
       <!-- <li style="float:right" class="active"><a href=#signin>Sign Up</a></li> -->
+      {% if s %}
+      <li style="float:right" class="active"><a>{{s}}</a></li>
+      {% endif %}
+      {% if not s %}
       <li style="float:right" class="active"><a href="/login">Get started</a></li>
+      {% endif %}
     </ul>
   </nav>
   <!--nav section ended-->
