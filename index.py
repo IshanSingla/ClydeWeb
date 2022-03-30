@@ -1,3 +1,4 @@
+from telnetlib import PRAGMA_HEARTBEAT
 import firebase_admin,pyrebase
 from datetime import datetime, date
 from flask import *
@@ -50,12 +51,10 @@ def basic():
             email = request.form['email']
             password = request.form['password']
             try:
-                newuser = auth.create_user_with_email_and_password(
-                    email, password)
+                newuser = auth.create_user_with_email_and_password(email, password)
                 auth.send_email_verification(newuser["idToken"])
-                proxys = (db.reference(
-                    f"/Details/{info['localId']}/Name")).set(name)
                 details = auth.get_account_info(newuser["idToken"])
+                proxys = (db.reference(f"/Details/{details['users'][0]['localId']}/Name")).set(name)
                 if details["users"][0]["emailVerified"] == False:
                     return render_template('login.html', s='Verify Your Email')
                 resp = make_response(render_template(
@@ -63,7 +62,8 @@ def basic():
                 resp.set_cookie('email', email, max_age=60*60*24)
                 resp.set_cookie('password', password, max_age=60*60*24)
                 return resp
-            except:
+            except Exception as e:
+                print(e)
                 return render_template('login.html', s='This Email Is Already Used')
         except:
             try:
