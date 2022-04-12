@@ -1,0 +1,134 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+    color: rgb(163, 159, 159);
+
+}
+
+/* ----------------Header section-----------  */
+nav {
+    background-color: black;
+    height: auto;
+    /* box-shadow: 0px 0px 10px dimgrey; */
+
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+#logo:hover {}
+
+/* ----------------Header section End-----------  */
+
+
+/* ----------------Main section Start-----------  */
+main {
+    width: 50%;
+    height: auto;
+    margin: 2% 20%;
+    background-color: white;
+    /* background-image:linear-gradient(to top right, orange, white, white, white, white, orange); */
+    border-radius: 5%;
+    padding: 100px;
+    color: black;
+}
+
+main:hover {
+    color: black;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    width: 800px;
+    height: 150px;
+    /* border: 2px dashed black; */
+    border-radius: 10px;
+    box-shadow: 0px 4px 5px dimgray;
+    margin: 16px;
+}
+
+main section:hover {
+    /* background-color: rgba(215, 149, 35, 0.917); */
+    background-color: orange;
+    transform: scale(1.03);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+section div {
+    padding: 20px;
+}
+
+section div h4 {
+    color: black;
+}
+
+.info-text {
+    text-align: left;
+}
+
+.info-text:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+section aside{
+    width: 300px;
+    height: auto;
+    color: white;
+    background-color: orange;
+    border-radius: 0px 10px 10px 0px;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
+
+/* profile pic animation */
+.cards {
+    perspective: 1500px;
+}
+
+.card {
+    width: auto;
+    height: 150px;
+    /* margin: 2% 10%; */
+    /* background-image:linear-gradient(to top right, orange, white, white, white, white, white, white, white, white, orange); */
+    border-radius: 5%;
+    /* padding: 10px; */
+    color: black;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: .5s;
+}
+
+.card:hover {
+    transform: translateZ(0px) rotateX(10deg) rotateY(20deg);
+}
+
+.card-title {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(5%);
+    transition: transform .5s;
+}
+
+.card:hover .card-title {
+    transform: translateZ(10px);
+}

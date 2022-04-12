@@ -1,0 +1,280 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+    color: rgb(163, 159, 159);
+
+}
+/* ----------------Header section-----------  */
+nav{
+    background-color: black;
+    height: auto;
+    /* box-shadow: 0px 0px 10px dimgrey; */
+
+}
+nav ul{
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+#logo:hover{
+    
+}
+/* ----------------Header section End-----------  */
+
+
+
+/* ----------------Main section Start-----------  */
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#intro-in-main {
+    padding: 4%;
+    width: 60%;
+    
+}
+
+.verticle-line{
+    height: 500px;
+    width: 1px;
+    background-color: dimgray;
+    margin: 2% 0% 0% 0%;
+}
+#offer-section{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    border-radius: 10%;
+    background-image: url('https://media.istockphoto.com/photos/white-felt-background-picture-id1062951208?b=1&k=20&m=1062951208&s=170667a&w=0&h=UqTpWjAYhXQPY4KIHWVzqNC6n_0DD73HAf-DO-eVJAk=');
+    background-size: cover;
+    box-shadow: 0px 2px 4px dimgray;
+    text-align: center;
+    color: dimgray;
+    float: right;
+    padding: 50px;
+    padding-top: 10%;
+}
+#offer-section button{
+    padding: 16px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 20%;
+    border: 1px solid transparent;
+    background-color: rgb(0, 0, 0);
+    color: #FFFFFFFF;
+}
+#offer-section button:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.3s;
+    background-color: #FFFFFFFF;
+    color: black;
+}
+#offer-section:hover{
+    /* transform: scale(1.01); */
+    transition: 0.5s;
+    box-shadow: 0px 4px 8px white;
+}
+.letter{
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.letter::first-letter{
+    font-size: 64px;
+}
+.P-letter::first-letter{
+    font-size: 24px;
+}
+
+.container{
+    width: 500px;
+    height: 300px;
+    padding: 16px;
+    background-image: url('https://media.istockphoto.com/photos/gold-colour-velvet-fabric-background-texture-picture-id855005240?b=1&k=20&m=855005240&s=170667a&w=0&h=3SLXQMg1n8U8UwZ4Rq0Gv3x-8gOgrvPL4sgcPbwUq6E=');
+    background-size: cover;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    color: white;
+}
+.container:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+#choicse-section{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 500px;
+    width: 2000px; 
+    background-color: white;
+}
+
+#choicse-section div{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    margin: 10% 5% 20% 20%;
+}
+#choicse-section aside{
+    width: 500px;
+    height: 300px;
+    /* background-image: url('https://v.fastcdn.co/u/83964589/50941228-0-Tablet.jpg'); */
+    /* display: flex;
+    justify-content: center; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 1px 10px 5px dimgray;
+    border-radius: 10%;
+    margin: 2% 0%;
+    padding: 10px;
+}
+#choicse-section aside img{
+    border-radius: 2%;
+    box-shadow: 1px 10px 5px dimgray;
+}
+
+
+#part3{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl_8dN7XVM_tfpvsm55LauuBdfXF0h6ub5Vvw4WoxuD3aN4wZZfWZXkfq6iF6f83zCAw&usqp=CAU');
+    background-size: cover;
+    margin: 5% 0;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    padding: 5%;
+    color: aliceblue;
+
+}
+#part3 aside{
+    width: 290px;
+    margin: 0 15%;
+}
+.mobile-model{
+    border: 2px solid black;
+    height: 400px;
+    width: 290px;
+    margin-top:-20%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 8px black;
+
+}
+.app-nav{
+    height: 10%;
+    border-bottom: 2px solid black;
+    margin-bottom: 30%;
+    
+}
+.app-bottom-nav{
+    margin-top: 50%;
+    border-top: 2px solid black;
+    justify-content: center;
+}
+.app-controller{
+
+}
+#part3 div h1{
+    color:black;
+    text-transform: uppercase;
+    font-family: '';
+}
+
+#teacher-info-section{
+    color: white;
+    padding-left:20%;
+}
+#div-1{
+    display: flex;
+    margin-bottom: 10%;
+}
+#div-1 img{
+    margin-left: 10%;
+    border-radius: 10%;
+}
+#div-2{
+    display: flex;
+    margin-bottom: 10%;
+}
+#div-2 img{
+    margin-right: 10%;
+    width: 30%;
+    border-radius: 10%;
+}
+#div-3{
+    display: flex;
+    margin-bottom: 10%;
+}
+#div-3 img{
+    margin-left: 10%;
+    width: 30%;
+    border-radius: 10%;
+}
+button{
+    padding: 16px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 10%;
+    border: 1px solid transparent;
+    background-color: #FFFFFFFF;
+    color: black;
+}
+button:hover{
+    color: orange;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+#last-btn:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+/* ----------------Main section End-----------  */
+
+/* ----------------FOOTER SECTION-----------  */
+#footer{
+    background-color: aliceblue;
+    width: 100%;
+    height:90px;
+    padding-left: 45%;
+    justify-content: center;
+
+}
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-google {
+    background: #98583b;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-instagram {
+    background: #eeac55;
+    color: white;
+  }

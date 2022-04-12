@@ -1,0 +1,145 @@
+* {
+font-family: 'Nunito', sans-serif;
+transition: all .2s ease-out;}
+
+html::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+#pastlec::-webkit-scrollbar{
+    width: 0;;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #333;
+}
+:root{
+    --theme:black;
+}
+
+
+#horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#111;
+    display: block;
+}
+    
+#horizontal li {
+    float: left;
+}
+    
+#horizontal li a {
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #111;
+}
+    
+#horizontal li a:hover:not(.active) {
+    background-color: white;
+    color:black;
+}
+    
+.active {
+    background-color: #111;
+    text-align: center;
+    
+}
+#logoImg{
+    height: 46px;
+    width: 45px;
+}
+nav{
+    position:relative;
+    background-color: #111;
+}
+
+#main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#left{
+    /* border: 1px solid black; */
+    height: auto;
+    width: 560px;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#rigth{
+    height: auto;
+    width: 750px;
+    margin: 2rem; 
+    padding: 1rem;
+}
+#upperD{
+    display: flex;
+}
+
+#teacherIMG{
+    margin-right: 20px;
+    border-radius: 8px;
+}
+#star{
+    margin-top: -5px;
+    margin-left: -2px;
+}
+#portfolio{
+    display:flex; 
+}
+#exper{
+    margin-left: 40px;
+}
+#pastlec{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+#pastlec a{
+    width: 215px;
+    height: 200px;
+    background-color: whitesmoke;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+#appointment{
+    display: flex;
+}
+
+#appoint{
+    padding: 7px 1rem;
+    border: none;
+    border-radius: 5px;
+}
+#appoint:hover{
+    background:linear-gradient(90deg, #ff5959, #6363ff);
+    color: white;
+}
+#commit{
+    width: 400px;
+}
+
+#stdreview{
+    margin-left: 20px;
+    width: 300px;
+}
+.review{
+    height: 50px;
+    width: 100%;
+    background-color: whitesmoke;
+    margin: 10px;
+}
+

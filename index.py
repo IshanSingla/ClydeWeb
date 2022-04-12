@@ -77,8 +77,8 @@ def basic():
                         return render_template('login.html', s='Verify Your Email')
                     resp = make_response(render_template(
                         'login.html', s='Login successful'))
-                    resp.set_cookie('email', email, max_age=60*60*24)
-                    resp.set_cookie('password', password, max_age=60*60*24)
+                    resp.set_cookie('email', email, max_age=60*60)
+                    resp.set_cookie('password', password, max_age=60*60)
                     return resp
                 except:
                     return render_template('login.html', s='Invalid Password')
@@ -128,6 +128,10 @@ def cources(n):
 @app.route('/doubt')
 def doubt():
     return render_template("doubt.html")
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template("dashboard.html")  
 
 
 if __name__ == "__main__":
