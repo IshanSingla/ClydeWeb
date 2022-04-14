@@ -157,8 +157,58 @@ def dashboard():
     return render_template("dashboard.html")
 
 @app.route('/appointment')
-def dashboard():
-    return render_template("appointment.html")
+def appointment():
+    datas=[
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+        {
+            'name': "Mr Ishan Singla",
+            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
+            'star': "5",
+        },
+    ]
+    return render_template("appointment.html", datas=datas)
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True, threaded=True)
