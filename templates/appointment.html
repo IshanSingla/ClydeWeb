@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://telegra.ph/file/4b3af0d328540a9d397ad.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/appointment.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/hamburger.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap/ScrollEffects/onScroll.css')}}">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tutor's Point</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <img id="logo" src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" alt="" height="150px"></li>
+                <li>
+                    <nav role='navigation'>
+                        <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul id="menu">
+                                <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"
+                                        style="border-radius:50%;" width="200px">
+                                </li>
+                                <li class="active" onclick="location.href='/'">Home</li>
+                                <li><a href="/doubt">Doubts</a></li>
+                                <li><a href="/cources">Our Courses</a></li>
+                                <li onclick="location.href='/tutor'">Tutor's Info</li>
+                                <li onclick="location.href='/dashboard'">Dashboard</li>
+                            </ul>
+                        </div>
+                    </nav>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <!-- CARD-------1 -->
+        {% for data in datas %}
+        <section class="cards" onclick="location.href='teachers PP.html'">
+            <figure class="card">
+                <img src="{{data.url}}"
+                    style="border-radius:10px; width: 223px;" alt="Profile Image">
+                <figcaption class="card-title info-text">
+                    <p></p>
+                </figcaption>
+            </figure>
+            <div>
+                <h3>{{data.name}}</h3>
+                <h4>Professor</h4>
+                <h6>{{data.bio}}</h6>
+            </div>
+            <aside>
+                <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                <!--trigger = morph-two-way -->
+                <lord-icon src="https://cdn.lordicon.com/mdgrhyca.json" trigger="loop-on-hover"
+                    colors="primary:white,secondary:#08a88a" style="width:80px;height:60px">
+                </lord-icon>
+                <p>6 Star</p>
+            </aside>
+        </section>
+        {% endfor %}
+    </main>
+    <script src="{{ url_for('static', filename='JavaScript/appointment.js')}}"></script>
+
+</body>
+
+</html>
