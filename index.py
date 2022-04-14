@@ -4,35 +4,40 @@ from flask import *
 app = Flask(__name__)
 
 auth = pyrebase.initialize_app({
-    "apiKey": "AIzaSyDCBuHPSO5Hbac8g995zNfAi9Puwh9osqA",
-    "authDomain": "inducedmesssystem.firebaseapp.com",
-    "databaseURL": "https://inducedmesssystem-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    "projectId": "inducedmesssystem",
-    "storageBucket": "inducedmesssystem.appspot.com",
-    "messagingSenderId": "1059758496051"
-}).auth()
+        "apiKey": "AIzaSyAByWb1CzSlgk0OzSS2llwPnkVE7NWQbXw",
+        "authDomain": "clyde-web.firebaseapp.com",
+        "databaseURL": "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "projectId": "clyde-web",
+        "storageBucket": "clyde-web.appspot.com",
+        "messagingSenderId": "691435749279",
+        "appId": "1:691435749279:web:f7b33ad28a2fd62be6c7aa",
+        "measurementId": "G-722LG7913E"
+    },).auth()
 default_app = initialize_app(
     credentials.Certificate(
         {
             "type": "service_account",
-            "project_id": "inducedmesssystem",
-            "private_key_id": "c9a7d683768821fb449118c1d54199e093e5342f",
-            "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDLKxiX1farl7jT\nCMo3s5bTPZ9e4s3owC7GfeSVAxpJM5hpLcD0IzKTzKHkQwsmMpXTPoJyYMkTMC1D\nmYIORo1vOeFWVIXIDqkvS+hZTneLozPkCmlFrnXeLAwg48hd2XrzPQg8njSaSHnY\nSHqTzxOiWcr2LOF63a5eA17qe6cTAwjyo4s8av6dythBTpm+JHPgMGdvZVK4P2EU\ng3/AgL45lxHGJ7K11964u3C/Z6cKnnxekOFW5A7wPlAL5na2lJqbFtCUOurbuT75\nvjrzA0dA1RG5N4f+s4ujPRsO94RhpsHGX/d93/qLO0S/P932vg9veVL5cPfU7v4c\nFDaSx3RDAgMBAAECggEADAetPbBb9aUf8ay6/t3tJX86Uk24Rvq6OAfCB3wyZ2am\nIoaALKtvuqr4ZDRIpUrxgMARFeFIq0dWb/COcAjQ3NSVsFQWnrFfizX4k4N17T0N\nPPZekff7KG5Y+YBxDWIit1D6+04uRzIiSWuqZCK9HlBxqm6Mv/SRiW5qzqZ04P4Q\nOKQsqtvfUzqt/DM7VpVGIKL1nk3LtZZTfmQoG5TjwPox/ius3CIgGixu9neAIP/+\nY+krQhO2i7rg3zYMug1Nm7kB8/gUAy2Cw3+MbO11Y7sk8DkSRPYUr+ecvq7cwoJK\n1J6SrjQjRKVg9H+0LVrCIoHIsYQYlWUvbtKLGPi1oQKBgQD0+0FifGPFShpPDL0b\ntx6obgSSIWpxQIcVO2ECJrM+LWmtdK4bUHebwghQD6SoF0B0x+69+SMKBQO4AYG/\neBqGlHjU2lpN2v+BSWCAT7bR930qh3hOzNfRKZVWf7zYe271kY8Gf4acCte5NTbd\ndUjE6JAXe4me3qI7EXNabNrF7QKBgQDUTmZLfr07RWIfH+fPontwDj2D3wnwlk8D\nRZynAmI4hsCXTFBDm7oAoo/+mw3qv/DJUcCdSkt6CtaLT91ZosSDsSLnwfYaDhU3\na9TRmgOWfpLuGM9Ob1GmGdj+sAOFGBQCoxmq03PZMOsvqTRsBeHkXDSt1cxxtL3C\nqf5pBBXc7wKBgGLdQvXL3TexQAzGx0p4DBdMzutqMNqjf+BBplSH6a4eBZfKjrjX\nMG3bUB9/MKPlPk3ioaZo9IsGmwmXEhWDErFdGaZMuETTLGmwgxFFGjKB/jE7moGy\niSYP8gSGaF+08IKJy36D2H8AoS5NG2cj/cn5UK0pXdCPaEkOMc88Ps3BAoGAQNGi\n57/NNJBtccVC+CDKgR7H50Asf7jUbNJPDqpqpIl3uXnCM7IS6ui2/+wFJrvtXvnH\nzf4F5z/x2tzKXviT+QUW/B067x+HmMEiW9Ai8kq4v1rxyCeyjPztRG0m1fbQ/TEg\nwAgJIbGOzKFjcOum2RrRtpVE8x5UpV9TXmqx5h8CgYABsAJMTbHo1TgHRHihNqAe\n7EdI0PZmoMgdq/oh8UkRyAYxLoximytA2R9IOvnsr5Kizz56ay1A2BFNVL6ZLg9O\ng0zOg2BE858RTj2CGQSmK0El+JlP0xoVX2OdPxCkId8oB8aq5s3rqPMsEYzCieNX\nbDwST+SH+tofsFOJbrtj7w==\n-----END PRIVATE KEY-----\n",
-            "client_email": "firebase-adminsdk-hffym@inducedmesssystem.iam.gserviceaccount.com",
-            "client_id": "111608122596104436421",
+            "project_id": "clyde-web",
+            "private_key_id": "f2a916fc26ce3e818087d5d0b88c1d31d65e3f8f",
+            "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6BnNI8Xyn72/3\n9uqYay6s35XWC3r1IMOtbg2Hquqt+GpsdV47fP1Ds9CuNHaAcGRRzOzyTqUyO5gB\nPwvHgREz/wZ3lXOYPgn3aEQ0yT3jxracoLjMqj7v/ydfSzuka0TWW6/ov+DkQT6F\nLZ29yv5eujwg1QGQ+tlfPZ+LP4bhKCTAJi/GhKdRruoerV7/UPHhxbcfCoItmUNT\n8aMEb7XVFjhbjxkofu8hKiy46IAEVVZS+F6DkZmgmhVF0D0CqiglLhvuEC4u1Bc2\ngVWgvKwnLHCRm2gKs1YIO3WAI604BMhU+x4n3h+rJ3m4R6SC9xC5eidb2H2QXNrv\nOuvByXU3AgMBAAECggEAPKpS2WRrdybWGIMNIXS+zYDC0AGBcURkm//qaKZ8Dw0W\nw9UIzJSn0XboJI+WX6+Hf8e5NBIivH2DxlBFqqO0NQVDmicCghElVepKZ/6C8O/C\naNTfP1t71++ZavHRev7Cfbd76Ab/M+D1HyBvs0/qYYERj9F3R80Oq4kgqRwoA+/x\nop2bGo1FihRKrMbxA6joaDMXtDTMmTIUEq6fUSqkT009CM8SPclu1h554Suys+Jq\n29nVuPbFCJ+gmGngQcdzIT00540T9cBGgldvt3skMM9eHn9JaUZ9od/OrVGCIRqX\n7YAJaCVG8fXP51ozz35dlOqNBXfYoGLT31LyHuNztQKBgQDe0HNBQQYjOYUAVjby\nhhYXThdJvzC4NQPtqWh9hN5Hv8TirCfEjv0HB3FKBWoij4PIxDQoSP4//y01fJ0B\nIwTnAg0nTqy4cmDXET2wo9A2DGxsu0eZxZ1I/YOGRYJTmsGE54CqHd7yyV2YGwZT\n/jnvweX0S1G9ZkrDIhfYYxCFxQKBgQDVu0rSfbQ5a1XGDUTUzonIOCOxb5V07V6r\ndiXG5H1CY18wcenLWfAlD9rFd5ETg9yLvWN27jEhZq1d/FpBldQdDqRuMkHQRJn1\n20bXh7n+9baefKYt+rpTD5mqWp2GEcCQoXs1gXOFyrpUWYMhuVyv2vrVc0AuWm60\nLzQB2qn6ywKBgQCCqJwdlOLjfxRmOShpmYWUzv9LCKmqK7SNBn22tVafnm33Olrr\noanxGEUv0fMGJ0BxV9T6Fqu5nYrGRbfP9dgnGwXZmgIg+zmchIi3b6hmOWzPahc3\nrjFonvkkoNgm7KY0qIjDuVaG6txOmPJiCL+yv/J4Cj75oOWQfgqboqQKvQKBgFhn\n1Bck77sgbqYxLttnYw5ySjFGmmd3F8WMZSvTrwwa1nDPbYkzdmWeHTu4rUWJMVyL\nxeyXsbLDKcrKavrd4pLyT4lVOGvRNG3BeZgFCCYxtIvxuzshjph0x3bzbFzcUu6A\nHNqQ5RveMxxYuijk5zXGOiK4PT/vIANf0v9BVzXpAoGAEScgtmsDX+43W1S4KsEM\nCT1iT0B6nSVBpeq/esjOD9Rt1JCWSmOEUi6SquiD2wpxjQ1YZCTGkKsuj3KdwKPl\n0aeGgIKoUrhEAfkgxx11HvY6ZfuxxtPgN8nXbTtY6PK3iLjVT5OQ+AG0IOPRhR+0\np2XMA7vqgMDL8t96cfd/2Tk=\n-----END PRIVATE KEY-----\n",
+            "client_email": "firebase-adminsdk-bo8th@clyde-web.iam.gserviceaccount.com",
+            "client_id": "102820297151318096500",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-hffym%40inducedmesssystem.iam.gserviceaccount.com"
+            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bo8th%40clyde-web.iam.gserviceaccount.com"
         }
+
     ),
     {
-        "apiKey": "AIzaSyDCBuHPSO5Hbac8g995zNfAi9Puwh9osqA",
-        "authDomain": "inducedmesssystem.firebaseapp.com",
-        "databaseURL": "https://inducedmesssystem-default-rtdb.asia-southeast1.firebasedatabase.app/",
-        "projectId": "inducedmesssystem",
-        "storageBucket": "inducedmesssystem.appspot.com",
-        "messagingSenderId": "1059758496051"
+        "apiKey": "AIzaSyAByWb1CzSlgk0OzSS2llwPnkVE7NWQbXw",
+        "authDomain": "clyde-web.firebaseapp.com",
+        "databaseURL": "https://clyde-web-default-rtdb.asia-southeast1.firebasedatabase.app",
+        "projectId": "clyde-web",
+        "storageBucket": "clyde-web.appspot.com",
+        "messagingSenderId": "691435749279",
+        "appId": "1:691435749279:web:f7b33ad28a2fd62be6c7aa",
+        "measurementId": "G-722LG7913E"
     },
 )
 
@@ -67,23 +72,23 @@ def basic():
         pass
     if request.method == 'POST':
         try:
-                email = request.form['email1']
-                password = request.form['password1']
-                try:
-                    info = auth.sign_in_with_email_and_password(
-                        email, password)
-                    details = auth.get_account_info(info["idToken"])
-                    if details["users"][0]["emailVerified"] == False:
-                        return render_template('login.html', s='Verify Your Email')
-                    resp = make_response(render_template(
-                        'login.html', s='Login successful'))
-                    resp.set_cookie('email', email, max_age=60*60)
-                    resp.set_cookie('password', password, max_age=60*60)
-                    return resp
-                except:
-                    return render_template('login.html', s='Invalid Password')
+            email = request.form['email1']
+            password = request.form['password1']
+            try:
+                info = auth.sign_in_with_email_and_password(
+                    email, password)
+                details = auth.get_account_info(info["idToken"])
+                if details["users"][0]["emailVerified"] == False:
+                    return render_template('login.html', s='Verify Your Email')
+                resp = make_response(render_template(
+                    'login.html', s='Login successful'))
+                resp.set_cookie('email', email, max_age=60*60)
+                resp.set_cookie('password', password, max_age=60*60)
+                return resp
+            except:
+                return render_template('login.html', s='Invalid Password')
         except:
-                pass
+            pass
     return render_template('login.html', s="")
 
 
@@ -138,18 +143,17 @@ def dashboard():
 @app.route('/appointment')
 def appointment():
     try:
-            proxys = (db.reference(f"/profiles/")).get()
-            datas=list(proxys.values())
+        proxys = (db.reference(f"/profiles/")).get()
+        datas = list(proxys.values())
 
-            for data in datas:
-                if data["role"]!="teacher":
-                    datas.remove(data)
-                
-            return render_template('appointment.html', datas=datas)
+        for data in datas:
+            if data["role"] != "teacher":
+                datas.remove(data)
+
+        return render_template('appointment.html', datas=datas)
     except Exception as e:
         pass
     return render_template('appointment.html')
-
 
 
 @app.route('/signup', methods=['GET', 'POST'])
