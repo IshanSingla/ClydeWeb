@@ -45,7 +45,7 @@
     <main id="main">
         <!-- CARD-------1 -->
         {% for data in datas %}
-        <section class="cards" onclick="location.href='teachers PP.html'">
+        <section class="cards" onclick="location.href='/teacher/{{data.uid}}'">
             <figure class="card">
                 <img src="{{data.url}}"
                     style="border-radius:10px; width: 223px;" alt="Profile Image">
@@ -54,7 +54,7 @@
                 </figcaption>
             </figure>
             <div>
-                <h3>{{data.name}}</h3>
+                <h3>Mr. {{data.firstname}} {{data.lastnmae}}</h3>
                 <h4>Professor</h4>
                 <h6>{{data.bio}}</h6>
             </div>

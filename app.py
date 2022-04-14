@@ -67,28 +67,6 @@ def basic():
         pass
     if request.method == 'POST':
         try:
-            name = request.form['name']
-            email = request.form['email']
-            password = request.form['password']
-            try:
-                newuser = auth.create_user_with_email_and_password(
-                    email, password)
-                auth.send_email_verification(newuser["idToken"])
-                details = auth.get_account_info(newuser["idToken"])
-                proxys = (db.reference(
-                    f"/Details/{details['users'][0]['localId']}/Name")).set(name)
-                if details["users"][0]["emailVerified"] == False:
-                    return render_template('login.html', s='Verify Your Email')
-                resp = make_response(render_template(
-                    'login.html', s='Login successful'))
-                resp.set_cookie('email', email, max_age=60*60*24)
-                resp.set_cookie('password', password, max_age=60*60*24)
-                return resp
-            except Exception as e:
-                print(e)
-                return render_template('login.html', s='This Email Is Already Used')
-        except:
-            try:
                 email = request.form['email1']
                 password = request.form['password1']
                 try:
@@ -104,7 +82,7 @@ def basic():
                     return resp
                 except:
                     return render_template('login.html', s='Invalid Password')
-            except:
+        except:
                 pass
     return render_template('login.html', s="")
 
@@ -156,59 +134,70 @@ def doubt():
 def dashboard():
     return render_template("dashboard.html")
 
+
 @app.route('/appointment')
 def appointment():
-    datas=[
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-        {
-            'name': "Mr Ishan Singla",
-            'bio': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
-            'url': "https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo=",
-            'star': "5",
-        },
-    ]
-    return render_template("appointment.html", datas=datas)
+    try:
+            proxys = (db.reference(f"/profiles/")).get()
+            datas=list(proxys.values())
+
+            for data in datas:
+                if data["role"]!="teacher":
+                    datas.remove(data)
+                
+            return render_template('appointment.html', datas=datas)
+    except Exception as e:
+        pass
+    return render_template('appointment.html')
+
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def regester():
+    try:
+        email1 = request.cookies.get('email')
+        password1 = request.cookies.get('password')
+        info = auth.sign_in_with_email_and_password(email1, password1)
+        details = auth.get_account_info(info["idToken"])
+        if details["users"][0]["emailVerified"] != False:
+            return redirect("/")
+    except:
+        pass
+    if request.method == 'POST':
+        try:
+            firstname = request.form['firstname']
+            lastnmae = request.form['lastnmae']
+            email = request.form['email']
+            company = request.form['company']
+            ROLE = request.form['ROLE']
+            address = request.form['address']
+            password = "Is@290403"
+            newuser = auth.create_user_with_email_and_password(
+                email, password)
+            auth.send_email_verification(newuser["idToken"])
+            details = auth.get_account_info(newuser["idToken"])
+            detail = {
+                "firstname": firstname,
+                "lastnmae": lastnmae,
+                "email": email,
+                "company": company,
+                "role": ROLE,
+                "address": address,
+                "bio": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
+                "uid": f"{details['users'][0]['localId']}",
+                "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VeVHSV-OV1ATnG7fcc-mCk06DEEfteHT5Q&usqp=CAU",
+                "star": "1"
+            }
+            proxys = (db.reference(
+                f"/profiles/{details['users'][0]['localId']}")).set(detail)
+            if details["users"][0]["emailVerified"] == False:
+                return render_template('login.html', s='Verify Your Email')
+        except Exception as e:
+            print(e)
+            return render_template('regester.html', s='This Email Is Already Used')
+
+    return render_template("regester.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True, threaded=True)

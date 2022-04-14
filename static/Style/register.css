@@ -1,0 +1,333 @@
+body {
+    background-image: url('https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1227082257?k=20&m=1227082257&s=612x612&w=0&h=9x0dktMDNufcCPsInCWt3fRlmNj_7UK-4ec56q1N1dU=');
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    position: absolute;
+    padding: 0% 22%;
+}
+
+header {
+    margin-bottom: 15%;
+}
+
+main {
+    height: 980px;
+    width: 860px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1%;
+    padding: 10px;
+    margin: 10%;
+    /* position: absolute; */
+}
+
+section {
+    float: right;
+    /* height: 800px; */
+    width: 300px;
+    background-color: white;
+    border-radius: 1%;
+    box-shadow: 0px 2px 10px dimgray;
+    margin-right: -3%;
+    padding: 5% 3%;
+
+}
+
+.input-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: dimgray;
+    font-size: 14px;
+
+}
+
+input {
+    margin: 4px 0;
+    padding: 8px;
+    padding-left: 10px;
+    width: 280px;
+    height: 30px;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    display: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: #ee7c4b;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background: #e86830;
+    transition: 0.3s;
+}
+
+.color-red {
+    color: red;
+}
+
+.input:focus {
+    outline: none !important;
+    border: 1px solid black;
+    box-shadow: 0 0 4px #e86830;
+}
+
+.dropdown {
+    margin: 4px 0;
+    padding: 5%;
+    padding-left: 10px;
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(255, 253, 253);
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    background-color: #e86830;
+    box-shadow: 0 0 10px #e86830;
+}
+
+.dropdown:focus {
+    outline: none !important;
+    border: 1px solid rgb(255, 253, 253);
+    box-shadow: 0 0 10px #e86830;
+}
+
+textarea {
+    margin: 4px 0;
+    padding: 8px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+textarea::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(175, 173, 173, 0.704);
+
+}
+
+
+
+/* ------------------------------------------------ */
+aside {
+    padding: 8% 8%;
+
+}
+
+.flex-container {
+    display: flex;
+}
+
+.heading-text {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e86830;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.info-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: dimgray;
+    width: 400px;
+}
+
+.horizontal-line {
+    width: 400px;
+    height: 1px;
+    background-color: rgba(187, 187, 187, 0.788);
+    margin: 4% 0;
+    border-radius: 30%;
+}
+
+
+
+
+
+
+
+/* -----------------CAPTCHA--------------- */
+/* Import Google font - Poppins & Noto */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Poppins:wght@400;500;600&display=swap');
+
+::selection {
+    color: #fff;
+    background: #e86830;
+}
+
+.captcha-area {
+    display: flex;
+    height: 34px;
+    margin: 30px 0 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.captcha-area .captcha-img {
+    height: 100%;
+    width: 345px;
+    user-select: none;
+    background: #000;
+    border-radius: 5px;
+    position: relative;
+}
+
+.captcha-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    opacity: 0.95;
+}
+
+.captcha-img .captcha {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 10px;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 2px #b1b1b1;
+    font-family: 'Noto Serif', serif;
+}
+
+.cap-button {
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: #ee7c4b;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .cap-button:hover {
+    background: #e86830;
+}
+
+.captcha-area .reload-btn {
+    width: 75px;
+    height: 100%;
+    font-size: 25px;
+}
+
+.captcha-area .reload-btn i {
+    transition: transform 0.3s ease;
+}
+
+.captcha-area .reload-btn:hover i {
+    transform: rotate(15deg);
+}
+
+.wrapper .input-area {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.input-area #cap-input {
+    width: 90%;
+    height: 90%;
+    outline: none;
+    padding-left: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+}
+
+.input-area #cap-input:is(:focus, :valid) {
+    padding-left: 19px;
+    border: 2px solid #e86830;
+}
+
+.input-area #cap-input::placeholder {
+    color: #bfbfbf;
+}
+
+.input-area .check-btn {
+    position: absolute;
+    right: 10px;
+    top: 80%;
+    font-size: 12px;
+    height: 80%;
+    padding: 0 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.input-area input:valid+.check-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.wrapper .status-text {
+    display: none;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 -5px;
+    color: black;
+}
+
+@media (max-width: 506px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .wrapper {
+        padding: 22px 25px 35px;
+    }
+
+    .wrapper header {
+        font-size: 25px;
+    }
+
+    .wrapper .captcha-area {
+        height: 60px;
+    }
+
+    .captcha-area .captcha {
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+
+    .captcha-area .reload-btn {
+        width: 60px;
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .wrapper .input-area {
+        height: 55px;
+    }
+
+    .input-area .check-btn {
+        height: 20px;
+    }
+
+    .wrapper .status-text {
+        font-size: 15px;
+    }
+
+    .captcha-area .captcha-img {
+        width: 250px;
+    }
+}
+
+.warning-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: dimgray;
+    width: 300px;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.warning-text a {
+    color: rgb(255, 179, 0);
+}

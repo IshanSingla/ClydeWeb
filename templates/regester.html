@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/register.css')}}">
+    <title>Register Now</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <form action="/signup" method="post" autocomplete="on">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fname" class="input-text">First name<sup class="color-red">*</sup></label><br>
+                            <input class="input" type="text" id="fname" name="firstname" placeholder="First name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="lname" class="input-text">Last name<sup class="color-red">*</sup></label><br>
+                            <input class="input" type="text" id="lname" name="lastnmae" placeholder="Last name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email" class="input-text">Email address<sup
+                                    class="color-red">*</sup></label><br>
+                            <input class="input" type="email" id="email" name="email" placeholder="Email address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="cname" class="input-text">Company name</label><br>
+                            <input class="input" type="text" id="cname" name="company" placeholder="Company name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Role" class="input-text">Role<sup class="color-red">*</sup></label><br>
+                            <div class="custom-selector" style="width:200px;">
+                                <select class="dropdown" name="ROLE" id="Role" required>
+                                    <option value="#">Role</option>
+                                    <option value="student">Student</option>
+                                    <option value="teacher">Teacher</option>
+
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="country-name" class="input-text">Country/Region<sup
+                                    class="color-red">*</sup></label><br>
+                            <input class="input" type="text" id="country-name" name="country" placeholder="Country" value="India"
+                                disabled style="background-color: bisque;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="address" class="input-text">Address<sup class="color-red">*</sup></label><br>
+                            <textarea class="input" name="address" id="address" cols="30" rows="4" required
+                                style="border: 1px solid rgb(151, 151, 151); border-radius: 4px;"
+                                placeholder="Address"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="submit" type="submit">
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+            <div class="wrapper">
+                <div class="captcha-area">
+                    <div class="captcha-img">
+                        <img src="https://media.istockphoto.com/photos/white-felt-background-picture-id1062951208?b=1&k=20&m=1062951208&s=170667a&w=0&h=UqTpWjAYhXQPY4KIHWVzqNC6n_0DD73HAf-DO-eVJAk="
+                            alt="Captch Background">
+                        <span class="captcha"></span>
+                    </div>
+                    <button class="reload-btn cap-button">
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/sihdhmit.json" trigger="click" colors="primary:#ffffff"
+                            style="width:25px;height:25px">
+                        </lord-icon>
+                    </button>
+                </div>
+                <form action="#" class="input-area">
+                    <input id="cap-input" type="text" placeholder="Enter captcha" maxlength="6" spellcheck="false"
+                        required>
+                    <button class="check-btn cap-button">Check</button>
+                </form>
+                <div class="status-text"></div>
+            </div>
+            <div>
+                <p class="warning-text">Signing up signifies that you have read and agree to the <a href="#">Terms of
+                        Service</a> and our <a href="#">Privacy Policy</a>.
+                    <a href="#">Cookie Preferences</a>.
+                </p>
+            </div>
+
+        </section>
+        <aside>
+            <div>
+                <span class="flex-container">
+                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/dklbhvrt.json" trigger="loop-on-hover"
+                        colors="primary:#e86830" style="width:30px;height:30px">
+                    </lord-icon>
+                    <p class="heading-text"> Free account</p>
+                </span>
+                <span>
+                    <p class="info-text">Placeat quibusdam consequuntur quisquam, tenetur doloremque eos sunt ipsum
+                        voluptas provident quidem impedit veritatis omnis repudiandae consectetur fugit, enim tempora
+                        ratione ad?</p>
+                </span>
+                <div class="horizontal-line"></div>
+            </div>
+
+            <div>
+                <span class="flex-container">
+                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/ryyjawhw.json" trigger="loop-on-hover"
+                        colors="primary:#e86830" style="width:30px;height:30px">
+                    </lord-icon>
+                    <p class="heading-text"> Your app platform</p>
+                </span>
+                <span>
+                    <p class="info-text">Aspernatur, aliquam esse velit expedita minima doloribus ipsam atque,
+                        temporibus architecto alias ipsum aliquid ad? Natus!</p>
+                </span>
+                <div class="horizontal-line"></div>
+            </div>
+
+            <div>
+                <span class="flex-container">
+                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/iswjnpyk.json" trigger="morph-two-way"
+                        colors="primary:#e86830" style="width:30px;height:30px">
+                    </lord-icon>
+                    <p class="heading-text"> Deploy now</p>
+                </span>
+                <span>
+                    <p class="info-text">Maxime blanditiis qui nisi repudiandae ratione dolores, autem sunt suscipit ex
+                        non voluptatem odit?</p>
+                </span>
+                <div class="horizontal-line"></div>
+            </div>
+
+        </aside>
+    </main>
+    <script src="{{ url_for('static', filename='JavaScript/register.js')}}"></script>
+</body>
+
+</html>
