@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="https://telegra.ph/file/4b3af0d328540a9d397ad.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/teachers.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teache's profile</title>
+</head>
+<body>
+
+    <nav>
+        <ul id="horizontal">
+          <li><img src="https://telegra.ph/file/4b3af0d328540a9d397ad.png" id="logoImg"></li>
+          <li><a href="/"x>Clyde</a></li>
+          <li><a href="/tutor">Tutor Profile</a></li>
+          <li><a href="/doubt">Doubts</a></li>
+          <li><a href="/cources">Our Courses</a></li>
+        </ul>
+    </nav>
+      <!--nav section ended-->
+    <br>
+
+    <div id="main">
+
+        <div id="left">
+
+            <div id="upperD">
+
+                <img id="teacherIMG" src="{{data.url}}">
+                <div id="details">
+                    <p>NAME - {{data.firstname}} {{data.lastnmae}}</p>
+                    <p>SUBJECT - {{data.subject}}</p>
+                    <p>SPECIALIZATION - {{data.specification}}</p>
+                    <p>RATING - {{data.star}}
+                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon
+                        id="star"
+                        src="https://cdn.lordicon.com/mdgrhyca.json"
+                        trigger="hover"
+                        colors="primary:#7166ee,secondary:#08a88a"
+                        style="width:25px;height:25px">
+                    </lord-icon>
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="breif">
+                <h4>BREIF INFO 
+                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/yyecauzv.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#4030e8"
+                        style="width:40px;height:35px">
+                    </lord-icon>
+                </h4>
+                <p>{{data.bio}}</p>
+            </div>
+
+            <div id="portfolio">
+
+                <div id="quali">
+                    <h4>QUALIFICATIONS
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/wxnxiano.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#4030e8"
+                            style="width:40px;height:40px">
+                        </lord-icon>
+                    </h4>
+                    {% for datas in data.qualification %}
+                    <p>datas</p>
+                    {% endfor %}
+                </div>
+                <div id="exper">
+                    <h4>EXPERRIENCE
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/tkgyrmwc.json"
+                        trigger="hover"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                    </h4>
+                    {% for datas in data.experience %}
+                    <p>datas</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="rigth">
+
+            <h3 style="text-align: center;">PAST LECTURES</h3>
+            <div id="pastlec">
+                <a></a>
+                <a></a>
+                <a></a>
+            </div>
+             
+            <div id="appointment">
+
+                <div id="commit">
+                    <h4>TWEETUP
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/nocovwne.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#4030e8"
+                        style="width:35px;height:35px">
+                    </lord-icon>
+                    </h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum quasi quas distinctio doloremque culpa eum eos, possimus esse nobis doloribus quaerat ullam quae voluptatibus autem inventore earum. Itaque, exercitationem magni.eos, possimus esse nobis doloribus quaerat ullam quae voluptatibus autem inventore earum. Itaque, exercitationem magni.</p>
+                    <button id="appoint">APPOINT</button>
+                </div>
+
+                <div id="stdreview">
+                    <h4 style="margin-left:10px;">REVIEWS
+                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/zpxybbhl.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#4030e8"
+                            style="width:35px;height:35px">
+                        </lord-icon></h4>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
