@@ -74,6 +74,9 @@ section div {
 section div h4 {
     color: black;
 }
+.horizontal-scroll{
+    overflow-y: scroll;
+}
 
 .info-text {
     text-align: left;
