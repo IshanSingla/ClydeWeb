@@ -190,17 +190,29 @@ def regester():
                 "bio": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, dicta? Magnam atque iste fugit neque.\nMagni possimus exercitationem ut voluptatibus eius incidunt, quo maxime illum, eos quis commodi,\nsaepe minima.",
                 "uid": f"{details['users'][0]['localId']}",
                 "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VeVHSV-OV1ATnG7fcc-mCk06DEEfteHT5Q&usqp=CAU",
-                "star": "1"
+                "star": "1",
+                "subject": "-",
+                "specification": "-",
+                "qualification": ["-","-","-"],
+                "experience": ["-","-","-"],
             }
             proxys = (db.reference(
                 f"/profiles/{details['users'][0]['localId']}")).set(detail)
             if details["users"][0]["emailVerified"] == False:
-                return render_template('login.html', s='Verify Your Email')
+                return render_template('login.html', s='Verify Your Email, a link has been send to your emial id!')
         except Exception as e:
             print(e)
-            return render_template('regester.html', s='This Email Is Already Used')
+            return render_template('regester.html', s='This Email Is Already Exist!')
 
     return render_template("regester.html")
+
+@app.route('/teacher/<string:n>', methods=['GET', 'POST'])
+def teacher(n):
+    data = (db.reference(f"/profiles/{n}/")).get()
+    print(data)
+    if data == None:
+        return render_template("404.html")
+    return render_template("profiletemp.html", data=data)
 
 
 if __name__ == "__main__":
