@@ -195,10 +195,10 @@ def regester():
             proxys = (db.reference(
                 f"/profiles/{details['users'][0]['localId']}")).set(detail)
             if details["users"][0]["emailVerified"] == False:
-                return render_template('login.html', s='Verify Your Email')
+                return render_template('login.html', s='Verify Your Email, a link has been send to your emial id!')
         except Exception as e:
             print(e)
-            return render_template('regester.html', s='This Email Is Already Used')
+            return render_template('regester.html', s='This Email Is Already Exist!')
 
     return render_template("regester.html")
 

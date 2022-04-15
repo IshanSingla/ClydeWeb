@@ -403,10 +403,10 @@
 	}
 </style>
 
-<body>
+<body onload="signupAlert()">
 
 	<div>
-		<span class="student">Student's</span>
+		<span class="student">Student's </span>
 		<div class="container" id="container">
 			<div class="form-container sign-up-container">
 				<form id="signup" action="/login" method="post">
@@ -455,7 +455,7 @@
 		const signUpButton = document.getElementById('signUp');
 		const signInButton = document.getElementById('signIn');
 		const container = document.getElementById('container');
-		const ishan = "{{s}}"
+		var ishan = '{{s}}';
 
 		signUpButton.addEventListener('click', () => {
 			container.classList.add("right-panel-active");
@@ -465,17 +465,20 @@
 			container.classList.remove("right-panel-active");
 		});
 		window.addEventListener('load',
-			function () {
+			);
+			function signupAlert() {
 				if (ishan == "") {
 
-				} else {
-					M.toast({ html: ishan })
+				}else if (ishan == "Login successful") {
+					alert(ishan);
+					window.location.href = "/";
 				}
-				if (ishan == "Login successful") {
-					window.location.href = "/"
+				else{
+					alert(ishan);
 				}
+				
 				// window.location.href = "/"
-			});
+			}
 	</script>
 
 
